@@ -2,6 +2,8 @@
 \begin{tikzpicture}
 
 \definecolor{color0}{rgb}{0.886274509803922,0.290196078431373,0.2}
+\definecolor{color1}{rgb}{0.203921568627451,0.541176470588235,0.741176470588235}
+\definecolor{color2}{rgb}{0.596078431372549,0.556862745098039,0.835294117647059}
 
 \begin{axis}[
 axis background/.style={fill=white!89.80392156862746!black},
@@ -25,46 +27,252 @@ ylabel={Percent of Scored Failures},
 ymajorgrids,
 ymin=0, ymax=7
 ]
-\draw[fill=color0,draw opacity=0] (axis cs:-0.459587872028351,0) rectangle (axis cs:-0.434587866067886,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.434587836265564,0) rectangle (axis cs:-0.409587830305099,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.409587860107422,0) rectangle (axis cs:-0.384587854146957,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.384587824344635,0) rectangle (axis cs:-0.359587818384171,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.359587848186493,0) rectangle (axis cs:-0.334587872028351,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.334587872028351,0) rectangle (axis cs:-0.309587866067886,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.309587836265564,0) rectangle (axis cs:-0.284587830305099,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.284587860107422,0) rectangle (axis cs:-0.259587854146957,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.259587854146957,0) rectangle (axis cs:-0.234587863087654,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.234587863087654,0) rectangle (axis cs:-0.20958785712719,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.20958785712719,0) rectangle (axis cs:-0.184587851166725,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.184587836265564,0) rectangle (axis cs:-0.159587845206261,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.159587860107422,0) rectangle (axis cs:-0.134587854146957,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.134587854146957,0) rectangle (axis cs:-0.109587855637074,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.109587863087654,0) rectangle (axis cs:-0.0845878645777702,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.0845878571271896,0) rectangle (axis cs:-0.0595878586173058,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.0595878586173058,0) rectangle (axis cs:-0.0345878563821316,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.0345878563821316,0) rectangle (axis cs:-0.0095878578722477,0);
-\draw[fill=color0,draw opacity=0] (axis cs:-0.00958785694092512,0) rectangle (axis cs:0.0154121415689588,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.0154121434316039,0) rectangle (axis cs:0.0404121428728104,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.0404121428728104,0) rectangle (axis cs:0.0654121413826942,40.0000023841859);
-\draw[fill=color0,draw opacity=0] (axis cs:0.0654121339321136,0) rectangle (axis cs:0.0904121324419975,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.0904121398925781,0) rectangle (axis cs:0.115412145853043,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.115412138402462,0) rectangle (axis cs:0.140412122011185,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.140412136912346,0) rectangle (axis cs:0.16541214287281,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.16541214287281,0) rectangle (axis cs:0.190412148833275,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.190412163734436,0) rectangle (axis cs:0.215412154793739,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.215412139892578,0) rectangle (axis cs:0.240412145853043,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.240412160754204,0) rectangle (axis cs:0.265412151813507,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.265412151813507,0) rectangle (axis cs:0.290412127971649,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.290412127971649,0) rectangle (axis cs:0.315412133932114,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.315412163734436,0) rectangle (axis cs:0.340412169694901,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.340412139892578,0) rectangle (axis cs:0.365412145853043,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.365412175655365,0) rectangle (axis cs:0.390412181615829,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.390412151813507,0) rectangle (axis cs:0.415412127971649,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.415412127971649,0) rectangle (axis cs:0.440412133932114,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.440412163734436,0) rectangle (axis cs:0.465412169694901,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.465412139892578,0) rectangle (axis cs:0.490412145853043,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.490412175655365,0) rectangle (axis cs:0.515412211418152,0);
-\draw[fill=color0,draw opacity=0] (axis cs:0.515412151813507,0) rectangle (axis cs:0.540412127971649,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.450705468654633,0) rectangle (axis cs:-0.425705462694168,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.425705432891846,0) rectangle (axis cs:-0.400705426931381,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.400705456733704,0) rectangle (axis cs:-0.375705450773239,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.375705450773239,0) rectangle (axis cs:-0.350705474615097,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.350705444812775,0) rectangle (axis cs:-0.32570543885231,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.325705468654633,0) rectangle (axis cs:-0.300705462694168,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.300705432891846,0) rectangle (axis cs:-0.275705426931381,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.275705456733704,0) rectangle (axis cs:-0.250705450773239,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.250705450773239,0) rectangle (axis cs:-0.225705459713936,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.225705444812775,0) rectangle (axis cs:-0.200705453753471,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.200705468654633,0) rectangle (axis cs:-0.175705462694168,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.175705462694168,0) rectangle (axis cs:-0.150705456733704,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.150705456733704,0) rectangle (axis cs:-0.1257054656744,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.1257054656744,0) rectangle (axis cs:-0.100705459713936,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.100705459713936,0) rectangle (axis cs:-0.075705461204052,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.0757054686546326,0) rectangle (axis cs:-0.0507054701447487,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.0507054626941681,0) rectangle (axis cs:-0.0257054604589939,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.0257054604589939,0) rectangle (axis cs:-0.000705461949110031,0);
+\draw[fill=color0,draw opacity=0] (axis cs:-0.000705461017787457,0) rectangle (axis cs:0.0242945402860641,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.0242945402860641,0) rectangle (axis cs:0.049294538795948,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.049294538795948,0) rectangle (axis cs:0.0742945373058319,40.0000023841859);
+\draw[fill=color0,draw opacity=0] (axis cs:0.0742945373058319,0) rectangle (axis cs:0.0992945358157158,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.0992945358157158,0) rectangle (axis cs:0.12429454177618,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.1242945343256,0) rectangle (axis cs:0.149294525384903,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.149294555187225,0) rectangle (axis cs:0.174294546246529,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.174294531345367,0) rectangle (axis cs:0.199294537305832,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.199294537305832,0) rectangle (axis cs:0.224294543266296,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.224294543266296,0) rectangle (axis cs:0.2492945343256,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.249294549226761,0) rectangle (axis cs:0.274294555187225,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.274294555187225,0) rectangle (axis cs:0.29929456114769,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.299294531345367,0) rectangle (axis cs:0.324294537305832,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.324294567108154,0) rectangle (axis cs:0.349294573068619,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.349294543266296,0) rectangle (axis cs:0.374294549226761,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.374294549226761,0) rectangle (axis cs:0.399294525384903,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.399294555187225,0) rectangle (axis cs:0.42429456114769,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.424294531345367,0) rectangle (axis cs:0.449294537305832,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.449294567108154,0) rectangle (axis cs:0.474294573068619,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.474294543266296,0) rectangle (axis cs:0.499294549226761,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.499294579029083,0) rectangle (axis cs:0.52429461479187,0);
+\draw[fill=color0,draw opacity=0] (axis cs:0.524294555187225,0) rectangle (axis cs:0.549294531345367,0);
+\addplot [semithick, color1, forget plot]
+table [row sep=\\]{%
+0.0100503358535014	nan \\
+0.056465687875063	nan \\
+0.102881039896624	nan \\
+0.149296391918186	nan \\
+0.195711743939747	nan \\
+0.242127095961309	nan \\
+0.288542447982871	nan \\
+0.334957800004432	nan \\
+0.381373152025994	nan \\
+0.427788504047555	nan \\
+0.474203856069117	nan \\
+0.520619208090678	nan \\
+0.56703456011224	nan \\
+0.613449912133801	nan \\
+0.659865264155363	nan \\
+0.706280616176924	nan \\
+0.752695968198486	nan \\
+0.799111320220047	nan \\
+0.845526672241609	nan \\
+0.89194202426317	nan \\
+0.938357376284732	nan \\
+0.984772728306293	nan \\
+1.03118808032785	nan \\
+1.07760343234942	nan \\
+1.12401878437098	nan \\
+1.17043413639254	nan \\
+1.2168494884141	nan \\
+1.26326484043566	nan \\
+1.30968019245722	nan \\
+1.35609554447879	nan \\
+1.40251089650035	nan \\
+1.44892624852191	nan \\
+1.49534160054347	nan \\
+1.54175695256503	nan \\
+1.58817230458659	nan \\
+1.63458765660815	nan \\
+1.68100300862972	nan \\
+1.72741836065128	nan \\
+1.77383371267284	nan \\
+1.8202490646944	nan \\
+1.86666441671596	nan \\
+1.91307976873752	nan \\
+1.95949512075908	nan \\
+2.00591047278065	nan \\
+2.05232582480221	nan \\
+2.09874117682377	nan \\
+2.14515652884533	nan \\
+2.19157188086689	nan \\
+2.23798723288845	nan \\
+2.28440258491002	nan \\
+2.33081793693158	nan \\
+2.37723328895314	nan \\
+2.4236486409747	nan \\
+2.47006399299626	nan \\
+2.51647934501782	nan \\
+2.56289469703938	nan \\
+2.60931004906095	nan \\
+2.65572540108251	nan \\
+2.70214075310407	nan \\
+2.74855610512563	nan \\
+2.79497145714719	nan \\
+2.84138680916875	nan \\
+2.88780216119032	nan \\
+2.93421751321188	nan \\
+2.98063286523344	nan \\
+3.027048217255	nan \\
+3.07346356927656	nan \\
+3.11987892129812	nan \\
+3.16629427331968	nan \\
+3.21270962534125	nan \\
+3.25912497736281	nan \\
+3.30554032938437	nan \\
+3.35195568140593	nan \\
+3.39837103342749	nan \\
+3.44478638544905	nan \\
+3.49120173747062	nan \\
+3.53761708949218	nan \\
+3.58403244151374	nan \\
+3.6304477935353	nan \\
+3.67686314555686	nan \\
+3.72327849757842	nan \\
+3.76969384959998	nan \\
+3.81610920162155	nan \\
+3.86252455364311	nan \\
+3.90893990566467	nan \\
+3.95535525768623	nan \\
+4.00177060970779	nan \\
+4.04818596172935	nan \\
+4.09460131375091	nan \\
+4.14101666577248	nan \\
+4.18743201779404	nan \\
+4.2338473698156	nan \\
+4.28026272183716	nan \\
+4.32667807385872	nan \\
+4.37309342588028	nan \\
+4.41950877790185	nan \\
+4.46592412992341	nan \\
+4.51233948194497	nan \\
+4.55875483396653	nan \\
+4.60517018598809	nan \\
+};
+\addplot [semithick, color2, forget plot]
+table [row sep=\\]{%
+0.0100503358535014	nan \\
+0.056465687875063	nan \\
+0.102881039896624	nan \\
+0.149296391918186	nan \\
+0.195711743939747	nan \\
+0.242127095961309	nan \\
+0.288542447982871	nan \\
+0.334957800004432	nan \\
+0.381373152025994	nan \\
+0.427788504047555	nan \\
+0.474203856069117	nan \\
+0.520619208090678	nan \\
+0.56703456011224	nan \\
+0.613449912133801	nan \\
+0.659865264155363	nan \\
+0.706280616176924	nan \\
+0.752695968198486	nan \\
+0.799111320220047	nan \\
+0.845526672241609	nan \\
+0.89194202426317	nan \\
+0.938357376284732	nan \\
+0.984772728306293	nan \\
+1.03118808032785	nan \\
+1.07760343234942	nan \\
+1.12401878437098	nan \\
+1.17043413639254	nan \\
+1.2168494884141	nan \\
+1.26326484043566	nan \\
+1.30968019245722	nan \\
+1.35609554447879	nan \\
+1.40251089650035	nan \\
+1.44892624852191	nan \\
+1.49534160054347	nan \\
+1.54175695256503	nan \\
+1.58817230458659	nan \\
+1.63458765660815	nan \\
+1.68100300862972	nan \\
+1.72741836065128	nan \\
+1.77383371267284	nan \\
+1.8202490646944	nan \\
+1.86666441671596	nan \\
+1.91307976873752	nan \\
+1.95949512075908	nan \\
+2.00591047278065	nan \\
+2.05232582480221	nan \\
+2.09874117682377	nan \\
+2.14515652884533	nan \\
+2.19157188086689	nan \\
+2.23798723288845	nan \\
+2.28440258491002	nan \\
+2.33081793693158	nan \\
+2.37723328895314	nan \\
+2.4236486409747	nan \\
+2.47006399299626	nan \\
+2.51647934501782	nan \\
+2.56289469703938	nan \\
+2.60931004906095	nan \\
+2.65572540108251	nan \\
+2.70214075310407	nan \\
+2.74855610512563	nan \\
+2.79497145714719	nan \\
+2.84138680916875	nan \\
+2.88780216119032	nan \\
+2.93421751321188	nan \\
+2.98063286523344	nan \\
+3.027048217255	nan \\
+3.07346356927656	nan \\
+3.11987892129812	nan \\
+3.16629427331968	nan \\
+3.21270962534125	nan \\
+3.25912497736281	nan \\
+3.30554032938437	nan \\
+3.35195568140593	nan \\
+3.39837103342749	nan \\
+3.44478638544905	nan \\
+3.49120173747062	nan \\
+3.53761708949218	nan \\
+3.58403244151374	nan \\
+3.6304477935353	nan \\
+3.67686314555686	nan \\
+3.72327849757842	nan \\
+3.76969384959998	nan \\
+3.81610920162155	nan \\
+3.86252455364311	nan \\
+3.90893990566467	nan \\
+3.95535525768623	nan \\
+4.00177060970779	nan \\
+4.04818596172935	nan \\
+4.09460131375091	nan \\
+4.14101666577248	nan \\
+4.18743201779404	nan \\
+4.2338473698156	nan \\
+4.28026272183716	nan \\
+4.32667807385872	nan \\
+4.37309342588028	nan \\
+4.41950877790185	nan \\
+4.46592412992341	nan \\
+4.51233948194497	nan \\
+4.55875483396653	nan \\
+4.60517018598809	nan \\
+};
 \path [draw=white, fill opacity=0] (axis cs:0,0)
 --(axis cs:0,7);
 
