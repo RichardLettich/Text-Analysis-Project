@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.11.30)  3 DEC 2018 15:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.11.30)  3 DEC 2018 18:38
 entering extended mode
 **./GroupTechReport.tex
 (GroupTechReport.tex
@@ -1741,45 +1741,8 @@ File: BarPlotPrimaryResults.png Graphic file (type png)
 <use BarPlotPrimaryResults.png>
 Package pdftex.def Info: BarPlotPrimaryResults.png  used on input line 257.
 (pdftex.def)             Requested size: 252.94499pt x 164.98396pt.
- [11 <./BarPlotPrimaryResults.png>]
-<BarPlotTwitterResults.png, id=217, 580.1675pt x 378.41376pt>
-File: BarPlotTwitterResults.png Graphic file (type png)
-<use BarPlotTwitterResults.png>
-Package pdftex.def Info: BarPlotTwitterResults.png  used on input line 272.
-(pdftex.def)             Requested size: 252.94499pt x 164.98396pt.
- [12 <./BarPlotTwitterResults.png>]
-<Panera.png, id=224, 867.24pt x 650.43pt>
-File: Panera.png Graphic file (type png)
-<use Panera.png>
-Package pdftex.def Info: Panera.png  used on input line 281.
-(pdftex.def)             Requested size: 252.94499pt x 189.70166pt.
-<Pal's.png, id=226, 867.24pt x 650.43pt>
-File: Pal's.png Graphic file (type png)
-<use Pal's.png>
-Package pdftex.def Info: Pal's.png  used on input line 294.
-(pdftex.def)             Requested size: 252.94499pt x 189.70166pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<TacoBell.png, id=227, 867.24pt x 650.43pt>
-File: TacoBell.png Graphic file (type png)
-<use TacoBell.png>
-Package pdftex.def Info: TacoBell.png  used on input line 306.
-(pdftex.def)             Requested size: 252.94499pt x 189.70166pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Chick-fil-A.png, id=228, 867.24pt x 650.43pt>
-File: Chick-fil-A.png Graphic file (type png)
-<use Chick-fil-A.png>
-Package pdftex.def Info: Chick-fil-A.png  used on input line 316.
-(pdftex.def)             Requested size: 252.94499pt x 189.70166pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[13 <./Panera.png>] (meg.tex (chick.tex) (taco.tex) (pals.tex) (Chipotle.tex)
-(Panera.tex)
+ [11 <./BarPlotPrimaryResults.png>] (meg.tex (chick.tex) (taco.tex)
+(pals.tex) (Chipotle.tex) (Panera.tex)
 Overfull \hbox (27.05402pt too wide) in paragraph at lines 4--8
 []$[]$ $[]$ $[]$
  []
@@ -1787,35 +1750,50 @@ Overfull \hbox (27.05402pt too wide) in paragraph at lines 4--8
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-) [14 <./Pal's.png> <./TacoBell.png>] [15 <./Chick-fil-A.png>]
-(GroupTechReport.bbl)
+)
+
+! Package caption Error: \caption outside float.
+
+See the caption package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.329 \caption
+              {Positive Sentiment Distribution for a Few Restaurants}
+If you do not understand this error, please take a closer look
+at the documentation of the `caption' package, especially the
+section about errors.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[12] [13] (GroupTechReport.bbl)
 
 Package natbib Warning: There were undefined citations.
 
-[16
+[14
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 334.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 334.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 337.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 337.
  (GroupTechReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 334.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 334.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 337.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 337.
 Package rerunfilecheck Info: File `GroupTechReport.out' has not changed.
 (rerunfilecheck)             Checksum: 8D3D91A296061CE0A4F0583B6242C03E;1216.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 334.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 337.
  ) 
 Here is how much of TeX's memory you used:
- 42903 strings out of 493312
- 961317 string characters out of 3138898
- 1388158 words of memory out of 3000000
- 45702 multiletter control sequences out of 15000+200000
+ 42872 strings out of 493312
+ 960774 string characters out of 3138898
+ 1392388 words of memory out of 3000000
+ 45682 multiletter control sequences out of 15000+200000
  543644 words of font info for 104 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,19n,136p,1275b,2203s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 78i,19n,136p,1275b,2205s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -1833,9 +1811,9 @@ lic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 msy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on GroupTechReport.pdf (18 pages, 5159816 bytes).
+Output written on GroupTechReport.pdf (16 pages, 438468 bytes).
 PDF statistics:
- 333 PDF objects out of 1000 (max. 8388607)
- 68 named destinations out of 1000 (max. 500000)
- 14546 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 308 PDF objects out of 1000 (max. 8388607)
+ 61 named destinations out of 1000 (max. 500000)
+ 14521 words of extra memory for PDF output out of 17280 (max. 10000000)
 

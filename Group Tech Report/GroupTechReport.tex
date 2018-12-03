@@ -267,63 +267,66 @@ The training set contained $90$ percent of the data and had an accuracy of $82.2
 
 Figure $8$ is a barplot containing the results of the testing set for the Twitter data. There is a bar for both the negative and positive results. The light green shows the percent of correct predictions for each group. The dark green bar shows the percent of false negatives for each group. In other words, the percent of sentences that should have been predicted to be positive in the positive bar, or negative in the negative bar. From this barplot we can see that the model is doing a great job of predicting negative sentiment in the Twitter data but not as well of a job with the positive sentiment. However the percent of correctly predicted positive sentiment for the Twitter data is about the same as the percent of correctly predicted positive sentiment in the Primary Emotion data. We want the model to accurately find the negative sentiment in tweets, since that is what companies are interested in. Most companies want to know which areas they are succeeding in, but they need to know which areas they can improve. If our model can accurately find negative sentiment in a tweet or a comment, we can then make recommendations based on that output about which reviews the company should be taking seriously. 
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width = 3.5in]{BarPlotTwitterResults.png}
-	\caption{Barplot of Results of Twitter Data, Positive and Negative Categories}
-\end{figure}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width = 3.5in]{BarPlotTwitterResults.png}
+%	\caption{Barplot of Results of Twitter Data, Positive and Negative Categories}
+%\end{figure}
 
 \subsection{Unlabeled Raw Twitter Data Results}
-For the final step in this project we tested our model on a few different sets of raw unlabeled twitter data. The data sets were tweets at a few different restaurants. We chose Panera, Taco Bell, Chick-Fil-A, and Pal's. The model which trained on the labeled twitter data, then went through a set of the raw twitter data and for each tweet gave a percent positive score. We then made a histogram of this data. So we have a histogram of "positivity" for each restaurants tweets. First we look at the results from Panera tweets. 
+For the final step in this project we tested our model on a few different sets of raw unlabeled twitter data. The data sets were tweets at a few different restaurants. We chose Panera, Taco Bell, Chick-Fil-A, Chipotle and Pal's. The model which trained on the labeled twitter data, then went through a set of the raw twitter data and for each tweet gave a percent positive score. We then made a histogram of this data. So we have a histogram of "positivity" for each restaurants tweets. As we can see from the Figure $10$ most of the restaurants had mostly positive sentiment in their tweets. Chipotle in the past few years has undergone some backlash after the food poisoning which happened more than once in the past few years. Due to that, they did have a larger portion of negative sentiment tweets. If we look at Chick-Fil-A, Panera, and Taco Bell we can see that most of the reviews are positive with some of the reviews falling into the negative side of the distribution. This is to be expected since no company has a hundred percent positive customer reviews. 
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width = 3.5in]{Panera.png}\caption{Histogram of Positive Scores for Panera}
-\end{figure}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width = 3.5in]{Panera.png}\caption{Histogram of Positive Scores for Panera}
+%\end{figure}
 
 %\vspace{-2in}
 %\input{Panera.tex}
 
-As we can see from figure $6$, Panera Results. The model predicted mostly positive responses. This is not surprising, Panera has a good reputation for great food and customer service. Obviously there are some less positive or negative reviews, but the majority of the reviews are positive.
+%As we can see from figure $6$, Panera Results. The model predicted mostly positive responses. This is not %surprising, Panera has a good reputation for great food and customer service. Obviously there are some %less positive or negative reviews, but the majority of the reviews are positive.
 
-Next we look at the results for tweets at the fast food chain Pal's.
+%Next we look at the results for tweets at the fast food chain Pal's.
 
 
-\begin{figure}[h!]
-	\center
-	\includegraphics[width = 3.5in]{Pal's.png}
-	\caption{Histogram of Positive Scores for Pals}
-\end{figure}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width = 3.5in]{Pal's.png}
+%	\caption{Histogram of Positive Scores for Pals}
+%\end{figure}
 %\vspace{-2in}
 %\input{Pal's.tex}
 
-From figure $7$ we can see that the majority of Pal's tweets have a positive sentiment score, which is good. This histogram is not as heavily skewed as the Panera histogram, so there may be slightly more negative tweets as compared to Panera, but overall Pal's is doing well from the customers standpoint. 
+%From figure $7$ we can see that the majority of Pal's tweets have a positive sentiment score, which is %good. This histogram is not as heavily skewed as the Panera histogram, so there may be slightly more %negative tweets as compared to Panera, but overall Pal's is doing well from the customers standpoint. 
 
-Next we look at the results from Taco Bell tweets.
+%Next we look at the results from Taco Bell tweets.
 
-\begin{figure}[h!]
-	\centering
-	\includegraphics[width = 3.5in]{TacoBell.png}
-	\caption{Histogram of Positive Scores for Taco Bell}
-\end{figure}
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width = 3.5in]{TacoBell.png}
+%	\caption{Histogram of Positive Scores for Taco Bell}
+%\end{figure}
 
-In figure $8$ we see that Taco Bell again is mostly in the positive score range, but the histogram does even off around $.06$. Overall it would appear that Taco Bell is meeting customer expectations. 
+%In figure $8$ we see that Taco Bell again is mostly in the positive score range, but the histogram does %even off around $.06$. Overall it would appear that Taco Bell is meeting customer expectations. 
 
-Finally we look at the results for Chick-Fil-A.
+%Finally we look at the results for Chick-Fil-A.
 
-\begin{figure}[h!]
-	\center
-	\includegraphics[width = 3.5in]{Chick-fil-A.png}
-	\caption{Histogram of Positive Scores for Chick-fil-A}
-\end{figure}
+%\begin{figure}[h!]
+%	\center
+%	\includegraphics[width = 3.5in]{Chick-fil-A.png}
+%	\caption{Histogram of Positive Scores for Chick-fil-A}
+%\end{figure}
 
 %\vspace{-2in}
 %\input{Chick-Fil-A.tex}
 
-From figure $9$ we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as the previous restaurants do, but that is to be expected. No business is perfect, so some less than positive reviews are bound to occur. It is interesting to note that there are not as many middling positive tweets, or tweets that fall in the middle of the graph.
+%From figure $9$ we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A %is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as %the previous restaurants do, but that is to be expected. No business is perfect, so some less than %positive reviews are bound to occur. It is interesting to note that there are not as many middling %positive tweets, or tweets that fall in the middle of the graph.
+
+
 
 \vspace{-2in}
 \input{meg.tex}
+\caption{Positive Sentiment Distribution for a Few Restaurants}
 \clearpage
 
 \newpage
