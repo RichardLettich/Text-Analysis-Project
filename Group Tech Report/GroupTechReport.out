@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Machine Learning}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Loss Function}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Optimizer Function - Stochastic Gradient Descent}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{Caveats}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{Sentiment Analysis}{}% 6
+\BOOKMARK [1][-]{section.4}{Plutchik's Wheel of Emotion}{}% 7
+\BOOKMARK [1][-]{section.5}{Primary Emotion Data}{}% 8
+\BOOKMARK [1][-]{section.6}{Methods}{}% 9
+\BOOKMARK [2][-]{subsection.6.1}{Text Mining}{section.6}% 10
+\BOOKMARK [2][-]{subsection.6.2}{Term Frequency Matrix}{section.6}% 11
+\BOOKMARK [2][-]{subsection.6.3}{Adam Optimizer}{section.6}% 12
+\BOOKMARK [2][-]{subsection.6.4}{Model Layers}{section.6}% 13
+\BOOKMARK [2][-]{subsection.6.5}{Dropout Technique}{section.6}% 14
+\BOOKMARK [1][-]{section.7}{Positive and Negative Groups}{}% 15
+\BOOKMARK [1][-]{section.8}{Results}{}% 16
+\BOOKMARK [2][-]{subsection.8.1}{Primary Emotion Data Results}{section.8}% 17
+\BOOKMARK [2][-]{subsection.8.2}{Labeled Twitter Data Results}{section.8}% 18
+\BOOKMARK [2][-]{subsection.8.3}{Unlabeled Raw Twitter Data Results}{section.8}% 19
