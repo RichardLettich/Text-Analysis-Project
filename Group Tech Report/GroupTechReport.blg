@@ -21,45 +21,45 @@ Warning--I didn't find a database entry for "nielsen2015neural"
 Warning--empty journal in BusinessCustomerSatisfaction
 Warning--empty publisher in Statlearning
 Warning--empty year in Statlearning
-You've used 7 entries,
+You've used 8 entries,
             2118 wiz_defined-function locations,
-            541 strings with 4945 characters,
-and the built_in function-call counts, 1670 in all, are:
-= -- 157
-> -- 49
+            546 strings with 5033 characters,
+and the built_in function-call counts, 1885 in all, are:
+= -- 176
+> -- 56
 < -- 0
-+ -- 24
-- -- 14
-* -- 93
-:= -- 294
-add.period$ -- 19
-call.type$ -- 7
-change.case$ -- 26
++ -- 27
+- -- 16
+* -- 101
+:= -- 332
+add.period$ -- 22
+call.type$ -- 8
+change.case$ -- 29
 chr.to.int$ -- 0
-cite$ -- 10
-duplicate$ -- 72
-empty$ -- 157
-format.name$ -- 14
-if$ -- 342
+cite$ -- 11
+duplicate$ -- 84
+empty$ -- 179
+format.name$ -- 16
+if$ -- 388
 int.to.chr$ -- 0
-int.to.str$ -- 7
-missing$ -- 7
-newline$ -- 36
-num.names$ -- 14
-pop$ -- 39
+int.to.str$ -- 8
+missing$ -- 9
+newline$ -- 41
+num.names$ -- 16
+pop$ -- 47
 preamble$ -- 1
-purify$ -- 21
+purify$ -- 24
 quote$ -- 0
-skip$ -- 46
+skip$ -- 52
 stack$ -- 0
-substring$ -- 93
-swap$ -- 5
+substring$ -- 98
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 26
 warning$ -- 3
-while$ -- 18
-width$ -- 8
-write$ -- 70
+while$ -- 20
+width$ -- 9
+write$ -- 80
 (There were 3 error messages)

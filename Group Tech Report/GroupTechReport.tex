@@ -247,8 +247,15 @@ A different approach was used for each model. Historically, Bidirectional LSTM h
 However, implementing Bi-directional LSTM on the idiom data has yielded a significant boost, raising accuracy approximately 5\% over regular LSTM.
 
 \subsection{Dropout Technique}
-Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{nielsen2015neural}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from over-itting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{nielsen2015neural}.
-
+Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{NeuralNet}.
+Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from over-fitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{NeuralNet}.
+\subsection{Validation Accuracy}
+Figure \ref{valepoch} shows the change in validation accuracy by epoch for a few different methods. We used both mono-directional and bi-directional neural nets with up to three hidden layers. Figure \ref{valepoch} shows the results for each of the methods. As we can see each method starts at approximately the same level of validation accuracy. The bidirectional method with two hidden layers appears to have the most consistent accuracy over the epochs, it levels off after five epochs without much fluctuation in validation accuracy. 
+\begin{figure}[htb]
+	\centering
+	\resizebox{4in}{!}{\input{validationbyepoch.tex}}
+	\caption{Validation Accuracy by Epoch}\label{valepoch}
+\end{figure}
 \section{Positive and Negative Groups}
 
 For this project, we first ran our method on Primary Emotion Data \cite{lowriwilliams}, then we ran it on Twitter data to see if the method would work on both sets and accurately predict the underlying emotion of a text. In both cases the data was broken into two groups, positive and negative. Once the data was labeled as positive and negative, the data was then split into a training set and a testing or validation set. Next the data goes through the LSTM method, which is programmed to go through each element of the data set and learn the appropriate response variable. In this project the LSTM network loops through each sentence and the corresponding emotion category and then continues through each sentence. This LSTM network learns the proportion of each emotion category. Once the LSTM network has gone through the entire training data set, it will go through the test data set. The network will predict the same proportion of emotion categories as represented in the training data set. 
