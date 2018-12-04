@@ -1,10 +1,16 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{BusinessCustomerSatisfaction}
 S~Azman A.~Novak, Petra~Sparl.
 \newblock Impact of customer satisfaction of financial results of car servicing
   companies: Findings from slovenia.
 \newblock 18.3:113, 2015.
+
+\bibitem{Statlearning}
+Trevor Hastie Robert~Tibshirani Gareth~James, Daniela~Witten.
+\newblock {\em An Introduction to Statistical Machine Learning with Examples in
+  R}.
+\newblock Springer, 2013.
 
 \bibitem{WheelofEmotion}
 Hokuma.
@@ -15,20 +21,10 @@ J.~Stuart Hunter.
 \newblock The exponentially weighted moving average.
 \newblock {\em Journal of Quality Technology}, 18(4):203--210, 1986.
 
-\bibitem{Statlearning}
-Gareth James.
-\newblock {\em An Introduction to Statistical Machine Learning with Examples in
-  R}.
-
 \bibitem{TextMining}
 Ted Kwalter.
 \newblock {\em Text Mining in Practice with R}.
 \newblock Wiley, 2017.
-
-\bibitem{LSTMNNforLanguageModeling}
-Hermann~Ney Martin~Sundermeyer, Ralf~Schluter.
-\newblock Lstm neural networks for language modeling.
-\newblock 2012.
 
 \bibitem{NeuralNet}
 Micheal~A. Nielson.
@@ -41,12 +37,6 @@ Robert Plutchik.
   a fact that may explain their complexity and provide tools for clinical
   practice.
 \newblock {\em American scientist}, 89(4):344--350, 2001.
-
-\bibitem{low}
-Lowri Williams.
-\newblock Pushing the envelope of sentiment analysis beyond words and
-  polarities.
-\newblock 2017.
 
 \bibitem{lowriwilliams}
 Lowri Williams.

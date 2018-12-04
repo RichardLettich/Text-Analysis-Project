@@ -1,23 +1,19 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: GroupTechReport.aux
 The style file: plain.bst
 Database file #1: references.bib
-I was expecting a `,' or a `}'---line 9 of file references.bib
- :     author = {Gareth James} 
- :                             {Daniela Witten} {Trevor Hastie} {Robert Tibshirani },
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 60 of file references.bib
+I was expecting a `,' or a `}'---line 55 of file references.bib
  :     
  :     journal = {},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 97 of file references.bib
+I was expecting a `,' or a `}'---line 87 of file references.bib
  : 
  : @article{plutchik2001nature,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Too many commas in name 1 of "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" for entry Statlearning
+while executing---line 1049 of file plain.bst
 Warning--empty journal in BusinessCustomerSatisfaction
-Warning--empty publisher in Statlearning
-Warning--empty year in Statlearning
-Warning--empty journal in LSTMNNforLanguageModeling
-Warning--empty journal in low
-(There were 3 error messages)
+Too many commas in name 1 of "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" for entry Statlearning
+while executing---line 1090 of file plain.bst
+(There were 4 error messages)

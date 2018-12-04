@@ -48,9 +48,9 @@ This paper introduces an approach on how to predict sentiment from idioms and te
 
 The goal of this project is to create a method which will accurately analyze a given text and predict the correct emotion which is expressed in the text. For many companies there is a high need for programs which can analyze a customer review and determine the appropriate underlying sentiment. Customer satisfaction plays a huge role in how companies compete. Novak, Sparl, and Azman explain how ``increased service quality positively influences customer satisfaction", which in turn leads to better financial results through increased customer loyalty \cite{BusinessCustomerSatisfaction}. Therefore companies need to know how well they are doing, how satisfied are the customers, where the company can improve, and much more. The goal of this project is to create a method which can accurately assign emotion to a given sentence.
 
-It should be stated that Chick-fil-A is a customer service oriented brand. They desire to potentially use the methods described in analysis as part of a larger project to discover how emotion relates to restaurant reviews in online comments and customer perception of service failure.
+It should be stated that Chick-fil-A is a customer service oriented brand. They desire to potentially use the methods described in analysis as part of a larger project to discover how emotion relates to restaurant reviews in on-line comments and customer perception of service failure.
 
-A spectrum of emotion (such as `satisfaction') would likely be best for this purpose. Since the goal is to determine what service failures and successes cause the strongest customer emotions and predict the former using the later, it would be best to rank the emotion quantitatively. Determining that long wait times make people unhappy would provide no novel information, but being able to say that people become an order of magnitude more upset over one service failure than another would beneficial as a tool of analysis. In addition, a spectrum of satisfaction would allow for better predictive capability when being used as a component of another analysis \cite{low}.
+A spectrum of emotion (such as `satisfaction') would likely be best for this purpose. Since the goal is to determine what service failures and successes cause the strongest customer emotions and predict the former using the later, it would be best to rank the emotion quantitatively. Determining that long wait times make people unhappy would provide no novel information, but being able to say that people become an order of magnitude more upset over one service failure than another would beneficial as a tool of analysis. In addition, a spectrum of satisfaction would allow for better predictive capability when being used as a component of another analysis \cite{lowriwilliams}.
 
 Secondly, it would be ideal to have a confidence value for the emotional prediction. If this sentiment analysis is used as part of another meta-tool, being able to provide estimate of confidence would allow the meta-tool to weigh the sentiment analysis appropriately with its other variables.
 
@@ -75,7 +75,7 @@ The vast majority of loss functions are not so naive, generally averaging the lo
 
 In this project, we use the \textit{Adam} optimizer, which is a tuned up version of stochastic gradient descent optimization. As its name alludes to, stochastic gradient descent optimizes the model function by descending the gradient of the loss function. 
 
-Before explaining what that means, it should be known that SGD optimizers assumes that if the loss function and model function are continuous \textit{enough}, then the mean value and rolle’s theorems \footnote{For a continuous function between two points the function must pass through the intermediate values; maxima and minima must occur at zero} still hold. 
+Before explaining what that means, it should be known that SGD optimizers assumes that if the loss function and model function are continuous \textit{enough}, then the mean value and Rolle’s Theorems \footnote{For a continuous function between two points the function must pass through the intermediate values; maxima and minima must occur at zero} still hold. 
 
 From this, if we take any point on the loss function, we are able to extrapolate that if we were modify our parameters p (where $p = [m, b,...]$), going in the direction opposite of the gradient of the loss function with respect those parameters ($\frac{\partial\lambda}{\partial p}$), we would be able to continuously re-evaluate and lower our error until we reach a gradient near zero, indicating we hypothetically found model parameters which can not be improved.
 
@@ -102,7 +102,7 @@ In this project, ``sentiment analysis, also referred to as opinion mining, aims 
 
 \section{Plutchik's Wheel of Emotion}
 
-Plutchik's Wheel of Emotion, see Figure \ref{plutchikemotionwheell}, has eight basic emotions including: joy, trust, fear, surprise, sadness,disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}.
+Plutchik's Wheel of Emotion, see Figure \ref{plutchikemotionwheel}, has eight basic emotions including: joy, trust, fear, surprise, sadness,disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}.
 
 The emotions on each leaf range in intensity. The emotions on the inner circle are the most intense and the emotions on the outer circle of each leaf are the least intense \cite{WheelofEmotion}. The emotions that fall between each leaf are a combination of each leaf's middle emotion \cite{WheelofEmotion}. For example, ``Trust + Fear = Submission". The Primary Emotion Data set has emotions from the middle of each leaf, the combinations emotions, and categories ``Neutral" and ``Ambiguous" \cite{lowriwilliams}.
 
@@ -245,7 +245,17 @@ A different approach was used for each model. Historically, Bidirectional LSTM h
 However, implementing Bi-directional LSTM on the idiom data has yielded a significant boost, raising accuracy approximately 5\% over regular LSTM.
 
 \subsection{Dropout Technique}
-Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{nielsen2015neural}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{nielsen2015neural}.
+Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from over-fitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{NeuralNet}.
+
+\subsection{Validation Accuracy}
+
+Figure \ref{valepoch} shows the change in validation accuracy by epoch for a few different methods. We used both mono-directional and bi-directional neural nets with up to three hidden layers. Figure \ref{valepoch} shows the results for each of the methods. As we can see each method starts at approximately the same level of validation accuracy. The bidirectional method with two hidden layers appears to have the most consistent accuracy over the epochs, it levels off after five epochs without much fluctuation in validation accuracy. 
+
+\begin{figure}[htb]
+	\centering
+	\resizebox{4in}{!}{\input{validationbyepoch.tex}}
+	\caption{Validation Accuracy by Epoch}\label{valepoch}
+\end{figure}
 
 \section{Positive and Negative Groups}
 
@@ -258,9 +268,9 @@ The Primary Emotion Data positive group contained the categories joy, love, opti
 
 The results from training set, which was made up of $80$ percent of the data, had an accuracy of around $89$ percent. The testing set was made up of the remaining $20$ percent of the data and had an accuracy of $74$ percent. The gap in the training and testing accuracy is not a good sign, as the gap suggests that the method is over-fitting to  the training set. Put more simply, the method is learning the patterns of the training data set, rather than learning the overall spread or picture of the data. Consequently the method can accurately predict the training set, but it makes less accurate predictions for data it has not yet seen.
 
-Figure \ref{primemresult} is a barplot of the results for the Primary Emotion Data testing set. There is a bar for positive predictions and a bar for negative predictions. The light blue shows the percent of correct predictions for both categories. The dark blue bar shows the percent of False Negatives, or sentences which should have been classified as positive for the positive bar, or negative in the negative bar. This barplot tells us how accurate the model is, which group the model is predicting accurately, and which group the model isn't predicting accurately. For the Primary Emotion data the model is most accurately predicting the positive emotions, meanwhile it isn't doing as well with the negative emotion group. We want the model to do a better job of predicting negative sentiment. 
+Figure \ref{primemresult} is a bar plot of the results for the Primary Emotion Data testing set. There is a bar for positive predictions and a bar for negative predictions. The light blue shows the percent of correct predictions for both categories. The dark blue bar shows the percent of False Negatives, or sentences which should have been classified as positive for the positive bar, or negative in the negative bar. This bar plot tells us how accurate the model is, which group the model is predicting accurately, and which group the model isn't predicting accurately. For the Primary Emotion data the model is most accurately predicting the positive emotions, meanwhile it isn't doing as well with the negative emotion group. We want the model to do a better job of predicting negative sentiment. 
 
-Companies want to know which areas they need to improve. A big part of that process is finding out where the company is going wrong with the customer. This information is found in reviews from the customer, whether through some social media website, Yelp!, or reviews posted directly to the company. At some point the company is going to see the comment, tweet, or review and have to analyze it. However a problem with this is the volume of reviews a company, especially a big chain restaurant will recieve. A model like the one developed in this project could go through a large set of reviews and tell the company which reviews should be looked at, or which reviews are the most important. In other words, the model used in this project could tell a company which reviews are the most negative and should be investigated further.   
+Companies want to know which areas they need to improve. A big part of that process is finding out where the company is going wrong with the customer. This information is found in reviews from the customer, whether through some social media website, Yelp!, or reviews posted directly to the company. At some point the company is going to see the comment, tweet, or review and have to analyze it. However a problem with this is the volume of reviews a company, especially a big chain restaurant will receive. A model like the one developed in this project could go through a large set of reviews and tell the company which reviews should be looked at, or which reviews are the most important. In other words, the model used in this project could tell a company which reviews are the most negative and should be investigated further.   
 
 %\begin{figure}[h!]
 %	\center
@@ -345,7 +355,12 @@ For the final step in this project we tested our model on a few different sets o
 %From figure $9$ we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A %is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as %the previous restaurants do, but that is to be expected. No business is perfect, so some less than %positive reviews are bound to occur. It is interesting to note that there are not as many middling %positive tweets, or tweets that fall in the middle of the graph.
 
 
-\newpage
+%\begin{figure}[htb]
+%	\centering
+%	\input{meg.tex}}
+%	\caption{Positive Sentiment Distributions for a Few Restaurants}\label{lbtwitresult}
+%\end{figure}
+
 \vspace{-2in}
 \input{meg.tex}
 \clearpage

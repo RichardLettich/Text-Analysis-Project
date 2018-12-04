@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.11.30)  3 DEC 2018 19:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.11.30)  3 DEC 2018 20:54
 entering extended mode
 **./GroupTechReport.tex
 (GroupTechReport.tex
@@ -1679,22 +1679,19 @@ Package epstopdf Info: Source file: <error_function.eps>
 d-to.pdf error_function.eps>
 (epstopdf)             \includegraphics on input line 90.
 Package epstopdf Info: Output file is already uptodate.
-<error_function-eps-converted-to.pdf, id=124, 829.0975pt x 512.91624pt>
+<error_function-eps-converted-to.pdf, id=128, 829.0975pt x 512.91624pt>
 File: error_function-eps-converted-to.pdf Graphic file (type pdf)
 <use error_function-eps-converted-to.pdf>
 Package pdftex.def Info: error_function-eps-converted-to.pdf  used on input lin
 e 90.
 (pdftex.def)             Requested size: 91.201pt x 56.42096pt.
  [3 <./error_function-eps-converted-to.pdf>]
-
-LaTeX Warning: Reference `plutchikemotionwheell' on page 4 undefined on input l
-ine 105.
-
-<PlutchikWheelOfEmotion.jpg, id=146, 803.0pt x 542.025pt>
+<PlutchikWheelOfEmotion.jpg, id=150, 803.0pt x 542.025pt>
 File: PlutchikWheelOfEmotion.jpg Graphic file (type jpg)
 <use PlutchikWheelOfEmotion.jpg>
 Package pdftex.def Info: PlutchikWheelOfEmotion.jpg  used on input line 111.
 (pdftex.def)             Requested size: 289.07999pt x 195.12885pt.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 133.
@@ -1719,57 +1716,40 @@ Overfull \hbox (15.70158pt too wide) detected at line 223
 [][] 
  []
 
-[7] [8]
-
-Package natbib Warning: Citation `nielsen2015neural' on page 9 undefined on inp
-ut line 248.
-
-
-Package natbib Warning: Citation `nielsen2015neural' on page 9 undefined on inp
-ut line 248.
-
-[9] [10] (PrimaryEmotionDataResults.tex)
-
-LaTeX Warning: Reference `lbtwitresult' on page 11 undefined on input line 284.
-
-
-[11] (LabeledTwitterDataResults.tex) [12] [13] (meg.tex (chick.tex) (taco.tex)
+[7] [8] [9] (validationbyepoch.tex) [10] [11] (PrimaryEmotionDataResults.tex)
+[12] (LabeledTwitterDataResults.tex) [13] (meg.tex (chick.tex) (taco.tex)
 (pals.tex) (Chipotle.tex) (Panera.tex)
 Overfull \hbox (27.05402pt too wide) in paragraph at lines 4--8
 []$[]$ $[]$ $[]$
  []
 
-) [14] (GroupTechReport.bbl)
 
-Package natbib Warning: There were undefined citations.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[15
+) [14] [15] (GroupTechReport.bbl) [16
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 358.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 358.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 373.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 373.
  (GroupTechReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 358.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 358.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 373.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 373.
 Package rerunfilecheck Info: File `GroupTechReport.out' has not changed.
-(rerunfilecheck)             Checksum: 8D3D91A296061CE0A4F0583B6242C03E;1216.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: E0E34313EE51FECDDDBAAAD18E931859;1286.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 358.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 373.
  ) 
 Here is how much of TeX's memory you used:
- 42879 strings out of 493312
- 960992 string characters out of 3138898
- 1384962 words of memory out of 3000000
- 45681 multiletter control sequences out of 15000+200000
- 543644 words of font info for 104 fonts, out of 3000000 for 9000
+ 42880 strings out of 493312
+ 960980 string characters out of 3138898
+ 1393386 words of memory out of 3000000
+ 45676 multiletter control sequences out of 15000+200000
+ 543695 words of font info for 105 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,19n,136p,1282b,2203s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 78i,19n,136p,1276b,2203s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKT
@@ -1787,9 +1767,9 @@ lic/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
 msy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb
 ><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on GroupTechReport.pdf (17 pages, 434383 bytes).
+Output written on GroupTechReport.pdf (18 pages, 440552 bytes).
 PDF statistics:
- 311 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 14511 words of extra memory for PDF output out of 17280 (max. 10000000)
+ 324 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 14519 words of extra memory for PDF output out of 17280 (max. 10000000)
 
