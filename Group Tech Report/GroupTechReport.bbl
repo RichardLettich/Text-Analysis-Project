@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{BusinessCustomerSatisfaction}
 S~Azman A.~Novak, Petra~Sparl.
@@ -25,28 +25,12 @@ Ted Kwalter.
 \newblock {\em Text Mining in Practice with R}.
 \newblock Wiley, 2017.
 
-\bibitem{LSTMNNforLanguageModeling}
-Hermann~Ney Martin~Sundermeyer, Ralf~Schluter.
-\newblock Lstm neural networks for language modeling.
-\newblock 2012.
-
-\bibitem{NeuralNet}
-Micheal~A. Nielson.
-\newblock {\em Neural Networks and Deep Learning}.
-\newblock Determination Press, 2015.
-
 \bibitem{plutchik2001nature}
 Robert Plutchik.
 \newblock The nature of emotions: Human emotions have deep evolutionary roots,
   a fact that may explain their complexity and provide tools for clinical
   practice.
 \newblock {\em American scientist}, 89(4):344--350, 2001.
-
-\bibitem{low}
-Lowri Williams.
-\newblock Pushing the envelope of sentiment analysis beyond words and
-  polarities.
-\newblock 2017.
 
 \bibitem{lowriwilliams}
 Lowri Williams.

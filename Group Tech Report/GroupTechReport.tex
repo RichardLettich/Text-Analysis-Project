@@ -28,6 +28,7 @@
 \setlength{\parindent}{4em}
 \setlength{\parskip}{1em}
 \usepackage{tabularx}
+\usepackage{cleveref}
 \usepackage[]{algorithm2e}
 \setlength{\parindent}{3em}
 \setlength{\parskip}{.75em}
@@ -50,7 +51,7 @@ The goal of this project is to create a method which will accurately analyze a g
 
 It should be stated that Chick-fil-A is a customer service oriented brand. They desire to potentially use the methods described in analysis as part of a larger project to discover how emotion relates to restaurant reviews in online comments and customer perception of service failure.
 
-A spectrum of emotion (such as `satisfaction') would likely be best for this purpose. Since the goal is to determine what service failures and successes cause the strongest customer emotions and predict the former using the later, it would be best to rank the emotion quantitatively. Determining that long wait times make people unhappy would provide no novel information, but being able to say that people become an order of magnitude more upset over one service failure than another would beneficial as a tool of analysis. In addition, a spectrum of satisfaction would allow for better predictive capability when being used as a component of another analysis \cite{low}.
+A spectrum of emotion (such as `satisfaction') would likely be best for this purpose. Since the goal is to determine what service failures and successes cause the strongest customer emotions and predict the former using the later, it would be best to rank the emotion quantitatively. Determining that long wait times make people unhappy would provide no novel information, but being able to say that people become an order of magnitude more upset over one service failure than another would beneficial as a tool of analysis. In addition, a spectrum of satisfaction would allow for better predictive capability when being used as a component of another analysis \cite{lowriwilliams}.
 
 Secondly, it would be ideal to have a confidence value for the emotional prediction. If this sentiment analysis is used as part of another meta-tool, being able to provide estimate of confidence would allow the meta-tool to weigh the sentiment analysis appropriately with its other variables.
 
@@ -102,7 +103,7 @@ In this project, ``sentiment analysis, also referred to as opinion mining, aims 
 
 \section{Plutchik's Wheel of Emotion}
 
-Plutchik's Wheel of Emotion, see Figure \ref{plutchikemotionwheell}, has eight basic emotions including: joy, trust, fear, surprise, sadness,disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}.
+Plutchik's Wheel of Emotion, (\cref{plutchikemotionwheel}), has eight basic emotions including: joy, trust, fear, surprise, sadness,disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}.
 
 The emotions on each leaf range in intensity. The emotions on the inner circle are the most intense and the emotions on the outer circle of each leaf are the least intense \cite{WheelofEmotion}. The emotions that fall between each leaf are a combination of each leaf's middle emotion \cite{WheelofEmotion}. For example, ``Trust + Fear = Submission". The Primary Emotion Data set has emotions from the middle of each leaf, the combinations emotions, and categories ``Neutral" and ``Ambiguous" \cite{lowriwilliams}.
 
@@ -269,12 +270,26 @@ Companies want to know which areas they need to improve. A big part of that proc
 %	\label{bpprimem}
 %\end{figure}
 
- \begin{figure}[htb]
+%\begin{subfigure}[]{6cm} \centering \resizebox{\linewidth}{!}{\input{chick.tex} }  \caption{} \label{fig:chicktt} \end{subfigure
+		
+\begin{figure}[]
+	\vspace*{-1in}
 	\centering
-	\resizebox{4in}{!}{\input{PrimaryEmotionDataResults.tex}}
-	\caption{Barplot of Primary Emotion Results}\label{primemresult}
-\end{figure}
+	\begin{adjustwidth}{-1in}{-1in}
+		
+ \begin{subfigure}{3in}
+ 	\centering
+	\resizebox{3in}{!}{\input{PrimaryEmotionDataResults.tex}}
+	\caption{Primary Emotion Accuracy}\label{primemresult}
+\end{subfigure}
+\begin{subfigure}{3in}
+	\centering
+	\resizebox{3in}{!}{\input{LabeledTwitterDataResults.tex}}
+	\caption{Labeled Twitter Data Accuracy} \label{lbtwitresult}
+\end{subfigure}
 
+\end{adjustwidth}
+\end{figure}
 \subsection{Labeled Twitter Data Results}
 
 The Twitter data consists of about $40,000$ tweets, assigned emotion, and user identification. There are some cases of multiple tweets from the same person. The emotion categories are empty, sadness, enthusiasm, neutral, worry, love, fun, hate, happiness, surprise, and boredom. The twitter data was split into positive and negative categories. The positive category contains the emotion groups enthusiasm, love, and happiness. The negative category contains the emotion groups sadness and hate. The other emotions are left out since they do not fall into completely positive or negative categories. 
@@ -289,66 +304,38 @@ Figure \ref{lbtwitresult} is a barplot containing the results of the testing set
 %	\caption{Barplot of Results of Twitter Data, Positive and Negative Categories}
 %\end{figure}
 
-\begin{figure}[htb]
-	\centering
-	\resizebox{4in}{!}{\input{LabeledTwitterDataResults.tex}}
-	\caption{Barplot of Labeled Twitter Data Results}\label{lbtwitresult}
-\end{figure}
 
 \subsection{Unlabeled Raw Twitter Data Results}
-For the final step in this project we tested our model on a few different sets of raw unlabeled twitter data. The data sets were tweets at a few different restaurants. We chose Panera, Taco Bell, Chick-Fil-A, Chipotle and Pal's. The model which trained on the labeled twitter data, then went through a set of the raw twitter data and for each tweet gave a percent positive score. We then made a histogram of this data. So we have a histogram of "positivity" for each restaurants tweets. As we can see from the Figure $10$ most of the restaurants had mostly positive sentiment in their tweets. Chipotle in the past few years has undergone some backlash after the food poisoning which happened more than once in the past few years. Due to that, they did have a larger portion of negative sentiment tweets. If we look at Chick-Fil-A, Panera, and Taco Bell we can see that most of the reviews are positive with some of the reviews falling into the negative side of the distribution. This is to be expected since no company has a hundred percent positive customer reviews. 
 
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width = 3.5in]{Panera.png}\caption{Histogram of Positive Scores for Panera}
-%\end{figure}
+\input{meg.tex}
 
-%\vspace{-2in}
-%\input{Panera.tex}
-
-%As we can see from figure $6$, Panera Results. The model predicted mostly positive responses. This is not %surprising, Panera has a good reputation for great food and customer service. Obviously there are some %less positive or negative reviews, but the majority of the reviews are positive.
-
-%Next we look at the results for tweets at the fast food chain Pal's.
+For the final step in this project we tested our model on a few different sets of raw unlabeled twitter data. The data sets were tweets at a few different restaurants. We chose Panera, Taco Bell, Chick-Fil-A, and Pal's. The model which trained on the labeled twitter data, then went through a set of the raw twitter data and for each tweet gave a percent positive score. We then made a histogram of this data. So we have a histogram of "positivity" for each restaurants tweets. First we look at the results from Panera tweets. 
 
 
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width = 3.5in]{Pal's.png}
-%	\caption{Histogram of Positive Scores for Pals}
-%\end{figure}
-%\vspace{-2in}
-%\input{Pal's.tex}
 
-%From figure $7$ we can see that the majority of Pal's tweets have a positive sentiment score, which is %good. This histogram is not as heavily skewed as the Panera histogram, so there may be slightly more %negative tweets as compared to Panera, but overall Pal's is doing well from the customers standpoint. 
+As we can see from the Panera Results (\cref{fig:Paneratt}). The model predicted mostly positive responses. This is not surprising, Panera has a good reputation for great food and customer service. Obviously there are some less positive or negative reviews, but the majority of the reviews are positive.
 
-%Next we look at the results from Taco Bell tweets.
+Next we look at the results for tweets at the fast food chain Pal's.
 
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width = 3.5in]{TacoBell.png}
-%	\caption{Histogram of Positive Scores for Taco Bell}
-%\end{figure}
 
-%In figure $8$ we see that Taco Bell again is mostly in the positive score range, but the histogram does %even off around $.06$. Overall it would appear that Taco Bell is meeting customer expectations. 
 
-%Finally we look at the results for Chick-Fil-A.
+From figure \cref{fig:chicktt} we can see that the majority of Pal's tweets have a positive sentiment score, which is good. This histogram is not as heavily skewed as the Panera histogram, so there may be slightly more negative tweets as compared to Panera, but overall Pal's is doing well from the customers standpoint. 
 
-%\begin{figure}[h!]
-%	\center
-%	\includegraphics[width = 3.5in]{Chick-fil-A.png}
-%	\caption{Histogram of Positive Scores for Chick-fil-A}
-%\end{figure}
+Next we look at the results from Taco Bell tweets.
+
+
+
+In figure \cref{fig:tacott} we see that Taco Bell again is mostly in the positive score range, but the histogram does even off around $.06$. Overall it would appear that Taco Bell is meeting customer expectations. 
+
+Finally we look at the results for Chick-Fil-A.
+
 
 %\vspace{-2in}
 %\input{Chick-Fil-A.tex}
 
-%From figure $9$ we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A %is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as %the previous restaurants do, but that is to be expected. No business is perfect, so some less than %positive reviews are bound to occur. It is interesting to note that there are not as many middling %positive tweets, or tweets that fall in the middle of the graph.
+From figure \cref{fig:chicktt} we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as the previous restaurants do, but that is to be expected. No business is perfect, so some less than positive reviews are bound to occur. It is interesting to note that there are not as many middling positive tweets, or tweets that fall in the middle of the graph.
 
 
-\newpage
-\vspace{-2in}
-\input{meg.tex}
-\clearpage
 
 \newpage
 \bibliographystyle{plain}

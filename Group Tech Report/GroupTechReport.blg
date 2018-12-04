@@ -1,4 +1,6 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: GroupTechReport.aux
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: GroupTechReport.aux
 The style file: plain.bst
 Database file #1: references.bib
 I was expecting a `,' or a `}'---line 9 of file references.bib
@@ -10,14 +12,54 @@ I was expecting a `,' or a `}'---line 60 of file references.bib
  :     journal = {},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 97 of file references.bib
+I was expecting a `,' or a `}'---line 92 of file references.bib
  : 
  : @article{plutchik2001nature,
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "nielsen2015neural"
 Warning--empty journal in BusinessCustomerSatisfaction
 Warning--empty publisher in Statlearning
 Warning--empty year in Statlearning
-Warning--empty journal in LSTMNNforLanguageModeling
-Warning--empty journal in low
+You've used 7 entries,
+            2118 wiz_defined-function locations,
+            541 strings with 4945 characters,
+and the built_in function-call counts, 1670 in all, are:
+= -- 157
+> -- 49
+< -- 0
++ -- 24
+- -- 14
+* -- 93
+:= -- 294
+add.period$ -- 19
+call.type$ -- 7
+change.case$ -- 26
+chr.to.int$ -- 0
+cite$ -- 10
+duplicate$ -- 72
+empty$ -- 157
+format.name$ -- 14
+if$ -- 342
+int.to.chr$ -- 0
+int.to.str$ -- 7
+missing$ -- 7
+newline$ -- 36
+num.names$ -- 14
+pop$ -- 39
+preamble$ -- 1
+purify$ -- 21
+quote$ -- 0
+skip$ -- 46
+stack$ -- 0
+substring$ -- 93
+swap$ -- 5
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 24
+warning$ -- 3
+while$ -- 18
+width$ -- 8
+write$ -- 70
 (There were 3 error messages)
