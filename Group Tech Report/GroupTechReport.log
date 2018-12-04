@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 DEC 2018 21:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  3 DEC 2018 22:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1255,27 +1255,27 @@ Package: relsize 2013/03/29 ver 4.1
 (./GroupTechReport.aux)
 \openout1 = `GroupTechReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 40.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 41.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
+LaTeX Font Info:    ... okay on input line 41.
 
 (/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1307,7 +1307,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 40.
+LaTeX Info: Redefining \microtypecontext on input line 41.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1339,7 +1339,7 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
 \AtBeginShipoutBox=\box75
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 41.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1348,15 +1348,15 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count327
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 41.
+LaTeX Info: Redefining \pageref on input line 41.
+LaTeX Info: Redefining \nameref on input line 41.
 
 (./GroupTechReport.out) (./GroupTechReport.out)
 \@outlinefile=\write7
 \openout7 = `GroupTechReport.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 43.
+LaTeX Font Info:    Try loading font information for U+msa on input line 44.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1364,7 +1364,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 43.
+LaTeX Font Info:    Try loading font information for U+msb on input line 44.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1372,14 +1372,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \hbox (3.88266pt too wide) in paragraph at lines 43--43
+Overfull \hbox (3.88266pt too wide) in paragraph at lines 44--44
  [][] 
  []
 
 [1
 
 {/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 45--46
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
 
  []
 
@@ -1387,12 +1387,12 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.46 \end{abstract}
+l.47 \end{abstract}
                     [1]pdfTeX warning (ext4): destination with the same identif
 ier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.63 
+l.64 
       [1] [2]
 Package epstopdf Info: Source file: <error_function.eps>
 (epstopdf)                    date: 2018-12-03 17:41:46
@@ -1402,58 +1402,58 @@ Package epstopdf Info: Source file: <error_function.eps>
 (epstopdf)                    size: 34082 bytes
 (epstopdf)             Command: <repstopdf --outfile=error_function-eps-convert
 ed-to.pdf error_function.eps>
-(epstopdf)             \includegraphics on input line 91.
+(epstopdf)             \includegraphics on input line 92.
 Package epstopdf Info: Output file is already uptodate.
 <error_function-eps-converted-to.pdf, id=125, 829.0975pt x 512.91624pt>
 File: error_function-eps-converted-to.pdf Graphic file (type pdf)
 <use error_function-eps-converted-to.pdf>
 Package pdftex.def Info: error_function-eps-converted-to.pdf  used on input lin
-e 91.
+e 92.
 (pdftex.def)             Requested size: 91.201pt x 56.42096pt.
  [3 <./error_function-eps-converted-to.pdf>]
 <PlutchikWheelOfEmotion.jpg, id=147, 803.0pt x 542.025pt>
 File: PlutchikWheelOfEmotion.jpg Graphic file (type jpg)
 <use PlutchikWheelOfEmotion.jpg>
-Package pdftex.def Info: PlutchikWheelOfEmotion.jpg  used on input line 112.
+Package pdftex.def Info: PlutchikWheelOfEmotion.jpg  used on input line 113.
 (pdftex.def)             Requested size: 289.07999pt x 195.12885pt.
  [4 <./PlutchikWheelOfEmotion.jpg>]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 134.
+(caption)                particular \caption on input line 135.
 See the caption package documentation for explanation.
 
 (./TopSixGroup.tex) [5] [6]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 172.
+               Default added (so using `tbp') on input line 173.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 196.
+               Default added (so using `htbp') on input line 197.
 
 
-Overfull \hbox (30.7016pt too wide) detected at line 222
+Overfull \hbox (30.7016pt too wide) detected at line 223
 []
  []
 
 
-Overfull \hbox (15.70158pt too wide) detected at line 224
+Overfull \hbox (15.70158pt too wide) detected at line 225
 [][] 
  []
 
 [7] [8]
 
 Package natbib Warning: Citation `nielsen2015neural' on page 9 undefined on inp
-ut line 249.
+ut line 250.
 
 
 Package natbib Warning: Citation `nielsen2015neural' on page 9 undefined on inp
-ut line 249.
+ut line 250.
 
 [9] [10]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 275.
+               Default added (so using `tbp') on input line 276.
 
 (./PrimaryEmotionDataResults.tex) (./LabeledTwitterDataResults.tex) [11]
 (./meg.tex
@@ -1483,19 +1483,19 @@ Overfull \hbox (27.05402pt too wide) in paragraph at lines 4--8
 Package natbib Warning: There were undefined citations.
 
 [14]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 345.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 345.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 347.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 347.
  (./GroupTechReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 345.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 345.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 347.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 347.
 Package rerunfilecheck Info: File `GroupTechReport.out' has not changed.
 (rerunfilecheck)             Checksum: 7E83A441D0DE7823372AFF1376686497;1197.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 345.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 347.
  ) 
 Here is how much of TeX's memory you used:
  43077 strings out of 492649
  984681 string characters out of 6129622
- 1416436 words of memory out of 5000000
+ 1417435 words of memory out of 5000000
  46217 multiletter control sequences out of 15000+600000
  542081 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1520,7 +1520,7 @@ f-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2018/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on GroupTechReport.pdf (16 pages, 414057 bytes).
+Output written on GroupTechReport.pdf (16 pages, 414074 bytes).
 PDF statistics:
  316 PDF objects out of 1000 (max. 8388607)
  271 compressed objects within 3 object streams

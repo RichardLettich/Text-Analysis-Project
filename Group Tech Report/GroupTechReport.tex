@@ -10,6 +10,7 @@
 \usepackage{changepage}
 \usepackage{indentfirst}
 \usepackage{caption}
+
 \usepackage{pgf}
 \usepackage{tikz}
 \usepackage{comment}
@@ -246,7 +247,7 @@ A different approach was used for each model. Historically, Bidirectional LSTM h
 However, implementing Bi-directional LSTM on the idiom data has yielded a significant boost, raising accuracy approximately 5\% over regular LSTM.
 
 \subsection{Dropout Technique}
-Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{nielsen2015neural}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{nielsen2015neural}.
+Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{nielsen2015neural}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from over-itting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{nielsen2015neural}.
 
 \section{Positive and Negative Groups}
 
@@ -261,7 +262,7 @@ The results from training set, which was made up of $80$ percent of the data, ha
 
 Figure \ref{primemresult} is a barplot of the results for the Primary Emotion Data testing set. There is a bar for positive predictions and a bar for negative predictions. The light blue shows the percent of correct predictions for both categories. The dark blue bar shows the percent of False Negatives, or sentences which should have been classified as positive for the positive bar, or negative in the negative bar. This barplot tells us how accurate the model is, which group the model is predicting accurately, and which group the model isn't predicting accurately. For the Primary Emotion data the model is most accurately predicting the positive emotions, meanwhile it isn't doing as well with the negative emotion group. We want the model to do a better job of predicting negative sentiment. 
 
-Companies want to know which areas they need to improve. A big part of that process is finding out where the company is going wrong with the customer. This information is found in reviews from the customer, whether through some social media website, Yelp!, or reviews posted directly to the company. At some point the company is going to see the comment, tweet, or review and have to analyze it. However a problem with this is the volume of reviews a company, especially a big chain restaurant will recieve. A model like the one developed in this project could go through a large set of reviews and tell the company which reviews should be looked at, or which reviews are the most important. In other words, the model used in this project could tell a company which reviews are the most negative and should be investigated further.   
+Companies want to know which areas they need to improve. A big part of that process is finding out where the company is going wrong with the customer. This information is found in reviews from the customer, whether through some social media website, Yelp!, or reviews posted directly to the company. At some point the company is going to see the comment, tweet, or review and have to analyze it. However a problem with this is the volume of reviews a company, especially a big chain restaurant will receive. A model like the one developed in this project could go through a large set of reviews and tell the company which reviews should be looked at, or which reviews are the most important. In other words, the model used in this project could tell a company which reviews are the most negative and should be investigated further.   
 
 %\begin{figure}[h!]
 %	\center
@@ -273,21 +274,23 @@ Companies want to know which areas they need to improve. A big part of that proc
 %\begin{subfigure}[]{6cm} \centering \resizebox{\linewidth}{!}{\input{chick.tex} }  \caption{} \label{fig:chicktt} \end{subfigure
 		
 \begin{figure}[]
+	\hfill
 	\vspace*{-1in}
 	\centering
-	\begin{adjustwidth}{-1in}{-1in}
+	\begin{adjustwidth}{-.75in}{-.75in}
 		
  \begin{subfigure}{3in}
  	\centering
 	\resizebox{3in}{!}{\input{PrimaryEmotionDataResults.tex}}
 	\caption{Primary Emotion Accuracy}\label{primemresult}
 \end{subfigure}
+\hfill
 \begin{subfigure}{3in}
 	\centering
 	\resizebox{3in}{!}{\input{LabeledTwitterDataResults.tex}}
 	\caption{Labeled Twitter Data Accuracy} \label{lbtwitresult}
 \end{subfigure}
-
+\hfill
 \end{adjustwidth}
 \end{figure}
 \subsection{Labeled Twitter Data Results}
@@ -334,7 +337,6 @@ Finally we look at the results for Chick-Fil-A.
 %\input{Chick-Fil-A.tex}
 
 From figure \cref{fig:chicktt} we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as the previous restaurants do, but that is to be expected. No business is perfect, so some less than positive reviews are bound to occur. It is interesting to note that there are not as many middling positive tweets, or tweets that fall in the middle of the graph.
-
 
 
 \newpage

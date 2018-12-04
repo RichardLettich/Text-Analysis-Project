@@ -5,7 +5,7 @@ The style file: plain.bst
 Database file #1: references.bib
 I was expecting a `,' or a `}'---line 9 of file references.bib
  :     author = {Gareth James} 
- :                             {Daniela Witten} {Trevor Hastie} {Robert Tibshirani },
+ :                             {, Daniela Witten} {, Trevor Hastie} {, Robert Tibshirani },
 I'm skipping whatever remains of this entry
 I was expecting a `,' or a `}'---line 60 of file references.bib
  :     
