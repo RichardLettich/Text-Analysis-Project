@@ -102,7 +102,7 @@ In this project, ``sentiment analysis, also referred to as opinion mining, aims 
 
 \section{Plutchik's Wheel of Emotion}
 
-Plutchik's Wheel of Emotion, see Figure $2$, has eight basic emotions including: joy, trust, fear, surprise, sadness,disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}.
+Plutchik's Wheel of Emotion, see Figure \ref{plutchikemotionwheell}, has eight basic emotions including: joy, trust, fear, surprise, sadness,disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}.
 
 The emotions on each leaf range in intensity. The emotions on the inner circle are the most intense and the emotions on the outer circle of each leaf are the least intense \cite{WheelofEmotion}. The emotions that fall between each leaf are a combination of each leaf's middle emotion \cite{WheelofEmotion}. For example, ``Trust + Fear = Submission". The Primary Emotion Data set has emotions from the middle of each leaf, the combinations emotions, and categories ``Neutral" and ``Ambiguous" \cite{lowriwilliams}.
 
@@ -110,10 +110,12 @@ The emotions on each leaf range in intensity. The emotions on the inner circle a
 	\center
 	\includegraphics[width=4in]{PlutchikWheelOfEmotion.jpg}
 	\caption{Plutchiks Wheel of Emotion \cite{WheelofEmotion}}
+	\label{plutchikemotionwheel}
 \end{figure}
 
 \section{Primary Emotion Data}
-Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labeled emotions in the Primary Emotion data. The Primary Emotion data set contains around $2425$ emotion labeled sentences. For this project the data will be used to develop a method which when given a text will assign the correct emotion to a given text. 
+Table %\ref{PrimaryEmotionTable} 
+gives a few examples of the sentences and labeled emotions in the Primary Emotion data. The Primary Emotion data set contains around $2425$ emotion labeled sentences. For this project the data will be used to develop a method which when given a text will assign the correct emotion to a given text. 
  
  \begin{center}
  	\begin{tabular}{ |c|c| } 
@@ -134,14 +136,23 @@ Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labele
  \end{center}
 
  
- Williams hypothesized that the use of idioms in sentiment analysis would increase the accuracy of predicting the correct emotion or category \cite{lowriwilliams}. Figure 1 shows a bar plot top six emotion groups, ranked by most frequently appearing groups in the data set. The emotion group ``Neutral" occurs the most, it makes up just over $20$ percent of the data set. 
+ Williams hypothesized that the use of idioms in sentiment analysis would increase the accuracy of predicting the correct emotion or category \cite{lowriwilliams}. Figure  shows a bar plot top six emotion groups, ranked by most frequently appearing groups in the data set. The emotion group ``Neutral" occurs the most, it makes up just over $20$ percent of the data set. 
  
- \begin{figure}[h!]
- 	\centering
- 	\includegraphics[width = 4.2in]{TopSixGroup1.png}
- 	\caption{Barplot of Frequency of Top Six Emotions in Primary Emotion Data}
- 	\label{fig: Plutchiks Wheel of Emotion}
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width = 4.2in]{TopSixGroup1.png}
+% 	\caption{Barplot of Frequency of Top Six Emotions in Primary Emotion Data}
+% 	\label{TopSixGroup1}
+% \end{figure}
+ 
+% \input{TopSixGroup.tex}
+ \begin{figure}[htb]
+ 		\centering
+ 		\resizebox{4in}{!}{\input{TopSixGroup.tex}}
+ 		\caption{Top Six Emotion Groups}\label{topsixgroups}
  \end{figure}
+ 	
+ %\clearpage
  
 \section{Methods}
 
@@ -246,9 +257,9 @@ For this project, we first ran our method on Primary Emotion Data \cite{lowriwil
 \subsection{Primary Emotion Data Results}
 The Primary Emotion Data positive group contained the categories joy, love, optimism, trust, and awe; in the negative group we have anger, disgust, sadness, aggression, contempt, disapproval, and remorse. The rest of the emotion groups are left out since they do not fall into either positive or negative categorizations.
 
-The results from training set, which was made up of $80$ percent of the data, had an accuracy of around $98$ percent. The testing set was made up of the remaining $20$ percent of the data and had an accuracy of $71$ percent. The gap in the training and testing accuracy is not a good sign, as the gap suggests that the method is over-fitting to  the training set. Put more simply, the method is learning the patterns of the training data set, rather than learning the overall spread or picture of the data. Consequently the method can accurately predict the training set, but it makes less accurate predictions for data it has not yet seen.
+The results from training set, which was made up of $80$ percent of the data, had an accuracy of around $89$ percent. The testing set was made up of the remaining $20$ percent of the data and had an accuracy of $74$ percent. The gap in the training and testing accuracy is not a good sign, as the gap suggests that the method is over-fitting to  the training set. Put more simply, the method is learning the patterns of the training data set, rather than learning the overall spread or picture of the data. Consequently the method can accurately predict the training set, but it makes less accurate predictions for data it has not yet seen.
 
-Figure $7$ is a barplot of the results for the Primary Emotion Data testing set. There is a bar for positive predictions and a bar for negative predictions. The light blue shows the percent of correct predictions for both categories. The dark blue bar shows the percent of False Negatives, or sentences which should have been classified as positive for the positive bar, or negative in the negative bar. This barplot tells us how accurate the model is, which group the model is predicting accurately, and which group the model isn't predicting accurately. For the Primary Emotion data the model is most accurately predicting the positive emotions, meanwhile it isn't doing as well with the negative emotion group. We want the model to do a better job of predicting negative sentiment. 
+Figure \ref{bpprimem} is a barplot of the results for the Primary Emotion Data testing set. There is a bar for positive predictions and a bar for negative predictions. The light blue shows the percent of correct predictions for both categories. The dark blue bar shows the percent of False Negatives, or sentences which should have been classified as positive for the positive bar, or negative in the negative bar. This barplot tells us how accurate the model is, which group the model is predicting accurately, and which group the model isn't predicting accurately. For the Primary Emotion data the model is most accurately predicting the positive emotions, meanwhile it isn't doing as well with the negative emotion group. We want the model to do a better job of predicting negative sentiment. 
 
 Companies want to know which areas they need to improve. A big part of that process is finding out where the company is going wrong with the customer. This information is found in reviews from the customer, whether through some social media website, Yelp!, or reviews posted directly to the company. At some point the company is going to see the comment, tweet, or review and have to analyze it. However a problem with this is the volume of reviews a company, especially a big chain restaurant will recieve. A model like the one developed in this project could go through a large set of reviews and tell the company which reviews should be looked at, or which reviews are the most important. In other words, the model used in this project could tell a company which reviews are the most negative and should be investigated further.   
 
@@ -256,6 +267,7 @@ Companies want to know which areas they need to improve. A big part of that proc
 	\center
 	\includegraphics[width = 3.5in]{BarPlotPrimaryResults.png}
 	\caption{Barplot of Results of Primary Emotion Data, Positive and Negative Categories}
+	\label{bpprimem}
 \end{figure}
 
 
@@ -267,11 +279,11 @@ The training set contained $90$ percent of the data and had an accuracy of $82.2
 
 Figure $8$ is a barplot containing the results of the testing set for the Twitter data. There is a bar for both the negative and positive results. The light green shows the percent of correct predictions for each group. The dark green bar shows the percent of false negatives for each group. In other words, the percent of sentences that should have been predicted to be positive in the positive bar, or negative in the negative bar. From this barplot we can see that the model is doing a great job of predicting negative sentiment in the Twitter data but not as well of a job with the positive sentiment. However the percent of correctly predicted positive sentiment for the Twitter data is about the same as the percent of correctly predicted positive sentiment in the Primary Emotion data. We want the model to accurately find the negative sentiment in tweets, since that is what companies are interested in. Most companies want to know which areas they are succeeding in, but they need to know which areas they can improve. If our model can accurately find negative sentiment in a tweet or a comment, we can then make recommendations based on that output about which reviews the company should be taking seriously. 
 
-%\begin{figure}[h!]
-%	\centering
-%	\includegraphics[width = 3.5in]{BarPlotTwitterResults.png}
-%	\caption{Barplot of Results of Twitter Data, Positive and Negative Categories}
-%\end{figure}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width = 3.5in]{BarPlotTwitterResults.png}
+	\caption{Barplot of Results of Twitter Data, Positive and Negative Categories}
+\end{figure}
 
 \subsection{Unlabeled Raw Twitter Data Results}
 For the final step in this project we tested our model on a few different sets of raw unlabeled twitter data. The data sets were tweets at a few different restaurants. We chose Panera, Taco Bell, Chick-Fil-A, Chipotle and Pal's. The model which trained on the labeled twitter data, then went through a set of the raw twitter data and for each tweet gave a percent positive score. We then made a histogram of this data. So we have a histogram of "positivity" for each restaurants tweets. As we can see from the Figure $10$ most of the restaurants had mostly positive sentiment in their tweets. Chipotle in the past few years has undergone some backlash after the food poisoning which happened more than once in the past few years. Due to that, they did have a larger portion of negative sentiment tweets. If we look at Chick-Fil-A, Panera, and Taco Bell we can see that most of the reviews are positive with some of the reviews falling into the negative side of the distribution. This is to be expected since no company has a hundred percent positive customer reviews. 
@@ -323,10 +335,9 @@ For the final step in this project we tested our model on a few different sets o
 %From figure $9$ we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A %is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as %the previous restaurants do, but that is to be expected. No business is perfect, so some less than %positive reviews are bound to occur. It is interesting to note that there are not as many middling %positive tweets, or tweets that fall in the middle of the graph.
 
 
-
+\newpage
 \vspace{-2in}
 \input{meg.tex}
-\caption{Positive Sentiment Distribution for a Few Restaurants}
 \clearpage
 
 \newpage
