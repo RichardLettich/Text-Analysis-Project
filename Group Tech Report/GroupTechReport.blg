@@ -6,14 +6,12 @@ I was expecting a `,' or a `}'---line 56 of file references.bib
  :     journal = {},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 88 of file references.bib
- : 
- : @article{plutchik2001nature,
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
+Warning--entry type for "LabeledTwitter" isn't style-file defined
+--line 115 of file references.bib
 Too many commas in name 1 of "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" for entry Statlearning
 while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in LabeledTwitter
 Warning--empty journal in BusinessCustomerSatisfaction
 Too many commas in name 1 of "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" for entry Statlearning
 while executing---line 1090 of file plain.bst
-(There were 4 error messages)
+(There were 3 error messages)

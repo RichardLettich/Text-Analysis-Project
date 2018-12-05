@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.11.30)  4 DEC 2018 14:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.11.30)  5 DEC 2018 15:52
 entering extended mode
 **./GroupTechReport.tex
 (GroupTechReport.tex
@@ -1536,26 +1536,26 @@ Package: relsize 2003/07/04 ver 3.1
 (GroupTechReport.aux)
 \openout1 = `GroupTechReport.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 40.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1cmr.fd"
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
+LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
+LaTeX Font Info:    ... okay on input line 40.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1583,7 +1583,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Info: Redefining \microtypecontext on input line 41.
+LaTeX Info: Redefining \microtypecontext on input line 40.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -1615,7 +1615,7 @@ Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.16}).
 
 \AtBeginShipoutBox=\box73
-Package hyperref Info: Link coloring OFF on input line 41.
+Package hyperref Info: Link coloring OFF on input line 40.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -1624,15 +1624,15 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count328
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
+LaTeX Info: Redefining \ref on input line 40.
+LaTeX Info: Redefining \pageref on input line 40.
+LaTeX Info: Redefining \nameref on input line 40.
 
 (GroupTechReport.out) (GroupTechReport.out)
 \@outlinefile=\write7
 \openout7 = `GroupTechReport.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 44.
+LaTeX Font Info:    Try loading font information for U+msa on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -1640,7 +1640,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msa.cfg"
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 44.
+LaTeX Font Info:    Try loading font information for U+msb on input line 43.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -1648,14 +1648,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ("C:\Program Files\MiKTeX 2.9\tex\latex\microtype\mt-msb.cfg"
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Overfull \hbox (3.88266pt too wide) in paragraph at lines 44--44
+Overfull \hbox (3.88266pt too wide) in paragraph at lines 43--43
  [][] 
  []
 
 [1
 
 {C:/Users/graci/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 46--47
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
 
  []
 
@@ -1663,57 +1663,57 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.47 \end{abstract}
+l.46 \end{abstract}
                     [1]pdfTeX warning (ext4): destination with the same identif
 ier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.64 
+l.63 
       [1] [2]
 
-Package caption Warning: \label without proper reference on input line 90.
+Package caption Warning: \label without proper reference on input line 89.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `fig:m_vs_error' on page 3 undefined on input line 84.
+LaTeX Warning: Reference `fig:m_vs_error' on page 3 undefined on input line 83.
 
 
 Package epstopdf Info: Source file: <error_function.eps>
-(epstopdf)                    date: 2018-12-03 22:28:03
+(epstopdf)                    date: 2018-12-05 14:59:23
 (epstopdf)                    size: 111761 bytes
 (epstopdf)             Output file: <error_function-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-12-03 22:28:03
+(epstopdf)                    date: 2018-12-05 14:59:23
 (epstopdf)                    size: 34082 bytes
 (epstopdf)             Command: <epstopdf --outfile=error_function-eps-converte
 d-to.pdf error_function.eps>
-(epstopdf)             \includegraphics on input line 92.
+(epstopdf)             \includegraphics on input line 91.
 Package epstopdf Info: Output file is already uptodate.
 <error_function-eps-converted-to.pdf, id=134, 829.0975pt x 512.91624pt>
 File: error_function-eps-converted-to.pdf Graphic file (type pdf)
 <use error_function-eps-converted-to.pdf>
 Package pdftex.def Info: error_function-eps-converted-to.pdf  used on input lin
-e 92.
+e 91.
 (pdftex.def)             Requested size: 91.201pt x 56.42096pt.
 [3 <./error_function-eps-converted-to.pdf>]
 <PlutchikWheelOfEmotion.jpg, id=159, 803.0pt x 542.025pt>
 File: PlutchikWheelOfEmotion.jpg Graphic file (type jpg)
 <use PlutchikWheelOfEmotion.jpg>
-Package pdftex.def Info: PlutchikWheelOfEmotion.jpg  used on input line 114.
+Package pdftex.def Info: PlutchikWheelOfEmotion.jpg  used on input line 113.
 (pdftex.def)             Requested size: 289.07999pt x 195.12885pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 123.
+(caption)                particular \caption on input line 122.
 See the caption package documentation for explanation.
 
 [4] (TopSixGroup.tex) [5 <./PlutchikWheelOfEmotion.jpg>] [6]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 175.
+               Default added (so using `tbp') on input line 174.
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `htbp') on input line 199.
+               Default added (so using `htbp') on input line 198.
 
 
 Overfull \hbox (30.7016pt too wide) detected at line 225
@@ -1721,7 +1721,7 @@ Overfull \hbox (30.7016pt too wide) detected at line 225
  []
 
 
-Overfull \hbox (15.70158pt too wide) detected at line 227
+Overfull \hbox (15.70158pt too wide) detected at line 226
 [][] 
  []
 
@@ -1767,11 +1767,11 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 356.
  ) 
 Here is how much of TeX's memory you used:
- 44575 strings out of 493312
- 1000668 string characters out of 3138898
- 1421207 words of memory out of 3000000
- 47365 multiletter control sequences out of 15000+200000
- 543988 words of font info for 107 fonts, out of 3000000 for 9000
+ 44581 strings out of 493312
+ 1000798 string characters out of 3138898
+ 1420198 words of memory out of 3000000
+ 47371 multiletter control sequences out of 15000+200000
+ 543937 words of font info for 106 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  78i,19n,136p,1328b,2205s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
@@ -1792,9 +1792,9 @@ ts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
 sy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti8.pfb>
-Output written on GroupTechReport.pdf (17 pages, 457049 bytes).
+Output written on GroupTechReport.pdf (17 pages, 458004 bytes).
 PDF statistics:
- 337 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
+ 342 PDF objects out of 1000 (max. 8388607)
+ 65 named destinations out of 1000 (max. 500000)
  16567 words of extra memory for PDF output out of 17280 (max. 10000000)
 

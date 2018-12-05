@@ -10,7 +10,6 @@
 \usepackage{changepage}
 \usepackage{indentfirst}
 \usepackage{caption}
-
 \usepackage{pgf}
 \usepackage{tikz}
 \usepackage{comment}
@@ -165,16 +164,17 @@ The goal of this project is to implement a method which when given a bit of text
 Once the data is clean, each sentence must be broken down into ``tokens". A token can be each sentence, each word, or even a set of words \cite{TextMining}. For this project each token represents a word in each sentence. 
 
 \subsection{Term Frequency Matrix}
-The next step in the project is to create a term frequency matrix. Specifically, a matrix with columns corresponding to the emotions we want to detect, and rows representing each word, the matrix itself will contain the number of times a word appears assigned to a given emotion. Since the data set contains over six thousand words the frequency matrix will be large.
+The next step in the project is to create a term frequency matrix. Specifically, the term frequency matrix is a matrix with columns corresponding to the emotions we want to detect, and rows representing each word; the matrix itself will contain the number of times a word appears in the assigned emotion category. Since the data set contains over six thousand words, the frequency matrix will be large.
 
 \subsection{Adam Optimizer}
-The Adam optimizer is the de facto successor to a RMSProp. In RMSProp initial values must be chosen for some variables in the optimization algorithm. This can lead to bias. The Adam optimizer improves upon RMSProp by correcting this bias in later calculations. In addition, while RMSProp calculates its effective step size using momentum, Adam implements a `Signal to Noise' method, changing it based on a smooth gradient moving average (moment estimation, $m_t$) and a moving variance estimation ($v_t$). This means the rate at which it navigates the gradient is a metaphorical function of confidence: the less steady the gradient, the slower it goes. The Adam optimizer has proved to produce consistently excellent results, therefore it was chosen as the benchmark optimizer for this project.
+The Adam optimizer is the de facto successor to a RMSProp \cite{adam}. In RMSProp initial values must be chosen for some variables in the optimization algorithm \cite{adam}. This can lead to bias. The Adam optimizer improves upon RMSProp by correcting this bias in later calculations. In addition, while RMSProp calculates its effective step size using momentum, Adam implements a `Signal to Noise' method, changing it based on a smooth gradient moving average (moment estimation, $m_t$) and a moving variance estimation ($v_t$). This means the rate at which it navigates the gradient is a metaphorical function of confidence: the less steady the gradient, the slower it goes. The Adam optimizer has proved to produce consistently excellent results, therefore it was chosen as the benchmark optimizer for this project.
 
-Below is a pseudo-code representation of the Adam optimizer (Algorithm $1$). Refer to Table \ref{adam_table} for explanation of the components and notation in the description of the optimizer.
+Algorithm $1$ gives a pseudo-code representation of the Adam optimizer (Algorithm $1$). Refer to Table \ref{adam_table} for an explanation of the components and notation in the description of the optimizer.
 
 \begin{table}[]
 	\begin{adjustwidth}{-1in}{-1in}
 		\centering
+		\SetAlgoLined
 		\caption{Glossary of notation used in Adam optimizer}
 		\label{adam_table}
 		\begin{tabular}{lll}
@@ -195,8 +195,8 @@ Below is a pseudo-code representation of the Adam optimizer (Algorithm $1$). Ref
 \end{table}
 
 \newcommand{\assn}{\mathrel{{:}{=}}}
-
 \begin{algorithm}[]
+	\caption{Pseudo-code representation of Adam optimizer. The $\mathrel{{:}{=}}$ ligature  represents assignment.}
 	\label{adam_alg}
 	\KwData{$\theta_0$, $f(x)$ (initial function parameters, unoptimized objective function), }
 	\textbf{Initialize variables}:
@@ -223,36 +223,36 @@ Below is a pseudo-code representation of the Adam optimizer (Algorithm $1$). Ref
 		\end{align*}
 	}
 	\vspace{3.5mm}
-	\caption{Pseudo-code representation of Adam optimizer. The $\mathrel{{:}{=}}$ ligature  represents assignment.}
 \end{algorithm}
+%% Perhaps move this gradient paragraph to the Loss Function Section %%
 
 \paragraph{Gradient} - The gradient of a function $\nabla_\theta f(\theta)$ evaluated at point $\theta$ is by definition the direction of steepest ascent at point $\theta$. We use this, as we are trying to reduce our inaccuracy/loss by moving in the direction of steepest \textit{descent} \mbox{(i.e. $-\nabla_\theta f(\theta)$)}. 
 
 \paragraph{Gradient Moving Average}
 
 The Adam optimizer does not just naively use the gradient itself, but instead smooths it using the exponential moving average as originally described by J. Stuart Hunter\cite{EMA}. This formula gives a much less noisy curve to descend, and helps prevent the optimizer from plateauing in local minima. Although used recursively here, a non recursive equivalent is given by
-\[m_t = \sum_{t=0}^{t_f} \left(1-\beta_1\right) \beta_1^{t_f-t}\nabla_\theta f\left(\theta_{t}\right)^2\]
-Although purely semantic, in the original EMA formula, \(\beta_1\) and \(\left(1-\beta_1\right)\) are switched.
+\[m_t = \sum_{t=0}^{t_f} \left(1-\beta_1\right) \beta_1^{t_f-t}\nabla_\theta f\left(\theta_{t}\right)^2.\]
+()Although purely semantic, in the original EMA formula, \(\beta_1\) and \(\left(1-\beta_1\right)\) are switched).
 
 
 \paragraph{Moving Variance}
-The moving variance is used to modulate the learning rate of the function, depending on how noisy the slope is. For an intuitive sense, recall that standard deviation is:
-\[\sigma = \sqrt{\sum \left(x_n - \bar{x}\right)}\]
+The moving variance is used to modulate the learning rate of the function, depending on how noisy the slope is. For an intuitive sense, recall that standard deviation is given by:
+\[\sigma = \sqrt{\sum \left(x_n - \bar{x}\right)}.\]
 If we replace \(x_n\) with \ \(\nabla_\theta f(\theta)\), and \(\bar{x}\) with a gradient of \(\vec{0}\), we get \footnote{\(f\left(\theta_{t}\right)^2 \implies \) component wise multiplication}
-\[\sigma = \sqrt{\sum \left(\nabla_\theta f(\theta)\right)^2}\]
+\[\sigma = \sqrt{\sum \left(\nabla_\theta f(\theta)\right)^2}.\]
 Applying the same exponential moving average to this `variance from the zero gradient' yields a moving average in the same manner of the moving average of the gradient. Albeit, the variance is more conservative, as \(\beta_2\) is typically larger than \(\beta_1\).
 
 \subsection{Model Layers}
 
-A different approach was used for each model. Historically, Bidirectional LSTM has shown better results for textual analysis. However, in testing, it performed equivalently or worst than regular LSTM, and significantly increased time to convergence.
-
-However, implementing Bi-directional LSTM on the idiom data has yielded a significant boost, raising accuracy approximately 5\% over regular LSTM.
+A different approach was used for each model. Historically, Bidirectional LSTM has shown better results for textual analysis \cite{Keras.io}. However, in testing, it performed equivalently or worse than regular LSTM, and significantly increased time to convergence. However, implementing Bi-directional LSTM on the idiom data has yielded a significant boost, raising accuracy approximately 5\% over regular LSTM.
 
 \subsection{Dropout Technique}
 Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{NeuralNet}.
 Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from over-fitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{NeuralNet}.
+
 \subsection{Validation Accuracy}
-Figure \ref{valepoch} shows the change in validation accuracy by epoch for a few different methods. We used both mono-directional and bi-directional neural nets with up to three hidden layers. Figure \ref{valepoch} shows the results for each of the methods. As we can see each method starts at approximately the same level of validation accuracy. The bidirectional method with two hidden layers appears to have the most consistent accuracy over the epochs, it levels off after five epochs without much fluctuation in validation accuracy. 
+Figure \ref{valepoch} shows the change in validation accuracy by epoch, which is the number of times the model has seen the training data set, for a few different methods. We used both mono-directional and bi-directional neural nets with up to three hidden layers. As we can see each method starts at approximately the same level of validation accuracy. The bidirectional method with two hidden layers appears to have the most consistent accuracy over the epochs; it levels off after five epochs without much fluctuation in validation accuracy. 
+
 \begin{figure}[htb]
 	\centering
 	\resizebox{4in}{!}{\input{validationbyepoch.tex}}
@@ -260,18 +260,20 @@ Figure \ref{valepoch} shows the change in validation accuracy by epoch for a few
 \end{figure}
 \section{Positive and Negative Groups}
 
-For this project, we first ran our method on Primary Emotion Data \cite{lowriwilliams}, then we ran it on Twitter data to see if the method would work on both sets and accurately predict the underlying emotion of a text. In both cases the data was broken into two groups, positive and negative. Once the data was labeled as positive and negative, the data was then split into a training set and a testing or validation set. Next the data goes through the LSTM method, which is programmed to go through each element of the data set and learn the appropriate response variable. In this project the LSTM network loops through each sentence and the corresponding emotion category and then continues through each sentence. This LSTM network learns the proportion of each emotion category. Once the LSTM network has gone through the entire training data set, it will go through the test data set. The network will predict the same proportion of emotion categories as represented in the training data set. 
+For this project, we first ran our method on Primary Emotion Data \cite{lowriwilliams}, then we ran it on a sample of labeled Twitter data \cite{LabeledTwitter} data to determine if the method would work on both sets of data and accurately predict the underlying emotion of a text. In both cases the data was broken into two groups, positive and negative. Once the data was labeled as positive and negative, the data was then split into a training set and a testing or validation set. Next the data goes through the LSTM method which is programmed to go through each element of the data set and learn the appropriate response variable. In this project the LSTM network loops through each sentence and the corresponding emotion category and then continues through each sentence. This LSTM network learns the proportion of each emotion category. Once the LSTM network has gone through the entire training data set, it will predict emotion in the test data set. The method will predict the same proportion of emotion categories from the test set as are represented in the training data set. 
 
 \section{Results}
 
 \subsection{Primary Emotion Data Results}
-The Primary Emotion Data positive group contained the categories joy, love, optimism, trust, and awe; in the negative group we have anger, disgust, sadness, aggression, contempt, disapproval, and remorse. The rest of the emotion groups are left out since they do not fall into either positive or negative categorizations.
+The Primary Emotion Data positive group contained the categories joy, love, optimism, trust, and awe; in the negative group we have anger, disgust, sadness, aggression, contempt, disapproval, and remorse. The rest of the emotion groups are disregarded since they do not fall into either positive or negative categorizations.
 
-The results from training set, which was made up of $80$ percent of the data, had an accuracy of around $89$ percent. The testing set was made up of the remaining $20$ percent of the data and had an accuracy of $74$ percent. The gap in the training and testing accuracy is not a good sign, as the gap suggests that the method is over-fitting to  the training set. Put more simply, the method is learning the patterns of the training data set, rather than learning the overall spread or picture of the data. Consequently the method can accurately predict the training set, but it makes less accurate predictions for data it has not yet seen.
+The results using this model on the training set, which was made up of $80$ percent of the data, was an accuracy of around $89$ percent. The testing set was composed of the remaining $20$ percent of the data and had an accuracy of $74$ percent. The gap in the training and testing accuracy suggests that the method is over-fitting to  the training set. Put more simply, the method is learning the patterns in the training data set rather than learning the overall dynamics of the data. Consequently the method can accurately predict the training set, but it makes less accurate predictions for data it has not yet seen.
 
-Figure \ref{primemresult} is a barplot of the results for the Primary Emotion Data testing set. There is a bar for positive predictions and a bar for negative predictions. The light blue shows the percent of correct predictions for both categories. The dark blue bar shows the percent of False Negatives, or sentences which should have been classified as positive for the positive bar, or negative in the negative bar. This barplot tells us how accurate the model is, which group the model is predicting accurately, and which group the model isn't predicting accurately. For the Primary Emotion data the model is most accurately predicting the positive emotions, meanwhile it isn't doing as well with the negative emotion group. We want the model to do a better job of predicting negative sentiment. 
+Figure \ref{primemresult} shows a barplot of both positive predictions and negative predictions for the Primary Emotion Data testing set. The light blue shows the percent of correct predictions for both categories. The dark blue bar indicates the percent of False Negatives, or sentences which should have been classified as positive for the positive bar, or negative in the negative bar. For the Primary Emotion data the model is most accurately predicting the positive emotions; meanwhile it isn't doing quiet as well with the negative emotion group. We would prefer more accuracy in the prediction of negative sentiment. 
 
-Companies want to know which areas they need to improve. A big part of that process is finding out where the company is going wrong with the customer. This information is found in reviews from the customer, whether through some social media website, Yelp!, or reviews posted directly to the company. At some point the company is going to see the comment, tweet, or review and have to analyze it. However a problem with this is the volume of reviews a company, especially a big chain restaurant will receive. A model like the one developed in this project could go through a large set of reviews and tell the company which reviews should be looked at, or which reviews are the most important. In other words, the model used in this project could tell a company which reviews are the most negative and should be investigated further.   
+% add a transition here%
+
+Companies want to know which areas they need to improve. A big part of that process is finding out where the company is going wrong with the customer. This information is found in reviews from the customer, whether through some social media website, Yelp!, or reviews posted directly to the company. At some point the company is going to see the comment, tweet, or review and have to analyze it. However a problem with this is the volume of reviews a company, especially a big chain restaurant will receive. A model like the one developed in this project could go through a large set of reviews and tell the company which reviews should be examined more closely, or which reviews are the most important. In other words, the model used in this project could potentially tell a company which reviews are the most negative and should be investigated further.   
 
 %\begin{figure}[h!]
 %	\center

@@ -1,10 +1,17 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
+
+\bibitem{LabeledTwitter}
+Sentiment anaysis: Emotion in text, 2016.
 
 \bibitem{BusinessCustomerSatisfaction}
 S~Azman A.~Novak, Petra~Sparl.
 \newblock Impact of customer satisfaction of financial results of car servicing
   companies: Findings from slovenia.
 \newblock 18.3:113, 2015.
+
+\bibitem{Keras.io}
+Keras Documentation.
+\newblock K keras, 2018.
 
 \bibitem{Statlearning}
 Trevor Hastie Robert~Tibshirani Gareth~James, Daniela~Witten.
