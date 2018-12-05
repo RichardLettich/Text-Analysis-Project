@@ -43,47 +43,47 @@
 \maketitle
 
 \begin{abstract}
-This paper introduces an approach on how to predict sentiment from idioms and text using LSTM Neural Networks. In general, the neural networks tend to learn from loops and this allows the method to predict the correct sentiment with high success. Following an overview of LSTM Neural Networks, we show it's success rate on the Plutchik's Emotion data and the Twitter data. After showing what it will do on smaller data sets, we then show it used on raw scraped twitter data. \\
+This paper introduces an approach for how to predict sentiment from idioms and text using Long Short Term Memory (LSTM) Neural Networks. In general, the neural networks learn from loops and this allows the method to predict the correct sentiment with high success. Following an overview of LSTM Neural Networks, we show it's success rate on the Plutchik's Emotion data and the Twitter data. After illustrating its performance on on two data sets, a set of labeled data according to Plutchik's wheel of emotion and a sample of labeled Twitter data. We then show how it can be used on raw Twitter data. \\
 \end{abstract}
 
 \section{Introduction}
 
 The goal of this project is to create a method which will accurately analyze a given text and predict the correct emotion which is expressed in the text. For many companies there is a high need for programs which can analyze a customer review and determine the appropriate underlying sentiment. Customer satisfaction plays a huge role in how companies compete. Novak, Sparl, and Azman explain how ``increased service quality positively influences customer satisfaction", which in turn leads to better financial results through increased customer loyalty \cite{BusinessCustomerSatisfaction}. Therefore companies need to know how well they are doing, how satisfied are the customers, where the company can improve, and much more. The goal of this project is to create a method which can accurately assign emotion to a given sentence.
 
-It should be stated that Chick-fil-A is a customer service oriented brand. They desire to potentially use the methods described in analysis as part of a larger project to discover how emotion relates to restaurant reviews in online comments and customer perception of service failure.
+It should be stated that Chick-fil-A is a customer service oriented brand. They desire to potentially use the methods described in this analysis as part of a larger project to discover how emotion relates to restaurant reviews in online comments and customer perception of service failure.
 
-A spectrum of emotion (such as `satisfaction') would likely be best for this purpose. Since the goal is to determine what service failures and successes cause the strongest customer emotions and predict the former using the later, it would be best to rank the emotion quantitatively. Determining that long wait times make people unhappy would provide no novel information, but being able to say that people become an order of magnitude more upset over one service failure than another would beneficial as a tool of analysis. In addition, a spectrum of satisfaction would allow for better predictive capability when being used as a component of another analysis \cite{lowriwilliams}.
+A spectrum of emotion (such as `satisfaction') would likely be best for this purpose. Since the goal is to determine what service failures and successes cause the strongest customer emotions and predict the former using the latter, it would be best to rank the emotion quantitatively. Determining that long wait times make people unhappy would provide no novel information, but being able to say that people become an order of magnitude more upset over one service failure than another would be beneficial as a tool of analysis. In addition, a spectrum of satisfaction would allow for better predictive capability when being used as a component of another analysis \cite{lowriwilliams}.
 
-Secondly, it would be ideal to have a confidence value for the emotional prediction. If this sentiment analysis is used as part of another meta-tool, being able to provide estimate of confidence would allow the meta-tool to weigh the sentiment analysis appropriately with its other variables.
+Secondly, it would be ideal to have a confidence value for the emotional prediction. If this sentiment analysis is used as part of another meta-tool, being able to provide an estimate of confidence would allow the meta-tool to weigh the sentiment analysis appropriately with its other variables.
 
-Succinctly, we can define what our desired result as follows: for a given snippet of text, give a numerical rating on a spectrum of a single (or possibly multiple) emotions; give a confidence score for this rating.
+Succinctly, we can define our desired result as follows: for a given snippet of text, give a numerical rating on a spectrum of a single (or possibly multiple) emotions along with an associated confidence score for this rating. To accomplish this goal, we use machine learning. 
 
 \section{Machine Learning}
 
-Machine Learning is the process of using a data set of known variables to create an algorithm which will predict a response variable \cite{Statlearning}. There are many different machine learning methods, such as Quadratic Discriminant Analysis, Neural Networks, Ridge Regression, Logistic Regression, and much more \cite{Statlearning}. In this data set each sentence has an assigned emotion so the method will be a supervised learning method \cite{Statlearning}. Simply put a supervised learning method uses a data set which has both the predictor variable and the response variable to create an algorithm to predict the response variable \cite{Statlearning}. In this situation, the predictor variables are the sentences and the response variables are the emotions associated with each sentence \cite{Statlearning}. 
+Machine Learning is the process of using a data set with known variables to create an algorithm which will predict a response variable \cite{Statlearning}. There are a variety of different machine learning methods, such as Quadratic Discriminant Analysis, Neural Networks, Ridge Regression, Logistic Regression, and much more \cite{Statlearning}. In this data set each sentence has an assigned emotion so the method will be a supervised learning method \cite{Statlearning}. Simply put a supervised learning method uses a data set which has both the predictor variable and the response variable to create an algorithm to predict the response variable \cite{Statlearning}. In this situation, the predictor variables are the sentences and the response variables are the emotions associated with each sentence \cite{Statlearning}. 
 
-The machine learning process is fundamentally similar to regression. There is an algorithm which attempts to find optimal parameters \footnote{while the parameter of our model $f(x)$ is $x$, this is \emph{not} the parameter we are addressing} for the function f(x) to yield the best prediction. This algorithm is called the optimizer. For instance, if the optimizer was trying to produce a linear regression model, \[f(x) = mx + b \] The optimizer’s goal would be to find the most ideal values of parameters $m$ and $b$. 
+The machine learning process is fundamentally similar to regression. There is an algorithm which attempts to find optimal parameters \footnote{while the parameter of our model $f(x)$ is $x$, this is \emph{not} the parameter we are addressing} for the function f(x) to yield the best prediction. This algorithm is called the optimizer. For instance, if the optimizer was trying to produce a linear regression model, \[f(x) = mx + b, \] the optimizer’s goal would be to find the most ideal values of parameters $m$ and $b$. 
 
 While this task is not daunting for such a simple function, it becomes much more complex for larger models that may contain thousands of parameters. However, at the simplest level, the process involves three parts: the model $f(x)$ itself, an optimization algorithm $\alpha$,  and a loss function $\lambda$.
 
 \subsection{Loss Function}
 
-The loss function dignifies the error of the predictions made by the model. It takes two parameters: the evaluation of our model at any given point($y_p$), and the actual value of the function at that given point, as provided by the input data set ($y_p$). A simple error function would be magnitude of the distance from our prediction to what our actual value is
-\[\lambda(y,y_p) =  |y - y_p| \]
+The loss function denotes the error of the predictions made by the model. It takes two parameters: the evaluation of our model at any given point($y_p$), and the actual value of the function at that given point, as provided by the input data set ($y$). A simple error function would be the magnitude of the distance from the prediction to the actual value ism i.e,
+\[\lambda(y,y_p) =  |y - y_p|. \]
 
-The vast majority of loss functions are not so naive, generally averaging the loss of all $y_p$'s in some way, and weighing outliers to be greater, to prevent the 'perfection' of one point by lowering the general applicability of the model.
+The vast majority of loss functions are not so naive, generally averaging the loss of all $y_p$'s in some way, and weighing outliers to be greater, to prevent the `perfection' of one point by lowering the general applicability of the model.
 
 \subsection{Optimizer Function - Stochastic Gradient Descent}
 
-In this project, we use the \textit{Adam} optimizer, which is a tuned up version of stochastic gradient descent optimization. As its name alludes to, stochastic gradient descent optimizes the model function by descending the gradient of the loss function. 
+In this project, we use the \textit{Adam} optimizer \cite{adam}, which is a tuned up version of stochastic gradient descent optimization \cite{adam}. As its name alludes to, stochastic gradient descent optimizes the model function by descending the gradient of the loss function. 
 
-Before explaining what that means, it should be known that SGD optimizers assumes that if the loss function and model function are continuous \textit{enough}, then the mean value and rolle’s theorems \footnote{For a continuous function between two points the function must pass through the intermediate values; maxima and minima must occur at zero} still hold. 
+Before explaining what that means, it should be known that SGD optimizers assumes that if the loss function and model function are continuous \textit{enough}, then the mean value and rolle’s theorems \footnote{For a continuous function between two points the function must pass through the intermediate values; maxima and minima must occur at zero} still hold \cite{EMA}. 
 
-From this, if we take any point on the loss function, we are able to extrapolate that if we were modify our parameters p (where $p = [m, b,...]$), going in the direction opposite of the gradient of the loss function with respect those parameters ($\frac{\partial\lambda}{\partial p}$), we would be able to continuously re-evaluate and lower our error until we reach a gradient near zero, indicating we hypothetically found model parameters which can not be improved.
+From this, if we take any point on the loss function, we are able to extrapolate that if we modify our parameters $p$ (where $p = [m, b,...]$), in the direction opposite of the gradient of the loss function with respect those parameters ($\frac{\partial\lambda}{\partial p}$), we would be able to continuously re-evaluate and lower our error until we reach a gradient near zero, indicating we hypothetically found model parameters which cannot be improved.
 
-SGD based optimizer functions find the gradient of this graph with respect to the optimization parameters (just $\frac{\partial\lambda}{\partial m}$ in this case). From this, they are able to accurately guess new parameters ($m$) in the direction of the opposite of the magnitude of the gradient which likely provide a lower error ($\lambda$). 
+SGD based optimizer functions find the gradient of Figure \ref{fig:m_vs_error} with respect to the optimization parameters (just $\frac{\partial\lambda}{\partial m}$ in this case) \cite{EMA}. From this, they are able to accurately guess new parameters ($m$) in the direction of the opposite of the magnitude of the gradient, which will likely provide a lower error ($\lambda$). 
 
-This process is iterative, and the change in parameter per iteration is called step size. Too large of a step size, and new parameter would `overshoot'. For instance if our $m$ was too small, `overshooting' would lead to it being too large.
+This process is iterative, and the change in parameter per iteration is called step size. Too large of a step size, and the new parameter could `overshoot'. For instance, if our $m$ was too small, `overshooting' would lead to the error being too large.
 
 	\begin{figure}[h]
 	\centering 
@@ -96,17 +96,18 @@ This process is iterative, and the change in parameter per iteration is called s
 
 \subsection{Caveats}
  
- Of course, the model isn't as simple as linear regression. With hundreds of thousands to millions of possible data points, some are bound to disagree on how to adjust parameters. In addition, not all critical points where minima occur are absolute minima, possibly leading to the optimizer  getting 'stuck' in a local minima. Moreover, saddle points occur in dimensions higher than two. The differences between SGD optimizers mainly concern to how work around these caveats while navigating the $\lambda$ graph.
+ Of course, the model isn't as simple as linear regression. With hundreds of thousands to millions of possible data points, some are bound to disagree on how to adjust parameters. In addition, not all critical points where minima occur are absolute minima, possibly leading to the optimizer  getting `stuck' in a local minima. Moreover, saddle points occur in dimensions higher than two \cite{EMA}. The differences between SGD optimizers mainly concern how to work around these caveats while navigating the $\lambda$ graph \cite{EMA}.
  
 \section{Sentiment Analysis}
+%Transition Needed$
 
-In this project, ``sentiment analysis, also referred to as opinion mining, aims to automatically extract and classify sentiments, opinions, and emotions expressed in text" is performed on the Primary Emotion Data created by Lowri Williams \cite{lowriwilliams}. The purpose of Primary Emotion data set is to show the use-fullness of idioms in determining the emotion expressed in a given text. For example, ``we'd fight like cats and dogs", from this sentence we can deduce that whomever is speaking would have awful fights with someone else \cite{lowriwilliams}. The labeled sentences were determined by contributors looked at the sentences and rated their emotional content based on Plutchik's Wheel of Emotions and polarity categories \cite{lowriwilliams}. Sentiment classification problems often use polarity categories to represent and classify sentiment \cite{lowriwilliams}. Sentiment polarity can be positive, negative, and neutral. An example of sentiment polarity in the data is given by: "Mr.Jones was grinning from ear to ear"; that is a positive idiom; "I was bored to tears at work today" is a negative statement. After decided the polarity it is very simple to then pick an emotion for the sentence.\cite{lowriwilliams}. 
+In this project, ``sentiment analysis, also referred to as opinion mining, aims to automatically extract and classify sentiments, opinions, and emotions expressed in text" is performed on the Primary Emotion Data created by Lowri Williams \cite{lowriwilliams}. The purpose of Primary Emotion data set is to show the use-fullness of idioms in determining the emotion expressed in a given text. For example, an idiom might be ``we'd fight like cats and dogs"; from this sentence we can deduce that whomever is speaking would have awful fights with someone else \cite{lowriwilliams}. The labeled sentences were determined by contributors examined the sentences, rating their emotional content based on Plutchik's Wheel of Emotions and polarity categories (discussed in more detail below) \cite{lowriwilliams}. Sentiment classification problems often use polarity categories to represent and classify sentiment \cite{lowriwilliams}. Sentiment polarity can be positive, negative, and neutral. An example of sentiment polarity in the data is given by ``Mr.Jones was grinning from ear to ear"; that is a positive idiom; ``I was bored to tears at work today" is a negative statement. After deciding on the polarity it is very simple to then pick an emotion for the sentence \cite{lowriwilliams}. 
 
 \section{Plutchik's Wheel of Emotion}
 
-Plutchik's Wheel of Emotion, (\cref{plutchikemotionwheel}), has eight basic emotions including: joy, trust, fear, surprise, sadness,disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}.
+Plutchik's Wheel of Emotion, (\cref{plutchikemotionwheel}), has eight basic emotions including joy, trust, fear, surprise, sadness, disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}.
 
-The emotions on each leaf range in intensity. The emotions on the inner circle are the most intense and the emotions on the outer circle of each leaf are the least intense \cite{WheelofEmotion}. The emotions that fall between each leaf are a combination of each leaf's middle emotion \cite{WheelofEmotion}. For example, ``Trust + Fear = Submission". The Primary Emotion Data set has emotions from the middle of each leaf, the combinations emotions, and categories ``Neutral" and ``Ambiguous" \cite{lowriwilliams}.
+The emotions on each leaf range in intensity. The emotions on the inner circle are the most intense and the emotions on the outer circle of each leaf are the least intense \cite{WheelofEmotion}. The emotions that fall between each leaf are a combination of each leaf's middle emotion \cite{WheelofEmotion}. For example, ``Trust + Fear = Submission". The Primary Emotion Data we use in this project has emotions from the middle of each leaf, the combinations emotions, and categories ``Neutral" and ``Ambiguous" \cite{lowriwilliams}.
 
 \begin{figure}[ht]
 	\center
@@ -116,9 +117,10 @@ The emotions on each leaf range in intensity. The emotions on the inner circle a
 \end{figure}
 
 \section{Primary Emotion Data}
-Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labeled emotions in the Primary Emotion data. The Primary Emotion data set contains around $2425$ emotion labeled sentences. For this project the data will be used to develop a method which when given a text will assign the correct emotion to a given text. 
+Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labeled emotions in the data set which we will call the Primary Emotion data. The Primary Emotion data set contains around $2425$ emotion labeled sentences. For this project the data will be used to develop a model which, when given a text, will assign an emotion to the text. 
  
  \begin{center}
+ 	\captionof{table}{Primary Emotion Data}
  	\begin{tabular}{ |c|c| } 
  		\hline
  		Emotion & Sentence \\
@@ -132,12 +134,11 @@ Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labele
  		Disgust & For God's sake bury the hatchet. \\
  		\hline
  	\end{tabular}
- 	\captionof{table}{Primary Emotion Data}
  	\label{PrimaryEmotionTable}
  \end{center}
 
  
- Williams hypothesized that the use of idioms in sentiment analysis would increase the accuracy of predicting the correct emotion or category \cite{lowriwilliams}. Figure \ref{topsixgroups} shows a bar plot top six emotion groups, ranked by most frequently appearing groups in the data set. The emotion group ``Neutral" occurs the most, it makes up just over $20$ percent of the data set. 
+ Williams hypothesized that the use of idioms in sentiment analysis would increase the accuracy of predicting the correct emotion or category \cite{lowriwilliams}. Figure \ref{topsixgroups} shows a bar plot of the top six emotion groups, ranked by most frequently appearing groups in the data set. The emotion group ``Neutral" occurs the most, it comprises just over $20$ percent of the data set. 
  
 % \begin{figure}[h!]
 % 	\centering
@@ -149,8 +150,9 @@ Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labele
 % \input{TopSixGroup.tex}
  \begin{figure}[htb]
  		\centering
+ 		\caption{Top Six Emotion Groups}
  		\resizebox{4in}{!}{\input{TopSixGroup.tex}}
- 		\caption{Top Six Emotion Groups}\label{topsixgroups}
+ 		\label{topsixgroups}
  \end{figure}
  	
  %\clearpage
@@ -158,7 +160,7 @@ Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labele
 \section{Methods}
 
 \subsection{Text Mining}
-The goal of this project is to implement a method which when given a bit of text will sort the text into one of the emotions categories. The first step in this project, is to do some basic text mining. Text mining is the process of ``cleaning" a data set, most raw data will contain punctuation, capitalizations, quotes, tenses, and much more \cite{TextMining}. For most text analysis not all words are needed. Words like ``the", ``a", ``an", and others known as ``stopwords" are not important to build a model which will assign emotion or predict a star rating \cite{TextMining}. 
+The goal of this project is to implement a method which when given a bit of text will sort the text into one of the emotions categories. The first step in this project is to do some basic text mining. Text mining is the process of ``cleaning" a data set most raw data will contain punctuation, capitalizations, quotes, tenses, and much more \cite{TextMining}. For most text analysis, not all words are needed. Words like ``the", ``a", ``an", and others, known as ``stopwords", are not important to build a model which will assign emotion or predict a star rating \cite{TextMining}. 
 
 Once the data is clean, each sentence must be broken down into ``tokens". A token can be each sentence, each word, or even a set of words \cite{TextMining}. For this project each token represents a word in each sentence. 
 
