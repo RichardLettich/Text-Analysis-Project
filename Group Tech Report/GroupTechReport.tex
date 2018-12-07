@@ -61,42 +61,54 @@ Succinctly, we can define our desired result as follows: for a given snippet of 
 
 Machine Learning is the process of using a data set with known variables to create an algorithm which will predict a response variable \cite{Statlearning}. There are a variety of different machine learning methods, such as Quadratic Discriminant Analysis, Neural Networks, Ridge Regression, Logistic Regression, and much more \cite{Statlearning}. In this data set each sentence has an assigned emotion so the method will be a supervised learning method \cite{Statlearning}. Simply put a supervised learning method uses a data set which has both the predictor variable and the response variable to create an algorithm to predict the response variable \cite{Statlearning}. In this situation, the predictor variables are the sentences and the response variables are the emotions associated with each sentence \cite{Statlearning}. 
 
-The machine learning process is fundamentally similar to regression. There is an algorithm which attempts to find optimal parameters \footnote{while the parameter of our model $f(x)$ is $x$, this is \emph{not} the parameter we are addressing} for the function f(x) to yield the best prediction. This algorithm is called the optimizer. For instance, if the optimizer was trying to produce a linear regression model, \[f(x) = mx + b, \] the optimizer’s goal would be to find the most ideal values of parameters $m$ and $b$. 
+    The product of a supervised machine learning process is a model function which yield (a) predicted value(s) based on input data $x$. For the function to be built, prelabeled input data must be provided (i.e., pre produced sets of corresponding points, $(x,(f(x))$). While using $x$ and $f(x)$ oversimplifies the dimensionality of the input and outputs of the model, they will be continually used to explain machine learning conceptually.
+
+In this paper, we utilize a supervising machine learning algorithm broadly categorized by the label of stochastic gradient descent\cite{stoch}. The process is not fundamentally different to regression.  There is an algorithm which attempts to find optimal parameters\cite{regression} \footnote{while the parameter of our model $f(x)$ is $x$, this is \emph{not} the parameter we are addressing} for the function f(x) to yield the best prediction. In the context of supervised machine learning, this algorithm is called the optimizer. For instance, if the optimizer was trying to produce a linear regression model, 
+\[f(x) = mx + b \]
+The optimizer’s goal would be to find the most ideal values of parameters $m$ and $b$. 
 
 While this task is not daunting for such a simple function, it becomes much more complex for larger models that may contain thousands of parameters. However, at the simplest level, the process involves three parts: the model $f(x)$ itself, an optimization algorithm $\alpha$,  and a loss function $\lambda$.
 
-\subsection{Loss Function}
 
-The loss function denotes the error of the predictions made by the model. It takes two parameters: the evaluation of our model at any given point($y_p$), and the actual value of the function at that given point, as provided by the input data set ($y$). A simple error function would be the magnitude of the distance from the prediction to the actual value ism i.e,
-\[\lambda(y,y_p) =  |y - y_p|. \]
+\subsection{Loss function}
 
-The vast majority of loss functions are not so naive, generally averaging the loss of all $y_p$'s in some way, and weighing outliers to be greater, to prevent the `perfection' of one point by lowering the general applicability of the model.
+The loss function dignifies the error of the the predictions made by the model. It takes two parameters: the evaluation of our model at any given point($y_p$), and the actual value of the function at that given point, as provided by the input data set ($y_p$). A simple error function would be the distance from our prediction to what our actual value is
+\[\lambda(y,y_p) =  |y - y_p| \]
 
-\subsection{Optimizer Function - Stochastic Gradient Descent}
+The vast majority of loss functions are not so naive, but the moral this moral explanation holds.
 
-In this project, we use the \textit{Adam} optimizer \cite{adam}, which is a tuned up version of stochastic gradient descent optimization \cite{adam}. As its name alludes to, stochastic gradient descent optimizes the model function by descending the gradient of the loss function. 
 
-Before explaining what that means, it should be known that SGD optimizers assumes that if the loss function and model function are continuous \textit{enough}, then the mean value and rolle’s theorems \footnote{For a continuous function between two points the function must pass through the intermediate values; maxima and minima must occur at zero} still hold \cite{EMA}. 
+\subsection{Optimizer function -- \textit{Stochastic gradient descent}}
 
-From this, if we take any point on the loss function, we are able to extrapolate that if we modify our parameters $p$ (where $p = [m, b,...]$), in the direction opposite of the gradient of the loss function with respect those parameters ($\frac{\partial\lambda}{\partial p}$), we would be able to continuously re-evaluate and lower our error until we reach a gradient near zero, indicating we hypothetically found model parameters which cannot be improved.
+In this paper, we use the \textit{Adam} optimizer, which is a tuned up version of stochastic gradient descent optimization. As it name alludes to, stochastic gradient descent optimizes the model function by descending the gradient of the loss function. 
 
-SGD based optimizer functions find the gradient of Figure \ref{fig:m_vs_error} with respect to the optimization parameters (just $\frac{\partial\lambda}{\partial m}$ in this case) \cite{EMA}. From this, they are able to accurately guess new parameters ($m$) in the direction of the opposite of the magnitude of the gradient, which will likely provide a lower error ($\lambda$). 
+Before explaining what that means, it should be known that SGD optimizers assumes  that if the loss function is smooth and continuous \textit{enough}, we are able to smooth it out, and the same rules of calculus still apply.
 
-This process is iterative, and the change in parameter per iteration is called step size. Too large of a step size, and the new parameter could `overshoot'. For instance, if our $m$ was too small, `overshooting' would lead to the error being too large.
+From this, if we take any point on the loss function, we are able to extrapolate that if we were modify our parameters \(p\) (where $p = [m, b,...]$), going in the direction opposite of the gradient of the loss function with respect those parameters ($\frac{\partial\lambda}{\partial p}$), we would be able to continuously re-evaluate and lower our error until we reach a gradient near zero, indicating we hypothetically found our optimal model parametrs
 
-	\begin{figure}[h]
+What does that mean? To illustrate simply, if we let $f(x)_{\text{act}}$ represent our actual data point, our loss function can be rewritten as 
+\begin{align}
+\lambda &=  |f(x)_{\text{act}} - f(x)| \nonumber\\
+&= | f(x)_{\text{act}} -  (mx + b)\label{eq1}|
+\end{align}
+for any particular point $x$ in our data set, and its corresponding $f(x)_{\text{act}}$. If we were to modify  $m$  and graph it versus the error $\lambda$, we would see the resulting graph \cref{fig:m_vs_error}. 
+
+SGD based optimizer functions find the gradient of this graph with respect to the optimization parameters (just $\frac{\partial\lambda}{\partial m}$ in this case). From this, they are able to accurately guess new parameters ($m$) in the direction of the gradient which will provide a lower error for our paticular test \(x\) and \(f(x)\) pair. 
+
+This process is iterative, and the change in the parameter per iteration is called step size. Too large of a step size, and new parameter would `overshoot'. For instance if our $m$ was too small, `overshooting' would lead to it being too large.
+
+\begin{figure}[h]
 	\centering 
 	\label{fig:m_vs_error}
 	\caption{M vs. Error}
 	\includegraphics[scale=.11]{error_function.eps}
 	\vspace{-55pt}
-	\end{figure}
+\end{figure}
 
 
 \subsection{Caveats}
- 
- Of course, the model isn't as simple as linear regression. With hundreds of thousands to millions of possible data points, some are bound to disagree on how to adjust parameters. In addition, not all critical points where minima occur are absolute minima, possibly leading to the optimizer  getting `stuck' in a local minima. Moreover, saddle points occur in dimensions higher than two \cite{EMA}. The differences between SGD optimizers mainly concern how to work around these caveats while navigating the $\lambda$ graph \cite{EMA}.
- 
+Of course, the model isn't as simple as linear regression. With hundreds of thousands to millions of possible data points, some are bound to disagree on how to adjust parameters. In addition, not all critical points where minima occur are absolute minima, possibly leading to the optimizer  getting `stuck' in a local minima. Sometimes optimizers have issues 'settling' in the lowest valley, often requiring lower learning rates.\cite{adaprop} Going in the direction opposite the gradient isn't rocket science. The differences between SGD optimizers mainly concern how work around these caveats while navigating the $\lambda$ graph \cite{adaprop,adam,rmsprop,moment}.
+
 \section{Sentiment Analysis}
 %Transition Needed$
 

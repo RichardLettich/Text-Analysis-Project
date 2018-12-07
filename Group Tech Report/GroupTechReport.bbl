@@ -73,6 +73,126 @@
       \field{type}{mathesis}
       \field{year}{2017}
     \endentry
+    \entry{stoch}{article}{}
+      \name{author}{2}{}{%
+        {{hash=99fd369866e6a25b4c5f379ead24a8f7}{%
+           family={Kiefer},
+           familyi={K\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6457d5cee135f9148a4b280e4c8cb9f5}{%
+           family={Wolfowitz},
+           familyi={W\bibinitperiod},
+           given={J.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {The Institute of Mathematical Statistics}%
+      }
+      \strng{namehash}{10c38c22949ca70b288722878b467696}
+      \strng{fullhash}{10c38c22949ca70b288722878b467696}
+      \strng{bibnamehash}{10c38c22949ca70b288722878b467696}
+      \strng{authorbibnamehash}{10c38c22949ca70b288722878b467696}
+      \strng{authornamehash}{10c38c22949ca70b288722878b467696}
+      \strng{authorfullhash}{10c38c22949ca70b288722878b467696}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Ann. Math. Statist.}
+      \field{month}{09}
+      \field{number}{3}
+      \field{title}{Stochastic Estimation of the Maximum of a Regression Function}
+      \field{volume}{23}
+      \field{year}{1952}
+      \field{pages}{462\bibrangedash 466}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1214/aoms/1177729392
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1214/aoms/1177729392
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1214/aoms/1177729392
+      \endverb
+    \endentry
+    \entry{regression}{article}{}
+      \name{author}{1}{}{%
+        {{hash=5e783c8e2e25427bd6512e749361ca06}{%
+           family={Blay},
+           familyi={B\bibinitperiod},
+           given={Michel},
+           giveni={M\bibinitperiod}}}%
+      }
+      \list{language}{1}{%
+        {fre}%
+      }
+      \list{publisher}{1}{%
+        {Armand Colin}%
+      }
+      \strng{namehash}{5e783c8e2e25427bd6512e749361ca06}
+      \strng{fullhash}{5e783c8e2e25427bd6512e749361ca06}
+      \strng{bibnamehash}{5e783c8e2e25427bd6512e749361ca06}
+      \strng{authorbibnamehash}{5e783c8e2e25427bd6512e749361ca06}
+      \strng{authornamehash}{5e783c8e2e25427bd6512e749361ca06}
+      \strng{authorfullhash}{5e783c8e2e25427bd6512e749361ca06}
+      \field{sortinit}{9}
+      \field{sortinithash}{1dd72ab054147731c9d824b49aba0534}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{RÉSUMÉ. — Cet article a pour objet de dégager et de préciser certains aspects de la démarche newtonienne concernant la résolution des problèmes du mouvement des projectiles dans les milieux résistants. Après avoir présenté cursivement les travaux préparatoires de Newton, antérieurs à la rédaction des Principia, nous analysons en détail les principales Propositions des trois premières sections du livre II.}
+      \field{issn}{0151-4105}
+      \field{journaltitle}{Revue d'histoire des sciences}
+      \field{number}{3}
+      \field{title}{Le traitement newtonien du mouvement des projectiles dans les milieux résistants}
+      \field{volume}{40}
+      \field{year}{1987}
+      \field{pages}{325\bibrangedash 355}
+      \range{pages}{31}
+      \verb{doi}
+      \verb 10.3406/rhs.1987.4061
+      \endverb
+      \verb{urlraw}
+      \verb https://www.persee.fr/doc/rhs_0151-4105_1987_num_40_3_4061
+      \endverb
+      \verb{url}
+      \verb https://www.persee.fr/doc/rhs_0151-4105_1987_num_40_3_4061
+      \endverb
+    \endentry
+    \entry{adaprop}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2e8f0042fa52e2976f90a025ddf6268c}{%
+           family={Zeiler},
+           familyi={Z\bibinitperiod},
+           given={Matthew\bibnamedelima D.},
+           giveni={M\bibinitperiod\bibinitdelim D\bibinitperiod}}}%
+      }
+      \strng{namehash}{2e8f0042fa52e2976f90a025ddf6268c}
+      \strng{fullhash}{2e8f0042fa52e2976f90a025ddf6268c}
+      \strng{bibnamehash}{2e8f0042fa52e2976f90a025ddf6268c}
+      \strng{authorbibnamehash}{2e8f0042fa52e2976f90a025ddf6268c}
+      \strng{authornamehash}{2e8f0042fa52e2976f90a025ddf6268c}
+      \strng{authorfullhash}{2e8f0042fa52e2976f90a025ddf6268c}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprinttype}{arXiv}
+      \field{journaltitle}{CoRR}
+      \field{title}{{ADADELTA:} An Adaptive Learning Rate Method}
+      \field{volume}{abs/1212.5701}
+      \field{year}{2012}
+      \verb{eprint}
+      \verb 1212.5701
+      \endverb
+      \verb{urlraw}
+      \verb http://arxiv.org/abs/1212.5701
+      \endverb
+      \verb{url}
+      \verb http://arxiv.org/abs/1212.5701
+      \endverb
+    \endentry
     \entry{adam}{article}{}
       \name{author}{2}{}{%
         {{hash=1e072d74f4ac1094c9c26e1b592cea4a}{%
@@ -92,8 +212,8 @@
       \strng{authorbibnamehash}{c1670936fba733d1cb2d4c23bce95c6e}
       \strng{authornamehash}{c1670936fba733d1cb2d4c23bce95c6e}
       \strng{authorfullhash}{c1670936fba733d1cb2d4c23bce95c6e}
-      \field{sortinit}{8}
-      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{CoRR}
@@ -101,46 +221,76 @@
       \field{volume}{abs/1412.6980}
       \field{year}{2014}
     \endentry
-    \entry{EMA}{article}{}
-      \name{author}{1}{}{%
-        {{hash=9046a62067138cb98865e34f45386505}{%
-           family={Hunter},
+    \entry{rmsprop}{misc}{}
+      \name{author}{2}{}{%
+        {{hash=ccad1aea31b3661f011494afacb6d4b8}{%
+           family={Tieleman},
+           familyi={T\bibinitperiod},
+           given={T.},
+           giveni={T\bibinitperiod}}}%
+        {{hash=f4542f4d6b850d2d768e30024103a690}{%
+           family={Hinton},
            familyi={H\bibinitperiod},
-           given={J.\bibnamedelimi Stuart},
-           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+           given={G.},
+           giveni={G\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Taylor & Francis}%
-      }
-      \strng{namehash}{9046a62067138cb98865e34f45386505}
-      \strng{fullhash}{9046a62067138cb98865e34f45386505}
-      \strng{bibnamehash}{9046a62067138cb98865e34f45386505}
-      \strng{authorbibnamehash}{9046a62067138cb98865e34f45386505}
-      \strng{authornamehash}{9046a62067138cb98865e34f45386505}
-      \strng{authorfullhash}{9046a62067138cb98865e34f45386505}
+      \strng{namehash}{0b49d9a4a29472a73353beb6b5c32fdf}
+      \strng{fullhash}{0b49d9a4a29472a73353beb6b5c32fdf}
+      \strng{bibnamehash}{0b49d9a4a29472a73353beb6b5c32fdf}
+      \strng{authorbibnamehash}{0b49d9a4a29472a73353beb6b5c32fdf}
+      \strng{authornamehash}{0b49d9a4a29472a73353beb6b5c32fdf}
+      \strng{authorfullhash}{0b49d9a4a29472a73353beb6b5c32fdf}
       \field{sortinit}{1}
       \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Journal of Quality Technology}
-      \field{number}{4}
-      \field{title}{The Exponentially Weighted Moving Average}
-      \field{volume}{18}
-      \field{year}{1986}
-      \field{pages}{203\bibrangedash 210}
-      \range{pages}{8}
+      \field{howpublished}{COURSERA: Neural Networks for Machine Learning}
+      \field{title}{{Lecture 6.5---RmsProp: Divide the gradient by a running average of its recent magnitude}}
+      \field{year}{2012}
+    \endentry
+    \entry{moment}{article}{}
+      \name{author}{1}{}{%
+        {{hash=ea12a5aa5be72e296f6e28e632bf5b66}{%
+           family={Qian},
+           familyi={Q\bibinitperiod},
+           given={Ning},
+           giveni={N\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Oxford, UK, UK}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier Science Ltd.}%
+      }
+      \strng{namehash}{ea12a5aa5be72e296f6e28e632bf5b66}
+      \strng{fullhash}{ea12a5aa5be72e296f6e28e632bf5b66}
+      \strng{bibnamehash}{ea12a5aa5be72e296f6e28e632bf5b66}
+      \strng{authorbibnamehash}{ea12a5aa5be72e296f6e28e632bf5b66}
+      \strng{authornamehash}{ea12a5aa5be72e296f6e28e632bf5b66}
+      \strng{authorfullhash}{ea12a5aa5be72e296f6e28e632bf5b66}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0893-6080}
+      \field{journaltitle}{Neural Netw.}
+      \field{month}{1}
+      \field{number}{1}
+      \field{title}{On the Momentum Term in Gradient Descent Learning Algorithms}
+      \field{volume}{12}
+      \field{year}{1999}
+      \field{pages}{145\bibrangedash 151}
+      \range{pages}{7}
       \verb{doi}
-      \verb 10.1080/00224065.1986.11979014
-      \endverb
-      \verb{eprint}
-      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \verb 10.1016/S0893-6080(98)00116-6
       \endverb
       \verb{urlraw}
-      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \verb http://dx.doi.org/10.1016/S0893-6080(98)00116-6
       \endverb
       \verb{url}
-      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \verb http://dx.doi.org/10.1016/S0893-6080(98)00116-6
       \endverb
+      \keyw{critical damping,damped harmonic oscillator,gradient descent learning algorithm,learning rate,momentum,speed of convergence}
     \endentry
     \entry{plutchik2001nature}{article}{}
       \name{author}{1}{}{%
@@ -183,8 +333,8 @@
       \strng{authorbibnamehash}{9aa76e5644e3ceae185d6d739784f87f}
       \strng{authornamehash}{9aa76e5644e3ceae185d6d739784f87f}
       \strng{authorfullhash}{9aa76e5644e3ceae185d6d739784f87f}
-      \field{sortinit}{2}
-      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Plutchiks Wheel of Emotion}
@@ -213,6 +363,47 @@
       \field{labeltitlesource}{title}
       \field{title}{Text Mining in Practice with R}
       \field{year}{2017}
+    \endentry
+    \entry{EMA}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9046a62067138cb98865e34f45386505}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi Stuart},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor & Francis}%
+      }
+      \strng{namehash}{9046a62067138cb98865e34f45386505}
+      \strng{fullhash}{9046a62067138cb98865e34f45386505}
+      \strng{bibnamehash}{9046a62067138cb98865e34f45386505}
+      \strng{authorbibnamehash}{9046a62067138cb98865e34f45386505}
+      \strng{authornamehash}{9046a62067138cb98865e34f45386505}
+      \strng{authorfullhash}{9046a62067138cb98865e34f45386505}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Quality Technology}
+      \field{number}{4}
+      \field{title}{The Exponentially Weighted Moving Average}
+      \field{volume}{18}
+      \field{year}{1986}
+      \field{pages}{203\bibrangedash 210}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1080/00224065.1986.11979014
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \endverb
     \endentry
     \entry{Keras.io}{misc}{}
       \name{author}{1}{}{%

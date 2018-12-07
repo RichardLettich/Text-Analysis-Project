@@ -1,17 +1,17 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
-[1] Config.pm:305> INFO - Logfile is 'GroupTechReport.blg'
-[65] biber-darwin:313> INFO - === Fri Dec  7, 2018, 17:35:09
-[102] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
-[261] Biber.pm:857> INFO - Found 11 citekeys in bib section 0
-[286] Biber.pm:3976> INFO - Processing section 0
-[303] Biber.pm:4136> INFO - Looking for bibtex format file 'references.bib' for section 0
-[306] bibtex.pm:1500> INFO - LaTeX decoding ...
-[349] bibtex.pm:1316> INFO - Found BibTeX data source 'references.bib'
-[370] Utils.pm:193> WARN - Name "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" has too many commas: skipping name
-[441] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[441] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[441] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[441] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[459] bbl.pm:617> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
-[466] bbl.pm:720> INFO - Output to GroupTechReport.bbl
-[466] Biber.pm:110> INFO - WARNINGS: 1
+[0] Config.pm:305> INFO - Logfile is 'GroupTechReport.blg'
+[53] biber-darwin:313> INFO - === Fri Dec  7, 2018, 17:47:01
+[83] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
+[202] Biber.pm:857> INFO - Found 16 citekeys in bib section 0
+[223] Biber.pm:3976> INFO - Processing section 0
+[239] Biber.pm:4136> INFO - Looking for bibtex format file 'references.bib' for section 0
+[241] bibtex.pm:1500> INFO - LaTeX decoding ...
+[280] bibtex.pm:1316> INFO - Found BibTeX data source 'references.bib'
+[296] Utils.pm:193> WARN - Name "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" has too many commas: skipping name
+[390] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[391] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[391] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[391] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[411] bbl.pm:617> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
+[417] bbl.pm:720> INFO - Output to GroupTechReport.bbl
+[418] Biber.pm:110> INFO - WARNINGS: 1
