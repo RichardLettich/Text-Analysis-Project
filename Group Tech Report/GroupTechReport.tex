@@ -5,7 +5,6 @@
 \usepackage{textcomp}
 \usepackage{amsmath}
 \usepackage[activate=true,final,tracking=true,kerning=true,spacing=true]{microtype}
-\usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{changepage}
 \usepackage{indentfirst}
@@ -18,7 +17,8 @@
 \pgfplotsset{compat=newest}
 \usepackage{mathtools}
 \usepackage{kantlipsum}
-\usepackage{natbib}
+\usepackage[sorting=none, backend = biber]{biblatex}
+\bibliography{references}
 \usepackage{attachfile}
 \usepackage{amsfonts}
 \usepackage{amsmath}
@@ -349,10 +349,19 @@ Finally we look at the results for Chick-Fil-A.
 
 From figure \cref{fig:chicktt} we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as the previous restaurants do, but that is to be expected. No business is perfect, so some less than positive reviews are bound to occur. It is interesting to note that there are not as many middling positive tweets, or tweets that fall in the middle of the graph.
 
+\subsection{Results of Raw Unlabeled Twitter Data}
 
-\newpage
-\bibliographystyle{plain}
-\bibliography{references}
+\subsection{McDonalds Service Failure Sentiment Results}
+
+\subsection{Analysis}
+
+\section{Conclusion}
+
+
+\clearpage
+
+
+\printbibliography
 
 
 \end{document}

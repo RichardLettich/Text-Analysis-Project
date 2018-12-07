@@ -1,59 +1,281 @@
-\begin{thebibliography}{10}
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
 
-\bibitem{LabeledTwitter}
-Sentiment anaysis: Emotion in text, 2016.
 
-\bibitem{BusinessCustomerSatisfaction}
-S~Azman A.~Novak, Petra~Sparl.
-\newblock Impact of customer satisfaction of financial results of car servicing
-  companies: Findings from slovenia.
-\newblock 18.3:113, 2015.
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{BusinessCustomerSatisfaction}{article}{}
+      \name{author}{1}{}{%
+        {{hash=86eb6cb851904ccbd37ce490bd56cc98}{%
+           family={A.\bibnamedelimi Novak},
+           familyi={A\bibinitperiod\bibinitdelim N\bibinitperiod},
+           given={S\bibnamedelima Azman},
+           giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+           suffix={Petra\bibnamedelima Sparl},
+           suffixi={P\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {E + M Edonomie a Management}%
+      }
+      \strng{namehash}{86eb6cb851904ccbd37ce490bd56cc98}
+      \strng{fullhash}{86eb6cb851904ccbd37ce490bd56cc98}
+      \strng{bibnamehash}{86eb6cb851904ccbd37ce490bd56cc98}
+      \strng{authorbibnamehash}{86eb6cb851904ccbd37ce490bd56cc98}
+      \strng{authornamehash}{86eb6cb851904ccbd37ce490bd56cc98}
+      \strng{authorfullhash}{86eb6cb851904ccbd37ce490bd56cc98}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Impact of Customer Satisfaction of Financial Results of Car Servicing Companies: Findings from Slovenia}
+      \field{volume}{18.3}
+      \field{year}{2015}
+      \field{pages}{113}
+      \range{pages}{1}
+    \endentry
+    \entry{lowriwilliams}{thesis}{}
+      \name{author}{1}{}{%
+        {{hash=7271b872dec57414d59f7b7ec77bf9ef}{%
+           family={Williams},
+           familyi={W\bibinitperiod},
+           given={Lowri},
+           giveni={L\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Cardiff University}%
+      }
+      \strng{namehash}{7271b872dec57414d59f7b7ec77bf9ef}
+      \strng{fullhash}{7271b872dec57414d59f7b7ec77bf9ef}
+      \strng{bibnamehash}{7271b872dec57414d59f7b7ec77bf9ef}
+      \strng{authorbibnamehash}{7271b872dec57414d59f7b7ec77bf9ef}
+      \strng{authornamehash}{7271b872dec57414d59f7b7ec77bf9ef}
+      \strng{authorfullhash}{7271b872dec57414d59f7b7ec77bf9ef}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Pushing the Envelope of Sentiment Analysis Beyond Words and Polarities}
+      \field{type}{mathesis}
+      \field{year}{2017}
+    \endentry
+    \entry{adam}{article}{}
+      \name{author}{2}{}{%
+        {{hash=b6fbd171848aad4edf3925543f1f1522}{%
+           family={Kingma},
+           familyi={K\bibinitperiod},
+           given={Diederik\bibnamedelima P.},
+           giveni={D\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=8aa66e8231cc2fdbe67aa4f18ca970c6}{%
+           family={Ba},
+           familyi={B\bibinitperiod},
+           given={Jimmy},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{fullhash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{bibnamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorbibnamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authornamehash}{a09df9f123146b8e2c7f1134c9496932}
+      \strng{authorfullhash}{a09df9f123146b8e2c7f1134c9496932}
+      \field{sortinit}{8}
+      \field{sortinithash}{07edf88d4ea82509b9c4b4d13f41c452}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{CoRR}
+      \field{title}{Adam: A Method for Stochastic Optimization}
+      \field{volume}{abs/1412.6980}
+      \field{year}{2014}
+    \endentry
+    \entry{EMA}{article}{}
+      \name{author}{1}{}{%
+        {{hash=eec0bca7144af5e1a34d84122bac62b6}{%
+           family={Hunter},
+           familyi={H\bibinitperiod},
+           given={J.\bibnamedelimi Stuart},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor & Francis}%
+      }
+      \strng{namehash}{eec0bca7144af5e1a34d84122bac62b6}
+      \strng{fullhash}{eec0bca7144af5e1a34d84122bac62b6}
+      \strng{bibnamehash}{eec0bca7144af5e1a34d84122bac62b6}
+      \strng{authorbibnamehash}{eec0bca7144af5e1a34d84122bac62b6}
+      \strng{authornamehash}{eec0bca7144af5e1a34d84122bac62b6}
+      \strng{authorfullhash}{eec0bca7144af5e1a34d84122bac62b6}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Quality Technology}
+      \field{number}{4}
+      \field{title}{The Exponentially Weighted Moving Average}
+      \field{volume}{18}
+      \field{year}{1986}
+      \field{pages}{203\bibrangedash 210}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1080/00224065.1986.11979014
+      \endverb
+      \verb{eprint}
+      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \endverb
+      \verb{urlraw}
+      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \endverb
+      \verb{url}
+      \verb https://doi.org/10.1080/00224065.1986.11979014
+      \endverb
+    \endentry
+    \entry{plutchik2001nature}{article}{}
+      \name{author}{1}{}{%
+        {{hash=050935e4cfedc32e862f19fc78769796}{%
+           family={Plutchik},
+           familyi={P\bibinitperiod},
+           given={Robert},
+           giveni={R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {JSTOR}%
+      }
+      \strng{namehash}{050935e4cfedc32e862f19fc78769796}
+      \strng{fullhash}{050935e4cfedc32e862f19fc78769796}
+      \strng{bibnamehash}{050935e4cfedc32e862f19fc78769796}
+      \strng{authorbibnamehash}{050935e4cfedc32e862f19fc78769796}
+      \strng{authornamehash}{050935e4cfedc32e862f19fc78769796}
+      \strng{authorfullhash}{050935e4cfedc32e862f19fc78769796}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{American scientist}
+      \field{number}{4}
+      \field{title}{The Nature of Emotions: Human Emotions Have Deep Evolutionary Roots, A Fact that May Explain Their Complexity and Provide Tools for Clinical Practice}
+      \field{volume}{89}
+      \field{year}{2001}
+      \field{pages}{344\bibrangedash 350}
+      \range{pages}{7}
+    \endentry
+    \entry{WheelofEmotion}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=9aa76e5644e3ceae185d6d739784f87f}{%
+           family={Hokuma},
+           familyi={H\bibinitperiod}}}%
+      }
+      \strng{namehash}{9aa76e5644e3ceae185d6d739784f87f}
+      \strng{fullhash}{9aa76e5644e3ceae185d6d739784f87f}
+      \strng{bibnamehash}{9aa76e5644e3ceae185d6d739784f87f}
+      \strng{authorbibnamehash}{9aa76e5644e3ceae185d6d739784f87f}
+      \strng{authornamehash}{9aa76e5644e3ceae185d6d739784f87f}
+      \strng{authorfullhash}{9aa76e5644e3ceae185d6d739784f87f}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Plutchiks Wheel of Emotion}
+      \field{year}{2017}
+    \endentry
+    \entry{TextMining}{book}{}
+      \name{author}{1}{}{%
+        {{hash=e682cc9e77ba1a46ac85dec284c0a1fe}{%
+           family={Kwalter},
+           familyi={K\bibinitperiod},
+           given={Ted},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Wiley}%
+      }
+      \strng{namehash}{e682cc9e77ba1a46ac85dec284c0a1fe}
+      \strng{fullhash}{e682cc9e77ba1a46ac85dec284c0a1fe}
+      \strng{bibnamehash}{e682cc9e77ba1a46ac85dec284c0a1fe}
+      \strng{authorbibnamehash}{e682cc9e77ba1a46ac85dec284c0a1fe}
+      \strng{authornamehash}{e682cc9e77ba1a46ac85dec284c0a1fe}
+      \strng{authorfullhash}{e682cc9e77ba1a46ac85dec284c0a1fe}
+      \field{sortinit}{2}
+      \field{sortinithash}{cbff857e587bcb4635511624d773949e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Text Mining in Practice with R}
+      \field{year}{2017}
+    \endentry
+    \entry{Keras.io}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=0cb5d5c696d57ae332b942375aecfd0b}{%
+           family={Documentation},
+           familyi={D\bibinitperiod},
+           given={Keras},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{0cb5d5c696d57ae332b942375aecfd0b}
+      \strng{fullhash}{0cb5d5c696d57ae332b942375aecfd0b}
+      \strng{bibnamehash}{0cb5d5c696d57ae332b942375aecfd0b}
+      \strng{authorbibnamehash}{0cb5d5c696d57ae332b942375aecfd0b}
+      \strng{authornamehash}{0cb5d5c696d57ae332b942375aecfd0b}
+      \strng{authorfullhash}{0cb5d5c696d57ae332b942375aecfd0b}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{K Keras}
+      \field{year}{2018}
+    \endentry
+    \entry{NeuralNet}{book}{}
+      \name{author}{1}{}{%
+        {{hash=92c09779d078a20629a33c024f60905a}{%
+           family={Nielson},
+           familyi={N\bibinitperiod},
+           given={Micheal\bibnamedelima A.},
+           giveni={M\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Determination Press}%
+      }
+      \strng{namehash}{92c09779d078a20629a33c024f60905a}
+      \strng{fullhash}{92c09779d078a20629a33c024f60905a}
+      \strng{bibnamehash}{92c09779d078a20629a33c024f60905a}
+      \strng{authorbibnamehash}{92c09779d078a20629a33c024f60905a}
+      \strng{authornamehash}{92c09779d078a20629a33c024f60905a}
+      \strng{authorfullhash}{92c09779d078a20629a33c024f60905a}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Neural Networks and Deep Learning}
+      \field{year}{2015}
+    \endentry
+    \entry{LabeledTwitter}{data}{}
+      \list{publisher}{1}{%
+        {Figure Eight}%
+      }
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labeltitlesource}{title}
+      \field{title}{Sentiment Anaysis: Emotion in Text}
+      \field{year}{2016}
+      \verb{urlraw}
+      \verb https://www.figure-eight.com/data-for-everyone/
+      \endverb
+      \verb{url}
+      \verb https://www.figure-eight.com/data-for-everyone/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
 
-\bibitem{Keras.io}
-Keras Documentation.
-\newblock K keras, 2018.
-
-\bibitem{Statlearning}
-Trevor Hastie Robert~Tibshirani Gareth~James, Daniela~Witten.
-\newblock {\em An Introduction to Statistical Machine Learning with Examples in
-  R}.
-\newblock Springer, 2013.
-
-\bibitem{WheelofEmotion}
-Hokuma.
-\newblock Plutchiks wheel of emotion, 2017.
-
-\bibitem{EMA}
-J.~Stuart Hunter.
-\newblock The exponentially weighted moving average.
-\newblock {\em Journal of Quality Technology}, 18(4):203--210, 1986.
-
-\bibitem{adam}
-Diederik~P. Kingma and Jimmy Ba.
-\newblock Adam: A method for stochastic optimization.
-\newblock {\em CoRR}, abs/1412.6980, 2014.
-
-\bibitem{TextMining}
-Ted Kwalter.
-\newblock {\em Text Mining in Practice with R}.
-\newblock Wiley, 2017.
-
-\bibitem{NeuralNet}
-Micheal~A. Nielson.
-\newblock {\em Neural Networks and Deep Learning}.
-\newblock Determination Press, 2015.
-
-\bibitem{plutchik2001nature}
-Robert Plutchik.
-\newblock The nature of emotions: Human emotions have deep evolutionary roots,
-  a fact that may explain their complexity and provide tools for clinical
-  practice.
-\newblock {\em American scientist}, 89(4):344--350, 2001.
-
-\bibitem{lowriwilliams}
-Lowri Williams.
-\newblock Pushing the envelope of sentiment analysis beyond words and
-  polarities.
-\newblock Master's thesis, Cardiff University, 2017.
-
-\end{thebibliography}

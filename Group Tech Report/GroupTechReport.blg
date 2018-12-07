@@ -1,17 +1,17 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: GroupTechReport.aux
-The style file: plain.bst
-Database file #1: references.bib
-I was expecting a `,' or a `}'---line 56 of file references.bib
- :     
- :     journal = {},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Warning--entry type for "LabeledTwitter" isn't style-file defined
---line 115 of file references.bib
-Too many commas in name 1 of "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" for entry Statlearning
-while executing---line 1049 of file plain.bst
-Warning--to sort, need author or key in LabeledTwitter
-Warning--empty journal in BusinessCustomerSatisfaction
-Too many commas in name 1 of "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" for entry Statlearning
-while executing---line 1090 of file plain.bst
-(There were 3 error messages)
+[0] Config.pm:304> INFO - This is Biber 2.12
+[1] Config.pm:307> INFO - Logfile is 'GroupTechReport.blg'
+[83] biber-MSWIN64:315> INFO - === 
+[150] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
+[388] Biber.pm:889> INFO - Found 11 citekeys in bib section 0
+[429] Biber.pm:4093> INFO - Processing section 0
+[467] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
+[473] bibtex.pm:1523> INFO - LaTeX decoding ...
+[513] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
+[538] Utils.pm:193> WARN - Name "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" has too many commas: skipping name
+[646] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[646] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[646] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[646] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[673] bbl.pm:636> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
+[681] bbl.pm:739> INFO - Output to GroupTechReport.bbl
+[682] Biber.pm:110> INFO - WARNINGS: 1
