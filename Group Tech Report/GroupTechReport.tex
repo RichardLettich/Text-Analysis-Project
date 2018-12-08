@@ -4,7 +4,7 @@
 \usepackage[svgnames]{xcolor}
 \usepackage{textcomp}
 \usepackage{amsmath}
-\usepackage[activate=true,final,tracking=true,kerning=true,spacing=true]{microtype}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true]{microtype}
 \usepackage{graphicx}
 \usepackage{changepage}
 \usepackage{indentfirst}
@@ -31,6 +31,7 @@
 \usepackage{tabularx}
 \usepackage{cleveref}
 \usepackage[]{algorithm2e}
+\graphicspath{{./}}
 \setlength{\parindent}{3em}
 \setlength{\parskip}{.75em}
 %opening
@@ -104,7 +105,7 @@ This process is iterative, and the change in the parameter per iteration is call
 	\centering 
 	\label{fig:m_vs_error}
 	\caption{M vs. Error}
-	\includegraphics[scale=.11]{error_function.eps}
+%	\includegraphics[scale=.11]{error_function.eps}
 	\vspace{-55pt}
 \end{figure}
 
@@ -259,6 +260,15 @@ Applying the same exponential moving average to this `variance from the zero gra
 
 \subsection{Model Layers}
 
+\begin{figure}
+	\centering
+	\caption{Model Layers with Data Flow and Back Propagation of Updates \cite{knisely}}
+	\label{layers}
+    \def\svgwidth{3.5in}
+	\input{drawing.pdf_tex}
+\end{figure}
+
+
 A different approach was used for each model. Historically, Bidirectional LSTM has shown better results for textual analysis \cite{Keras.io}. However, in testing, it performed equivalently or worse than regular LSTM, and significantly increased time to convergence. However, implementing Bi-directional LSTM on the idiom data has yielded a significant boost, raising accuracy approximately 5\% over regular LSTM.
 
 \subsection{Dropout Technique}
@@ -366,7 +376,7 @@ From figure \cref{fig:chicktt} we see a high percentage of tweets with positive 
 
 Figure \ref{compstat} displays some basic statistical analysis on each restaurant from the raw unlabeled Twitter data. The red bar gives the proportion of positive reviews which were over $0.5$ on the positive sentiment score, the blue bar gives the mean positive sentiment score, and the purple bar shows the median positive sentiment score for each restaurant. As we can see most of the restaurants are positive, each of the bars falls over $0.5$ in this bar graph. The only two exceptions are Chipotle and Comcast, which both have means that are higher than their medians. This is not surprising since we know that a mean will be pulled toward the outliers. Panera appears to have the most positive statistics of the restaurants, with a median score of $0.8$. 
 
-\begin{figure}[htb]
+\begin{figure}[]
 	\centering
 	\caption{Statistical Comparison of Twitter Restaurants}
 	\input{comparison.tex}
@@ -381,6 +391,7 @@ The McDonalds Service failure is a labeled data set that contains just over $150
 For the purposes of this project, we wanted to see how our model would classify the sentiment in each review. Figure \ref{servfail} gives the sentiment results of the six different Service Failure groups. As we can see, most of the groups contain negative sentiment, which is what we would expect. The NA group works as a control group, showing that our model doesn't just predict negative sentiment. Rather the NA group has almost a uniform distribution, neither overly positive or overly negative, it also contains a lot of middling sentiment (review that fall between $0.4$ and $0.6$ on the Positive Sentiment Score).
 
 The results from Figure \ref{servfail} show that service failures are expressed in text that contains negative sentiment. Knowing that a service failure will have highly negative sentiment tells businesses which comments they need to investigate. While it's important to know where a business is doing well, businesses are able to improve once they know where they are failing. Not only does this model tell a business which reviews they need to look at to find areas to improve, this model also speeds up the process. Most companies could just pay someone or multiple people to read through every review, tweet, yelp! post, and etc, but that is incredibly time consuming and expensive. A model that looks through all that text data and then tells you which texts contain the most important information saves time and money.  
+
 
 \input{meg_fail.tex}
 %\label{servfail}
@@ -436,7 +447,8 @@ Given the results of each data set we were able to develop a function which mode
 The business applications of a model like this are numerous. Businesses in the United States run in a competitive market for customers. With reviews on social media and other sites consumers can easily find the ideal business to meet their needs. These same reviews can also help the business to learn where they are struggling, where they are succeeding, and how to improve. For businesses quicker improvement times lead to better customer loyalty and in turn better profits.   
 
 
-\clearpage
+
+\clearpage 
 
 
 \printbibliography

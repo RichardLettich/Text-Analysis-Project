@@ -14,13 +14,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Plutchik's Wheel of Emotion}{4}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Primary Emotion Data}{5}{section.5}
+\contentsline {section}{\numberline {5}Primary Emotion Data}{4}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Methods}{6}{section.6}
+\contentsline {section}{\numberline {6}Methods}{5}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Text Mining}{6}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.1}Text Mining}{5}{subsection.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Term Frequency Matrix}{7}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.2}Term Frequency Matrix}{6}{subsection.6.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.3}Adam Optimizer}{7}{subsection.6.3}
 \defcounter {refsection}{0}\relax 
@@ -28,15 +28,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{Gradient Moving Average}{7}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Moving Variance}{10}{section*.9}
+\contentsline {paragraph}{Moving Variance}{7}{section*.9}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.4}Model Layers}{10}{subsection.6.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.5}Dropout Technique}{10}{subsection.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.6}Validation Accuracy}{10}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.6}Validation Accuracy}{11}{subsection.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Positive and Negative Groups}{11}{section.7}
+\contentsline {section}{\numberline {7}Positive and Negative Groups}{12}{section.7}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {8}Results}{12}{section.8}
 \defcounter {refsection}{0}\relax 
@@ -50,4 +50,4 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.5}Analysis}{17}{subsection.8.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Conclusion}{19}{section.9}
+\contentsline {section}{\numberline {9}Conclusion}{18}{section.9}

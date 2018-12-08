@@ -429,6 +429,28 @@
       \verb https://doi.org/10.1080/00224065.1986.11979014
       \endverb
     \endentry
+    \entry{knisely}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=4c9eacaf92eb25c2c86e4711c3dcab54}{%
+           family={Knisley},
+           familyi={K\bibinitperiod},
+           given={Jeff\bibnamedelima R},
+           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{4c9eacaf92eb25c2c86e4711c3dcab54}
+      \strng{fullhash}{4c9eacaf92eb25c2c86e4711c3dcab54}
+      \strng{bibnamehash}{4c9eacaf92eb25c2c86e4711c3dcab54}
+      \strng{authorbibnamehash}{4c9eacaf92eb25c2c86e4711c3dcab54}
+      \strng{authornamehash}{4c9eacaf92eb25c2c86e4711c3dcab54}
+      \strng{authorfullhash}{4c9eacaf92eb25c2c86e4711c3dcab54}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{Personal Interview}
+      \field{year}{2018}
+    \endentry
     \entry{Keras.io}{misc}{}
       \name{author}{1}{}{%
         {{hash=0cb5d5c696d57ae332b942375aecfd0b}{%
