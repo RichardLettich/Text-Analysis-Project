@@ -73,6 +73,30 @@
       \field{type}{mathesis}
       \field{year}{2017}
     \endentry
+    \entry{Statlearning}{book}{}
+      \name{author}{1}{}{%
+        {{hash=715b0d6915c6192b90b22b4c3e965d3c}{%
+           family={Tibshirani},
+           familyi={T\bibinitperiod},
+           given={Gareth\bibnamedelimb James\bibnamedelimb Daniela\bibnamedelimb Witten\bibnamedelimb Trevor\bibnamedelimb Hastie\bibnamedelima Robert},
+           giveni={G\bibinitperiod\bibinitdelim J\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim W\bibinitperiod\bibinitdelim T\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{715b0d6915c6192b90b22b4c3e965d3c}
+      \strng{fullhash}{715b0d6915c6192b90b22b4c3e965d3c}
+      \strng{bibnamehash}{715b0d6915c6192b90b22b4c3e965d3c}
+      \strng{authorbibnamehash}{715b0d6915c6192b90b22b4c3e965d3c}
+      \strng{authornamehash}{715b0d6915c6192b90b22b4c3e965d3c}
+      \strng{authorfullhash}{715b0d6915c6192b90b22b4c3e965d3c}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{An Introduction to Statistical Machine Learning with Examples in R}
+      \field{year}{2013}
+    \endentry
     \entry{stoch}{article}{}
       \name{author}{2}{}{%
         {{hash=813adedef62022bf4d7bb90c68a674b1}{%

@@ -1,17 +1,15 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [1] Config.pm:307> INFO - Logfile is 'GroupTechReport.blg'
-[72] biber-MSWIN64:315> INFO - === 
-[163] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
-[385] Biber.pm:889> INFO - Found 16 citekeys in bib section 0
-[421] Biber.pm:4093> INFO - Processing section 0
-[451] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
-[460] bibtex.pm:1523> INFO - LaTeX decoding ...
-[530] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
-[554] Utils.pm:193> WARN - Name "Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani" has too many commas: skipping name
-[689] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[689] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[689] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[689] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[726] bbl.pm:636> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
-[738] bbl.pm:739> INFO - Output to GroupTechReport.bbl
-[740] Biber.pm:110> INFO - WARNINGS: 1
+[77] biber-MSWIN64:315> INFO - === 
+[130] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
+[335] Biber.pm:889> INFO - Found 16 citekeys in bib section 0
+[367] Biber.pm:4093> INFO - Processing section 0
+[400] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
+[408] bibtex.pm:1523> INFO - LaTeX decoding ...
+[490] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
+[645] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[645] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[645] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[646] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[681] bbl.pm:636> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
+[693] bbl.pm:739> INFO - Output to GroupTechReport.bbl
