@@ -1,0 +1,53 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {1}Introduction}{1}{section.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {2}Machine Learning}{1}{section.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.1}Loss function}{2}{subsection.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.2}Optimizer function -- \textit {Stochastic gradient descent}}{3}{subsection.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {2.3}Caveats}{3}{subsection.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {3}Sentiment Analysis}{4}{section.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4}Plutchik's Wheel of Emotion}{4}{section.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Primary Emotion Data}{5}{section.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {6}Methods}{6}{section.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.1}Text Mining}{6}{subsection.6.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.2}Term Frequency Matrix}{7}{subsection.6.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.3}Adam Optimizer}{7}{subsection.6.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Gradient}{7}{section*.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Gradient Moving Average}{7}{section*.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Moving Variance}{10}{section*.9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.4}Model Layers}{10}{subsection.6.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.5}Dropout Technique}{10}{subsection.6.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {6.6}Validation Accuracy}{10}{subsection.6.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {7}Positive and Negative Groups}{11}{section.7}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {8}Results}{12}{section.8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.1}Primary Emotion Data Results}{12}{subsection.8.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.2}Labeled Twitter Data Results}{13}{subsection.8.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.3}Unlabeled Raw Twitter Data Results}{14}{subsection.8.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.4}Mcdonalds Service Failure Sentiment Results}{15}{subsection.8.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {8.5}Analysis}{17}{subsection.8.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {9}Conclusion}{19}{section.9}
