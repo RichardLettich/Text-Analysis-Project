@@ -2034,6 +2034,8 @@
     <bcf:citekey order="34">NeuralNet</bcf:citekey>
     <bcf:citekey order="35">lowriwilliams</bcf:citekey>
     <bcf:citekey order="36">LabeledTwitter</bcf:citekey>
+    <bcf:citekey order="37">lowriwilliams</bcf:citekey>
+    <bcf:citekey order="38">LabeledTwitter</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
