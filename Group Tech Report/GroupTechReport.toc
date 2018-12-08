@@ -44,9 +44,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.2}Labeled Twitter Data Results}{13}{subsection.8.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.3}Unlabeled Raw Twitter Data Results}{14}{subsection.8.3}
+\contentsline {subsection}{\numberline {8.3}Unlabeled Raw Twitter Data Results}{15}{subsection.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Mcdonalds Service Failure Sentiment Results}{15}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.4}Mcdonalds Service Failure Sentiment Results}{17}{subsection.8.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.5}Analysis}{17}{subsection.8.5}
 \defcounter {refsection}{0}\relax 
