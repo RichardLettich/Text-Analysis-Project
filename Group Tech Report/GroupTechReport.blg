@@ -1,17 +1,17 @@
-[0] Config.pm:304> INFO - This is Biber 2.12
-[1] Config.pm:307> INFO - Logfile is 'GroupTechReport.blg'
-[80] biber-MSWIN64:315> INFO - === 
-[134] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
-[354] Biber.pm:889> INFO - Found 17 citekeys in bib section 0
-[386] Biber.pm:4093> INFO - Processing section 0
-[418] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
-[423] bibtex.pm:1523> INFO - LaTeX decoding ...
-[489] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
-[603] Utils.pm:193> WARN - month field 'Dec' in entry 'knisely' is not an integer - this will probably not sort properly.
-[695] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[696] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[696] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[696] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[731] bbl.pm:636> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
-[744] bbl.pm:739> INFO - Output to GroupTechReport.bbl
-[745] Biber.pm:110> INFO - WARNINGS: 1
+[1] Config.pm:304> INFO - This is Biber 2.12
+[2] Config.pm:307> INFO - Logfile is 'GroupTechReport.blg'
+[78] biber-MSWIN64:315> INFO - === 
+[137] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
+[359] Biber.pm:889> INFO - Found 17 citekeys in bib section 0
+[392] Biber.pm:4093> INFO - Processing section 0
+[427] Biber.pm:4254> INFO - Looking for bibtex format file 'references.bib' for section 0
+[433] bibtex.pm:1523> INFO - LaTeX decoding ...
+[507] bibtex.pm:1340> INFO - Found BibTeX data source 'references.bib'
+[613] Utils.pm:193> WARN - month field 'Dec' in entry 'knisely' is not an integer - this will probably not sort properly.
+[668] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[668] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[668] Biber.pm:3921> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[669] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[705] bbl.pm:636> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
+[717] bbl.pm:739> INFO - Output to GroupTechReport.bbl
+[718] Biber.pm:110> INFO - WARNINGS: 1

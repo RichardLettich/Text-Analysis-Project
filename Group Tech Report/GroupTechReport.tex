@@ -125,9 +125,9 @@ Plutchik's Wheel of Emotion, (\cref{plutchikemotionwheel}), has eight basic emot
 The emotions on each leaf range in intensity. The emotions on the inner circle are the most intense and the emotions on the outer circle of each leaf are the least intense \cite{WheelofEmotion}. The emotions that fall between each leaf are a combination of each leaf's middle emotion \cite{WheelofEmotion}. For example, ``Trust + Fear = Submission". The Primary Emotion Data we use in this project has emotions from the middle of each leaf, the combinations emotions, and categories ``Neutral" and ``Ambiguous" \cite{lowriwilliams}.
 
 \begin{figure}[ht]
-	\center
-	\includegraphics[width=4in]{PlutchikWheelOfEmotion.jpg}
+	\centering
 	\caption{Plutchiks Wheel of Emotion \cite{WheelofEmotion}}
+	\includegraphics[width=4in]{PlutchikWheelOfEmotion.jpg}
 	\label{plutchikemotionwheel}
 \end{figure}
 
@@ -280,8 +280,9 @@ Figure \ref{valepoch} shows the change in validation accuracy by epoch, which is
 
 \begin{figure}[htb]
 	\centering
+	\caption{Validation Accuracy by Epoch}
 	\resizebox{4in}{!}{\input{validationbyepoch.tex}}
-	\caption{Validation Accuracy by Epoch}\label{valepoch}
+	\label{valepoch}
 \end{figure}
 \section{Positive and Negative Groups}
 
@@ -315,14 +316,16 @@ The accurate prediction of negative sentiment in review is important to companie
 		
  \begin{subfigure}{3in}
  	\centering
+ 	\caption{Primary Emotion Accuracy}
 	\resizebox{3in}{!}{\input{PrimaryEmotionDataResults.tex}}
-	\caption{Primary Emotion Accuracy}\label{primemresult}
+	\label{primemresult}
 \end{subfigure}
 \hfill
 \begin{subfigure}{3in}
 	\centering
+	\caption{Labeled Twitter Data Accuracy}
 	\resizebox{3in}{!}{\input{LabeledTwitterDataResults.tex}}
-	\caption{Labeled Twitter Data Accuracy} \label{lbtwitresult}
+	\label{lbtwitresult}
 \end{subfigure}
 \hfill
 \end{adjustwidth}
