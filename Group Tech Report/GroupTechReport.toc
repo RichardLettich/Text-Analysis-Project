@@ -48,6 +48,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.4}Mcdonalds Service Failure Sentiment Results}{17}{subsection.8.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Analysis}{17}{subsection.8.5}
+\contentsline {subsection}{\numberline {8.5}Analysis}{18}{subsection.8.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Conclusion}{18}{section.9}
+\contentsline {section}{\numberline {9}Conclusion}{20}{section.9}
