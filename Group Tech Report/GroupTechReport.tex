@@ -383,7 +383,9 @@ The results from Figure \ref{servfail} show that service failures are expressed 
 \label{servfail}
 
 \subsection{Analysis}
-Once we ran the Mcdonalds Service Failure data through our model we were able to develop a function which models the distribution of the service failures. Given in Figure (INSERT REF TO SENTIMENT DISTRIBUTION OF ALL SERVICE FAILURES) is a histogram showing the distribution of all the Service Failures combined. As we can see it is heavily right-skewed showing mostly negative sentiment, just as we would expect. The blue line shows the function which models the distribution 
+Once we ran the Mcdonalds Service Failure data through our model we were able to develop a function which models the distribution of the service failures. Given in Figure (INSERT REF TO SENTIMENT DISTRIBUTION OF ALL SERVICE FAILURES) is a histogram showing the distribution of all the Service Failures combined. As we can see it is heavily right-skewed showing mostly negative sentiment, just as we would expect. The blue line shows the function which models the distribution of the service failures. From this model we were able to calculate the Cumulative Distribution Function (CDF), essentially the area under the curve, or a function which gives the area under the curve for any value of $x$ (in this case $x$ is the positive sentiment score). For example, we want to know the percent of service failures that fall below a $0.4$ positive sentiment score, we can simply plug in $0$ to $0.4$ into the CDF and we will get the percentage! 
+
+Figure \ref{sentivfail} gives the function of the percent of Service Failures which fall under a certain positive sentiment score. So if we want to find $
 
 %\begin{figure}[htb]
 %	\centering
