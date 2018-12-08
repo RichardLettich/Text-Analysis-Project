@@ -50,7 +50,7 @@
   \makeatother%
   \begin{picture}(1,0.74789914)%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{drawing.pdf}}%
-    \put(0.15846384,0.48411621){\color[rgb]{0,0,0}\rotatebox{91.31986}{\makebox(0,0)[lt]{\begin{minipage}{0.23429008\unitlength}\raggedright English Text\\ \end{minipage}}}}%
+    \put(0.1334734,0.47156863){\color[rgb]{0,0,0}\rotatebox{91.31986}{\makebox(0,0)[lt]{\begin{minipage}{0.28331573\unitlength}\raggedright One Hot  Encoded Text\\ \end{minipage}}}}%
     \put(0.35294118,0.58823531){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\begin{minipage}{0.05042018\unitlength}\raggedright \end{minipage}}}%
     \put(0.34903812,0.38543115){\color[rgb]{0,0,0}\rotatebox{91.082072}{\makebox(0,0)[lb]{\smash{Embedding}}}}%
     \put(0.49799738,0.29159465){\color[rgb]{0,0,0}\rotatebox{89.903972}{\makebox(0,0)[lt]{\begin{minipage}{0.43697482\unitlength}\raggedright Single/Biderectinonal\\ LSTM\end{minipage}}}}%
