@@ -371,9 +371,16 @@ Figure \ref{compstat} displays some basic statistical analysis on each restauran
 \end{figure}
 
 
-\subsection{McDonalds Service Failure Sentiment Results}
+\subsection{Mcdonalds Service Failure Sentiment Results}
+
+The McDonalds Service failure is a labeled data set that contains just over $1500$ reviews. The reviews are of Mcdonalds restaurants in different locations around the United States. The Mcdonalds data set aims to classify reviews into different service failure categories. Service failures describe an instance when a customer at a given restaurant had an unsatisfactory experience due to something specific with either the food, staff, or location. An example might be a customer enters a restaurant and places an order, however it takes over fifteen minutes for the order was filled. This example would be of an Order Problem. The Mcdonalds data set has six different service failure classification groups, Bad Food, Order Problem, Scary McDs, Rude Service, Slow Service, and a category that contains No Service Failures (NA). 
+
+For the purposes of this project, we wanted to see how our model would classify the sentiment in each review. Figure \ref{servfail} gives the sentiment results of the six different Service Failure groups. As we can see, most of the groups contain negative sentiment, which is what we would expect. The NA group works as a control group, showing that our model doesn't just predict negative sentiment. Rather the NA group has almost a uniform distribution, neither overly positive or overly negative, it also contains a lot of middling sentiment (review that fall between $0.4$ and $0.6$ on the Positive Sentiment Score).
+
+The results from Figure \ref{servfail} show that service failures are expressed in text that contains negative sentiment. Knowing that a service failure will have highly negative sentiment tells businesses which comments they need to investigate. While it's important to know where a business is doing well, businesses are able to improve once they know where they are failing. Not only does this model tell a business which reviews they need to look at to find areas to improve, this model also speeds up the process. Most companies could just pay someone or multiple people to read through every review, tweet, yelp! post, and etc, but that is incredibly time consuming and expensive. A model that looks through all that text data and then tells you which texts contain the most important information saves time and money.  
 
 \input{meg_fail.tex}
+\label{servfail}
 
 \subsection{Analysis}
 
