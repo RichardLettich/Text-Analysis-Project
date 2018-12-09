@@ -2029,6 +2029,7 @@
     <bcf:citekey order="29">adam</bcf:citekey>
     <bcf:citekey order="30">rmsprop</bcf:citekey>
     <bcf:citekey order="31">adam</bcf:citekey>
+<<<<<<< HEAD
     <bcf:citekey order="32">adam</bcf:citekey>
     <bcf:citekey order="33">learn</bcf:citekey>
     <bcf:citekey order="34">learn</bcf:citekey>
@@ -2048,16 +2049,49 @@
     <bcf:citekey order="47">Keras.io</bcf:citekey>
     <bcf:citekey order="47">deep_bi</bcf:citekey>
     <bcf:citekey order="48">tensors</bcf:citekey>
+=======
+    <bcf:citekey order="32">gradient</bcf:citekey>
+    <bcf:citekey order="33">EMA</bcf:citekey>
+    <bcf:citekey order="34">adam</bcf:citekey>
+    <bcf:citekey order="35">tensorflow</bcf:citekey>
+    <bcf:citekey order="36">tensors</bcf:citekey>
+    <bcf:citekey order="37">knisely</bcf:citekey>
+    <bcf:citekey order="38">knisely</bcf:citekey>
+    <bcf:citekey order="39">Keras.io</bcf:citekey>
+    <bcf:citekey order="40">dropout_embedding</bcf:citekey>
+    <bcf:citekey order="41">dropout_embedding</bcf:citekey>
+    <bcf:citekey order="41">embed</bcf:citekey>
+    <bcf:citekey order="42">Keras.io</bcf:citekey>
+    <bcf:citekey order="42">deep_bi</bcf:citekey>
+    <bcf:citekey order="43">NeuralNet</bcf:citekey>
+    <bcf:citekey order="44">NeuralNet</bcf:citekey>
+    <bcf:citekey order="45">graves</bcf:citekey>
+    <bcf:citekey order="46">graves</bcf:citekey>
+    <bcf:citekey order="47">tensors</bcf:citekey>
+    <bcf:citekey order="47">tensorflow</bcf:citekey>
+    <bcf:citekey order="48">NeuralNet</bcf:citekey>
+>>>>>>> 22c790268f97147ee771595abe0f30d3278ff58c
     <bcf:citekey order="48">tensorflow</bcf:citekey>
     <bcf:citekey order="49">NeuralNet</bcf:citekey>
     <bcf:citekey order="50">NeuralNet</bcf:citekey>
     <bcf:citekey order="51">NeuralNet</bcf:citekey>
     <bcf:citekey order="52">NeuralNet</bcf:citekey>
+<<<<<<< HEAD
     <bcf:citekey order="53">lowriwilliams</bcf:citekey>
     <bcf:citekey order="54">LabeledTwitter</bcf:citekey>
     <bcf:citekey order="55">LabeledTwitter</bcf:citekey>
     <bcf:citekey order="56">lowriwilliams</bcf:citekey>
     <bcf:citekey order="57">LabeledTwitter</bcf:citekey>
+=======
+    <bcf:citekey order="53">NeuralNet</bcf:citekey>
+    <bcf:citekey order="54">NeuralNet</bcf:citekey>
+    <bcf:citekey order="55">NeuralNet</bcf:citekey>
+    <bcf:citekey order="56">lowriwilliams</bcf:citekey>
+    <bcf:citekey order="57">LabeledTwitter</bcf:citekey>
+    <bcf:citekey order="58">LabeledTwitter</bcf:citekey>
+    <bcf:citekey order="59">lowriwilliams</bcf:citekey>
+    <bcf:citekey order="60">LabeledTwitter</bcf:citekey>
+>>>>>>> 22c790268f97147ee771595abe0f30d3278ff58c
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
