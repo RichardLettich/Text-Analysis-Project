@@ -70,7 +70,7 @@ Machine Learning is the process of using a data set with known variables to crea
     The product of a supervised machine learning process is a model function which yield (a) predicted value(s) based on input data $x$. For the function to be built, prelabeled input data must be provided (i.e., pre produced sets of corresponding points, $(x,(f(x))$). While using $x$ and $f(x)$ oversimplifies the dimensionality of the input and outputs of the model, they will be continually used to explain machine learning conceptually.
 
 In this paper, we utilize a supervising machine learning algorithm broadly categorized by the label of stochastic gradient descent \cite{stoch}. The process is not fundamentally different to regression.  There is an algorithm which attempts to find optimal parameters \cite{regression} \footnote{while the parameter of our model $f(x)$ is $x$, this is \emph{not} the parameter we are addressing} for the function f(x) to yield the best prediction. In the context of supervised machine learning, this algorithm is called the optimizer. For instance, if the optimizer was trying to produce a linear regression model, 
-\[f(x) = mx + b, \] the optimizer’s goal would be to find the most ideal values of parameters $m$ and $b$. 
+\[f(x) = mx + b \], the optimizer’s goal would be to find the most ideal values of parameters $m$ and $b$. 
 
 While this task is not daunting for such a simple function, it becomes much more complex for larger models that may contain thousands of parameters. However, at the simplest level, the process involves three parts: the model $f(x)$ itself, an optimization algorithm $\alpha$,  and a loss function $\lambda$.
 
@@ -78,7 +78,7 @@ While this task is not daunting for such a simple function, it becomes much more
 \subsection{Loss function}
 
 The loss function denotes the error of the the predictions made by the model. It takes two parameters: the evaluation of our model at any given point($y_p$), and the actual value of the function at that given point, as provided by the input data set ($y$). A simple error function would be the distance from our prediction to what our actual value is
-\[\lambda(y,y_p) =  |y - y_p|. \] The vast majority of loss functions are not so naive, but the moral this moral explanation holds.
+\[\lambda(y,y_p) =  |y - y_p| \]. The vast majority of loss functions are not so naive, but the moral this moral explanation holds.
 
 
 \subsection{Optimizer function -- \textit{Stochastic gradient descent}}
@@ -172,6 +172,11 @@ Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labele
  
 \section{Methods}
 
+\subsection{Text Mining}
+The goal of this project is to implement a method which when given a bit of text will sort the text into one of the emotions categories. The first step in this project is to do some basic text mining. Text mining is the process of ``cleaning" a data set most raw data will contain punctuation, capitalizations, quotes, tenses, and much more \cite{TextMining}. For most text analysis, not all words are needed. Words like ``the", ``a", ``an", and others, known as ``stopwords", are not important to build a model which will assign emotion or predict a star rating \cite{TextMining}. 
+
+Once the data is clean, each sentence must be broken down into ``tokens". A token can be each sentence, each word, or even a set of words \cite{TextMining}. For this project each token represents a word in each sentence. 
+
 \subsection{Adam Optimizer}
 
 Building on it, the Adam could be viewed as the theoretical successor to RMSProp \cite{adam}. While RMSProp keeps an average square update velocity or `momentum'\cite{rmsprop}, Adam keeps a exponential moving or running average of update velocity squared to control the rate at which the gradient is descended, in which old values are decayed and outweighed by new values \cite{adam}. The original Adam paper justifies this as a `signal to noise ratio'.\cite{adam}.
@@ -244,15 +249,15 @@ Algorithm \ref{fig:adam_alg} gives a pseudo-code representation of the Adam opti
 
 \paragraph{Gradient Moving Average}
 The Adam optimizer does not just naively use the gradient itself, but instead smooths it using the exponential moving average as originally described by J. Stuart Hunter.\cite{EMA} This formula gives a much less noisy curve to descend, and helps prevent the optimizer from plateauing in local minima. Although used recursively here, a non recursive equivalent is given by
-\[m_t = \sum_{t=0}^{t_f} \left(1-\beta_1\right) \beta_1^{t_f-t}\nabla_\theta f\left(\theta_{t}\right)^2.\]
+\[m_t = \sum_{t=0}^{t_f} \left(1-\beta_1\right) \beta_1^{t_f-t}\nabla_\theta f\left(\theta_{t}\right)^2\].
 (Although purely semantic, in the original EMA formula, \(\beta_1\) and and \(\left(1-\beta_1\right)\) are switched.)
 
 \paragraph{Moving Variance}
 The moving variance is used to modulate the learning rate of the function, depending on how noisy the slope is. For an intuitive sense, 
 recall that standard deviation is given by
-\[\sigma = \sqrt{\sum \left(x_n - \bar{x}\right)^2}.\]
-If we replace \(x_n\) with \ \(\nabla_\theta f(\theta),\) and \(\bar{x}\) with a gradient of \(\vec{0}\), we get \footnote{\(f\left(\theta_{t}\right)^2 \implies \) component wise multiplication}
-\[\sigma = \sqrt{\sum \left(\nabla_\theta f(\theta)\right)^2}.\]
+\[\sigma = \sqrt{\sum \left(x_n - \bar{x}\right)^2}\].
+If we replace \(x_n\) with \ \(\nabla_\theta f(\theta)\), and \(\bar{x}\) with a gradient of \(\vec{0}\), we get \footnote{\(f\left(\theta_{t}\right)^2 \implies \) component wise multiplication}
+\[\sigma = \sqrt{\sum \left(\nabla_\theta f(\theta)\right)^2}\].
 Applying the same exponential moving average to this `variance from the zero gradient' yields a moving average in the same manner of the moving average of the gradient. Albeit, the variance is more conservative, as \(\beta_2\) is typically larger than \(\beta_1\)\cite{adam}.
 
 \subsection{Model Layers}
@@ -312,7 +317,7 @@ In the equation above \(W\) is our weight tensor, \(I\) is our input tensor, and
 Softmax is our activation function. It modifies our output to from a collection of two vectors  with arbitrary scaling of positive and negative correlation to a collection of two vectors that each add up to one. We do desire a probability for our predictions, but simply summing to one does not make this our output a probability in itself. However, combined with our loss function that optimizes for probabilities (as described in \cref{loss-section}), our outputs theoretically ought to  be one \cite{NeuralNet,tensorflow}.
 
 For any particular non normalized raw input \(r(x)\)  into the softmax function, with indices \(i=0\)  and \(i=1\) representing positive and negative sentiment respectively, the output would be \cite{NeuralNet}
-\[f(x)_i = \sigma(r(x))_i  = \frac{e^{r(x)_i}}{\sum_{k=0}^1 e^{r (x)_k}}.\]
+\[f(x)_i = \sigma(r(x))_i  = \frac{e^{r(x)_i}}{\sum_{k=0}^1 e^{r (x)_k}}\].
 \subsection{Dropout}
 Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout tested was between 20-50\% \cite{NeuralNet}.
 
@@ -323,9 +328,9 @@ As describe before, the loss function can be anything, it is used to find the ma
 \subsection{Cross-entropy Loss} \label{loss-section}
 As describe before, the loss function can be anything, and is used to find the magnitude of the error, and is used to descend the gradient. We used Cross-entropy loss, which is a measure the divergence between two probabilities. It yields how much information would be required to describe the distribution \(f(x)_{\text{act},i} \) in a encoding perfectly tuned for \(f(x)_i \) for all instances \(i\). Cross-entropy It is defined as \cite{NeuralNet}
 
-\[L = -\sum_{n=0}^i f(x)_{\text{act},n} \log f(x)_n.\] 
-For example, in a system where event \(f(x)_1\) never occurs, a perfect encoding would never allow for the possibility of expressing \(f(x)_1\), as that would translate to inefficiency. Logically the Cross-entropy loss for any actual occurrence (i.e. \(f(x)_{\text{act},1}= 1\)) of  event \(f(x)_1\) would be undefined,
-\[L = -1\cdot\log 0.\]
+\[L = -\sum_{n=0}^i f(x)_{\text{act},n} \log f(x)_n\]. 
+For example, in a system where event \(f(x)_1\) never occurs, a perfect encoding would never allow for the possibility of expressing \(f(x)_1\), as that would translate to inefficiency. Logically the Cross-entropy loss for any actual occurrence (i.e. \(f(x)_{\text{act},1}= 1\)) of  event \(f(x)_1\) would be undefined,.
+\[L = -1\cdot\log 0 \]
 We use this over some other loss function, such as root mean square error, because that we are trying to optimize the accuracy of our \textit{probability} prediction of sentiment being positive or negative. Thus, this method of measuring accuracy is more ideal in our case . 
 
 
@@ -334,7 +339,7 @@ For example, an insurance adjuster who accounts for no probability of a flood fo
 We have two probabilities, sentiment being positive or negative. If \(f(x)\) is our algorithms probability of the sentiment being positive, then the algorithm's prediction for the negative probability is \(1-f(x)\).
 
 Therefore our total loss for a single training example is
-\[L = - f(x)_\text{act} \log f(x) -\sigma -(1-f(x)_\text{act}) \log (1-f(x)).\]
+\[L = - f(x)_\text{act} \log f(x) -\sigma -(1-f(x)_\text{act}) \log (1-f(x))\].
 
 \subsection{LSTM Neural Networks} \label{lstm_sec}
 
@@ -343,7 +348,7 @@ For example, an insurance adjuster who accounts for no probability of a flood fo
 We have two  probabilities, sentiment of the comment being positive and sentiment of the comment being negative. Since they must add up to one, If \(f(x)\) is our algorithms probability of the sentiment being positive, then the algorithm's prediction for the negative probability is \(1-f(x)\).
 
 Therefore our total loss for a single training example is
-\[L = - f(x)_\text{act} \log f(x)  - (1-f(x)_\text{act}) \log (1-f(x)).\]
+\[L = - f(x)_\text{act} \log f(x)  - (1-f(x)_\text{act}) \log (1-f(x))\].
 
 
 \subsection{Validation Accuracy}
