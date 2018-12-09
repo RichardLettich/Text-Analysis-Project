@@ -1,20 +1,20 @@
 [0] Config.pm:302> INFO - This is Biber 2.11
 [0] Config.pm:305> INFO - Logfile is 'GroupTechReport.blg'
-[86] biber-darwin:313> INFO - === Sun Dec  9, 2018, 18:05:11
-[129] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
-[260] Biber.pm:857> INFO - Found 25 citekeys in bib section 0
-[282] Biber.pm:3976> INFO - Processing section 0
-[300] Biber.pm:4136> INFO - Looking for bibtex format file 'references.bib' for section 0
-[309] bibtex.pm:1500> INFO - LaTeX decoding ...
-[364] bibtex.pm:1316> INFO - Found BibTeX data source 'references.bib'
-[448] Utils.pm:193> WARN - month field 'Dec' in entry 'gradient' is not an integer - this will probably not sort properly.
-[576] Utils.pm:193> WARN - month field 'Dec' in entry 'knisely' is not an integer - this will probably not sort properly.
-[611] Utils.pm:193> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
-[612] Utils.pm:193> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
-[644] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[644] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[644] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[644] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
-[674] bbl.pm:617> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
-[688] bbl.pm:720> INFO - Output to GroupTechReport.bbl
-[688] Biber.pm:110> INFO - WARNINGS: 4
+[76] biber-darwin:313> INFO - === Sun Dec  9, 2018, 18:09:01
+[155] Biber.pm:371> INFO - Reading 'GroupTechReport.bcf'
+[285] Biber.pm:857> INFO - Found 25 citekeys in bib section 0
+[306] Biber.pm:3976> INFO - Processing section 0
+[344] Biber.pm:4136> INFO - Looking for bibtex format file 'references.bib' for section 0
+[353] bibtex.pm:1500> INFO - LaTeX decoding ...
+[406] bibtex.pm:1316> INFO - Found BibTeX data source 'references.bib'
+[481] Utils.pm:193> WARN - month field 'Dec' in entry 'gradient' is not an integer - this will probably not sort properly.
+[583] Utils.pm:193> WARN - month field 'Dec' in entry 'knisely' is not an integer - this will probably not sort properly.
+[616] Utils.pm:193> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[616] Utils.pm:193> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[648] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[648] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[649] Biber.pm:3804> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[649] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[693] bbl.pm:617> INFO - Writing 'GroupTechReport.bbl' with encoding 'UTF-8'
+[705] bbl.pm:720> INFO - Output to GroupTechReport.bbl
+[706] Biber.pm:110> INFO - WARNINGS: 4

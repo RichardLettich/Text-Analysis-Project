@@ -308,7 +308,7 @@ This method recurrence allows for the context of previous information to be used
 For a more in depth explanation of RNN and LSTM layers, see \textcite{NeuralNet} and \textcite{graves}.
 
 \subsubsection{Dense Layer}
-The Dense Layer is the final layer of the model. Our LSTM layer has 196 output cells, but we simply want a single number to define the sentiment of a comment.  The Dense layer takes every output from the (last) LSTM layer, and applies a transformation and shift based on what the Adam Optimizer found Ideal during training. It can be expressed as
+The Dense Layer is the final layer of the model. Our LSTM layer has 196 output cells, but we simply want a single number to define the sentiment of a comment.  The Dense layer takes every output from the (last) LSTM layer, and applies a transformation and shift based on what the Adam Optimizer found ideal during training. It can be expressed as
 \[ \text{Output} = \text{softmax(} W \cdot I + B ). \]
 In the equation above \(W\) is our weight tensor, \(I\) is our input tensor, and \(B\) is a bias tensor that simply shifts the output. While regular dot products are defined to always produce a scalar, tensor dot products produce a tensor who's rank is dependent on the ranks of its parent tensors. In our case, we get in a tensor of rank two, with dimensions of \(2\times b.\) The first index corresponds to either positive and or negative correlation of our input, and the second corresponds to the position any particular documents we inputted \cite{tensors, tensorflow}.
 
@@ -323,7 +323,7 @@ Dropout is a regularization technique for the Long Short Term Memory Neural Netw
 
 
 \subsection{Cross-entropy Loss} \label{loss-section}
-As describe before, the loss function can be anything, and is used to find the magnitude of the error, and is used to descend the gradient. We used Cross-entropy loss, which is a measure the divergence between two probabilities. It yields how much information would be required to describe the distribution \(f(x)_{\text{act},i} \) in a encoding perfectly tuned for \(f(x)_i \) for all instances \(i\). Cross-entropy It is defined as \cite{NeuralNet}
+As describe before, the loss function can be anything, and is used to find the magnitude of the error, and is used to descend the gradient. We used Cross-entropy loss, which is a measure the divergence between two probabilities. It yields how much information would be required to describe the distribution \(f(x)_{\text{act},i} \) in a encoding perfectly tuned for \(f(x)_i \) for all instances \(i\). Cross-entropy is defined as \cite{NeuralNet}
 
 \[L = -\sum_{n=0}^i f(x)_{\text{act},n} \log f(x)_n.\] 
 For example, in a system where event \(f(x)_1\) never occurs, a perfect encoding would never allow for the possibility of expressing \(f(x)_1,\) as that would translate to inefficiency. Logically the Cross-entropy loss for any actual occurrence (i.e. \(f(x)_{\text{act},1}= 1\)) of  event \(f(x)_1\) would be undefined,
@@ -337,7 +337,6 @@ We have two probabilities, sentiment being positive or negative. If \(f(x)\) is 
 
 Therefore our total loss for a single training example is
 \[L = - f(x)_\text{act} \log f(x) -\sigma -(1-f(x)_\text{act}) \log (1-f(x)).\]
-
 
 \subsection{Validation Accuracy}
 Figure \ref{valepoch} shows the change in validation accuracy by epoch, which is the number of times the model has seen the training data set, for a few different methods. We used both mono-directional and bi-directional neural nets with up to three hidden layers. As we can see, each method starts at approximately the same level of validation accuracy. The bidirectional method with two hidden layers appears to have the most consistent accuracy over the epochs; it levels off after five epochs without much fluctuation in validation accuracy. 
