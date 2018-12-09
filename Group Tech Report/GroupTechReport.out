@@ -16,13 +16,12 @@
 \BOOKMARK [3][-]{subsubsection.6.3.3}{Dense Layer}{subsection.6.3}% 16
 \BOOKMARK [2][-]{subsection.6.4}{Dropout}{section.6}% 17
 \BOOKMARK [2][-]{subsection.6.5}{Cross-entropy Loss}{section.6}% 18
-\BOOKMARK [2][-]{subsection.6.6}{LSTM Neural Networks}{section.6}% 19
-\BOOKMARK [2][-]{subsection.6.7}{Validation Accuracy}{section.6}% 20
-\BOOKMARK [1][-]{section.7}{Positive and Negative Groups}{}% 21
-\BOOKMARK [1][-]{section.8}{Results}{}% 22
-\BOOKMARK [2][-]{subsection.8.1}{Primary Emotion Data Results}{section.8}% 23
-\BOOKMARK [2][-]{subsection.8.2}{Labeled Twitter Data Results}{section.8}% 24
-\BOOKMARK [2][-]{subsection.8.3}{Unlabeled Raw Twitter Data Results}{section.8}% 25
-\BOOKMARK [2][-]{subsection.8.4}{McDonald's Service Failure Sentiment Results}{section.8}% 26
-\BOOKMARK [2][-]{subsection.8.5}{Analysis}{section.8}% 27
-\BOOKMARK [1][-]{section.9}{Conclusion}{}% 28
+\BOOKMARK [2][-]{subsection.6.6}{Validation Accuracy}{section.6}% 19
+\BOOKMARK [1][-]{section.7}{Positive and Negative Groups}{}% 20
+\BOOKMARK [1][-]{section.8}{Results}{}% 21
+\BOOKMARK [2][-]{subsection.8.1}{Primary Emotion Data Results}{section.8}% 22
+\BOOKMARK [2][-]{subsection.8.2}{Labeled Twitter Data Results}{section.8}% 23
+\BOOKMARK [2][-]{subsection.8.3}{Unlabeled Raw Twitter Data Results}{section.8}% 24
+\BOOKMARK [2][-]{subsection.8.4}{McDonald's Service Failure Sentiment Results}{section.8}% 25
+\BOOKMARK [2][-]{subsection.8.5}{Analysis}{section.8}% 26
+\BOOKMARK [1][-]{section.9}{Conclusion}{}% 27

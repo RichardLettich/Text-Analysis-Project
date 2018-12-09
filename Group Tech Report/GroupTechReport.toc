@@ -40,11 +40,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.4}Dropout}{12}{subsection.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5}Cross-entropy Loss}{12}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.5}Cross-entropy Loss}{13}{subsection.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.6}LSTM Neural Networks}{13}{subsection.6.6}
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.7}Validation Accuracy}{13}{subsection.6.7}
+\contentsline {subsection}{\numberline {6.6}Validation Accuracy}{13}{subsection.6.6}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7}Positive and Negative Groups}{14}{section.7}
 \defcounter {refsection}{0}\relax 
@@ -52,11 +50,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.1}Primary Emotion Data Results}{15}{subsection.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Labeled Twitter Data Results}{16}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.2}Labeled Twitter Data Results}{15}{subsection.8.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.3}Unlabeled Raw Twitter Data Results}{17}{subsection.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}McDonald's Service Failure Sentiment Results}{20}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.4}McDonald's Service Failure Sentiment Results}{18}{subsection.8.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.5}Analysis}{21}{subsection.8.5}
 \defcounter {refsection}{0}\relax 

@@ -312,6 +312,11 @@ The Dense Layer is the final layer of the model. Our LSTM layer has 196 output c
 \[ \text{Output} = \text{softmax(} W \cdot I + B ). \]
 In the equation above \(W\) is our weight tensor, \(I\) is our input tensor, and \(B\) is a bias tensor that simply shifts the output. While regular dot products are defined to always produce a scalar, tensor dot products produce a tensor who's rank is dependent on the ranks of its parent tensors. In our case, we get in a tensor of rank two, with dimensions of \(2\times b.\) The first index corresponds to either positive and or negative correlation of our input, and the second corresponds to the position any particular documents we inputted \cite{tensors, tensorflow}.
 
+Softmax is our activation function. It modifies our output to from a collection of two vectors  with arbitrary scaling of positive and negative correlation to a collection of two vectors that each add up to one. We do desire a probability for our predictions, but simply summing to one does not make this our output a probability in itself. However, combined with our loss function that optimizes for probabilities (as described in \cref{loss-section}), our outputs theoretically ought to  be one \cite{NeuralNet,tensorflow}.
+
+For any particular non normalized raw input \(r(x)\)  into the softmax function, with indices \(i=0\)  and \(i=1\) representing positive and negative sentiment respectively, the output would be \cite{NeuralNet}
+\[f(x)_i = \sigma(r(x))_i  = \frac{e^{r(x)_i}}{\sum_{k=0}^1 e^{r (x)_k}}.\]
+
 
 \subsection{Dropout}
 Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout tested was between 20-50\% \cite{NeuralNet}.
@@ -333,12 +338,6 @@ We have two probabilities, sentiment being positive or negative. If \(f(x)\) is 
 Therefore our total loss for a single training example is
 \[L = - f(x)_\text{act} \log f(x) -\sigma -(1-f(x)_\text{act}) \log (1-f(x)).\]
 
-\subsection{LSTM Neural Networks} \label{lstm_sec}
-
-Softmax is our activation function. It modifies our output to from a collection of two vectors  with arbitrary scaling of positive and negative correlation to a collection of two vectors that each add up to one. We do desire a probability for our predictions, but simply summing to one does not make this our output a probability in itself. However, combined with our loss function that optimizes for probabilities (as described in \cref{loss-section}), our outputs theoretically ought to  be one \cite{NeuralNet,tensorflow}.
-
-For any particular non normalized raw input \(r(x)\)  into the softmax function, with indices \(i=0\)  and \(i=1\) representing positive and negative sentiment respectively, the output would be \cite{NeuralNet}
-\[f(x)_i = \sigma(r(x))_i  = \frac{e^{r(x)_i}}{\sum_{k=0}^1 e^{r (x)_k}}.\]
 
 \subsection{Validation Accuracy}
 Figure \ref{valepoch} shows the change in validation accuracy by epoch, which is the number of times the model has seen the training data set, for a few different methods. We used both mono-directional and bi-directional neural nets with up to three hidden layers. As we can see, each method starts at approximately the same level of validation accuracy. The bidirectional method with two hidden layers appears to have the most consistent accuracy over the epochs; it levels off after five epochs without much fluctuation in validation accuracy. 
