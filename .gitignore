@@ -1,0 +1,10 @@
+
+*.aux
+*.blg
+*.log
+.DS_Store
+Group Tech Report/GroupTechReport.bcf
+Group Tech Report/GroupTechReport.bbl
+Group Tech Report/.DS_Store
+Group Tech Report/GroupTechReport.synctex.gz
+Group Tech Report/error_function-eps-converted-to.pdf

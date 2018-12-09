@@ -1,0 +1,551 @@
+\RequirePackage[english=usenglishmax]{hyphsubst}
+\documentclass[titlepage,letterpaper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[svgnames]{xcolor}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true]{microtype}
+\usepackage{graphicx}
+\usepackage{changepage}
+\usepackage{indentfirst}
+\usepackage{caption}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{comment}
+\usepackage{subcaption}
+\usepackage{pgfplots}
+\usepackage{floatpag}
+\pgfplotsset{compat=newest}
+\usepackage{mathtools}
+\usepackage{kantlipsum}
+\usepackage[sorting=none, backend = biber]{biblatex}
+\bibliography{references}
+\usepackage{attachfile}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{placeins}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1em}
+\usepackage{tabularx}
+\usepackage{cleveref}
+\usepackage[]{algorithm2e}
+\usepackage{wrapfig}
+\DeclareUnicodeCharacter{0301}{\'{e}}
+\graphicspath{{./}}
+\setlength{\parindent}{3em}
+\setlength{\parskip}{.75em}
+%opening
+\title{Sentiment Analysis in Text}
+\author{Richard Lettich, Carmen Gaver, Bryce Taylor, Mary Grace Oster}
+\date{Fall 2018}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\begin{abstract}
+This paper introduces an approach for how to predict sentiment from idioms and text using Long Short Term Memory (LSTM) Neural Networks. In general, the neural networks learn from loops and this allows the method to predict the correct sentiment with high success. Following an overview of LSTM Neural Networks, we show it's success rate on the Plutchik's Emotion data and Labeled Twitter data. After illustrating the models performance on the two data sets, a set of emotion labeled data according to Plutchik's wheel of emotion and a sample of emotion labeled Twitter data, we show how the model can be used on unlabeled Twitter data and a data set from McDonalds with labeled Service Failures. This paper concludes with how this model may be useful for businesses.\\
+\end{abstract}
+
+\section{Introduction}
+
+The goal of this project is to create a method which will accurately analyze a given text and predict the correct emotion which is expressed in the text. For many companies there is a high need for programs which can analyze a customer review and determine the appropriate underlying sentiment. Customer satisfaction plays a huge role in how companies compete. Novak, Sparl, and Azman explain how ``increased service quality positively influences customer satisfaction", which in turn leads to better financial results through increased customer loyalty \cite{BusinessCustomerSatisfaction}. Therefore companies need to know how well they are doing, how satisfied their customers are, where the company can improve, and much more.
+
+It should be stated that Chick-fil-A is a customer service oriented brand. They desire to potentially use the methods described in this analysis as part of a larger project to discover how emotion relates to restaurant reviews in online comments and customer perception of service failure.
+
+A spectrum of emotion (such as `satisfaction') would likely be best for this purpose. Since the goal is to determine which service failures and successes cause the strongest customer emotions and predict the former using the latter, it would be best to rank the emotion quantitatively. Determining that long wait times make people unhappy would provide no novel information, but being able to say that people become an order of magnitude more upset over one service failure than another would be beneficial as a tool of analysis. In addition, a spectrum of satisfaction would allow for better predictive capability when being used as a component of another analysis \cite{lowriwilliams}.
+
+Secondly, it would be ideal to have a confidence value for the emotional prediction. If this sentiment analysis is used as part of another meta-tool, being able to provide an estimate of confidence would allow the meta-tool to weigh the sentiment analysis appropriately with its other variables.
+
+Succinctly, we can define our desired result as follows: for a given snippet of text, give a numerical rating on a spectrum of a single (or possibly multiple) emotions along with an associated confidence score for this rating. To accomplish this goal, we use machine learning. 
+
+\section{Machine Learning}
+
+Machine Learning is the process of using a data set with known variables to create an algorithm which will predict a response variable \cite{Statlearning}. There are a variety of different machine learning methods, such as Quadratic Discriminant Analysis, Neural Networks, Ridge Regression, Logistic Regression, and much more \cite{Statlearning}. In this data set each sentence has an assigned emotion so the method will be a supervised learning method \cite{Statlearning}. Simply put a supervised learning method uses a data set which has both the predictor variable and the response variable to create an algorithm to predict the response variable \cite{Statlearning}. In this situation, the predictor variables are the sentences and response variables are the emotions associated with each sentence \cite{Statlearning}. 
+
+    The product of a supervised machine learning process is a model function which yield (a) predicted value(s) based on input data $x$. For the function to be built, prelabeled input data must be provided (i.e., pre produced sets of corresponding points, $(x,(f(x))$). While using $x$ and $f(x)$ oversimplifies the dimensionality of the input and outputs of the model, they will be continually used to explain machine learning conceptually.
+
+In this paper, we utilize a supervising machine learning algorithm broadly categorized by the label of stochastic gradient descent \cite{stoch}. The process is not fundamentally different to regression.  There is an algorithm which attempts to find optimal parameters \cite{regression} \footnote{while the parameter of our model $f(x)$ is $x$, this is \emph{not} the parameter we are addressing} for the function f(x) to yield the best prediction. In the context of supervised machine learning, this algorithm is called the optimizer. For instance, if the optimizer was trying to produce a linear regression model, 
+\[f(x) = mx + b \], the optimizer’s goal would be to find the most ideal values of parameters $m$ and $b$. 
+
+While this task is not daunting for such a simple function, it becomes much more complex for larger models that may contain thousands of parameters. However, at the simplest level, the process involves three parts: the model $f(x)$ itself, an optimization algorithm $\alpha$,  and a loss function $\lambda$.
+
+
+\subsection{Loss function}
+
+The loss function denotes the error of the the predictions made by the model. It takes two parameters: the evaluation of our model at any given point($y_p$), and the actual value of the function at that given point, as provided by the input data set ($y$). A simple error function would be the distance from our prediction to what our actual value is
+\[\lambda(y,y_p) =  |y - y_p|. \] The vast majority of loss functions are not so naive, but the moral this moral explanation holds.
+
+
+\subsection{Optimizer function -- \textit{Stochastic gradient descent}}
+
+In this paper, we use the \textit{Adam} optimizer \cite{adam}, which is a tuned up version of stochastic gradient descent optimization \cite{adam}. As it name alludes, stochastic gradient descent (SGD) optimizes the model function by descending the gradient of the loss function. 
+
+Before explaining what that means, it should be known that SGD optimizers assumes  that if the loss function is smooth and continuous \textit{enough}, we are able to smooth it out, and the same rules of calculus still apply \cite{adam}.
+
+From this, if we take any point on the loss function, we are able to extrapolate that if we modify our parameters \(p\) (where $p = [m, b,...]$), in the direction opposite of the gradient of the loss function with respect those parameters ($\frac{\partial\lambda}{\partial p}$), we would be able to continuously re-evaluate and lower our error until we reach a gradient near zero, indicating we hypothetically found our optimal model parameters.
+
+What does that mean? To illustrate simply, if we let $f(x)_{\text{act}}$ represent our actual data point, our loss function can be rewritten as 
+\begin{align}
+\lambda &=  |f(x)_{\text{act}} - f(x)| \nonumber\\
+&= | f(x)_{\text{act}} -  (mx + b)\label{eq1}|
+\end{align}
+for any particular point $x$ in our data set, and its corresponding $f(x)_{\text{act}}$. If we were to modify  $m$  and graph it versus the error $\lambda$, we would see the resulting graph \cref{fig:m_vs_error}. 
+
+SGD based optimizer functions find the gradient of graph \cref{fig:m_vs_error} with respect to the optimization parameters (just $\frac{\partial\lambda}{\partial m}$ in this case) \cite{learn}. From this, they are able to accurately guess new parameters ($m$) in the direction of the gradient, which will provide a lower error for our particular test \(x\) and \(f(x)\) pair. 
+
+This process is iterative, and the change in the parameter per iteration is called step size. Too large of a step size, and the new parameter could `overshoot'. For instance, if our $m$ was too small, `overshooting' would lead to the error being too large.
+
+
+\begin{wrapfigure}{r}[.35in]{1.5in}
+	\vspace*{-.8in}
+	\centering
+\caption{ \(m\) vs. Error}
+\label{fig:m_vs_error}
+\def\svgwidth{1.5 in}
+\input{m_v_error.pdf_tex}
+\end{wrapfigure}
+
+\subsection{Caveats}
+Of course, the model isn't as simple as linear regression. With hundreds of thousands to millions of possible data points, some are bound to disagree on how to adjust parameters. In addition, not all critical points where minima occur are absolute minima, possibly leading to the optimizer  getting `stuck' in a local minima. Sometimes optimizers have issues `settling' in the lowest valley, often requiring lower learning rates \cite{adaprop}. Going in the direction opposite the gradient isn't rocket science. The differences between SGD optimizers mainly concern how to work around these caveats while navigating the $\lambda$ graph \cite{adaprop,adam,rmsprop,moment}.
+
+\section{Sentiment Analysis}
+%Transition Needed$
+
+In this project, ``sentiment analysis, also referred to as opinion mining, aims to automatically extract and classify sentiments, opinions, and emotions expressed in text" is performed on the Primary Emotion Data created by Lowri Williams \cite{lowriwilliams}. The purpose of Primary Emotion data set is to show the use-fullness of idioms in determining the emotion expressed in a given text. For example, an idiom might be ``we'd fight like cats and dogs"; from this sentence we can deduce that whomever is speaking would have awful fights with someone else \cite{lowriwilliams}. The labeled sentences were determined by contributors examining the sentences and rating their emotional content based on Plutchik's Wheel of Emotions and polarity categories (discussed in more detail below) \cite{lowriwilliams}. Sentiment classification problems often use polarity categories to represent and classify sentiment \cite{lowriwilliams}. Sentiment polarity can be positive, negative, and neutral. An example of sentiment polarity in the data is given by ``Mr.Jones was grinning from ear to ear"; that is a positive idiom; ``I was bored to tears at work today" is a negative statement. After deciding on the polarity, it is very simple to then pick an emotion for the sentence \cite{lowriwilliams}. 
+
+\section{Plutchik's Wheel of Emotion}
+
+Plutchik's Wheel of Emotion, (\cref{plutchikemotionwheel}), has eight basic emotions including joy, trust, fear, surprise, sadness, disgust, anger, and anticipation. Each of the eight emotions has three levels of activation represented by color boldness, the inner circle of emotions are the most intense while the outer circle of emotions are least intense. The emotion space is represented so that combinations of basic emotions derive secondary emotions. For example: joy+trust=love, anger+anticipation=aggression \cite{plutchik2001nature}. The Primary Emotion Data we use in this project has emotions from the middle of each leaf, the combinations emotions, and categories ``Neutral" and ``Ambiguous" \cite{lowriwilliams}.
+
+\begin{figure}[ht]
+	\centering
+	\caption{Plutchiks Wheel of Emotion \cite{WheelofEmotion}}
+	\includegraphics[width=4in]{PlutchikWheelOfEmotion.jpg}
+	\label{plutchikemotionwheel}
+\end{figure}
+
+\section{Primary Emotion Data}
+Table \ref{PrimaryEmotionTable} gives a few examples of the sentences and labeled emotions in the data set which we will call the Primary Emotion data. The Primary Emotion data set contains around $2425$ emotion labeled sentences. For this project the data will be used to develop a model which, when given a text, will assign an emotion to the text. 
+ 
+ \begin{center}
+ 	\captionof{table}{Primary Emotion Data}
+ 	\begin{tabular}{ |c|c| } 
+ 		\hline
+ 		Emotion & Sentence \\
+ 		\hline \hline
+ 		Neutral & Don't let him pick a fight now, we're almost home. \\
+ 		\hline
+ 		Optimism &  You must sink your differences. \\
+ 		\hline
+ 		Aggression & We'd fight like cat and dog.  \\ 
+ 		\hline
+ 		Disgust & For God's sake bury the hatchet. \\
+ 		\hline
+ 	\end{tabular}
+ 	\label{PrimaryEmotionTable}
+ \end{center}
+
+ 
+ Williams hypothesized that the use of idioms in sentiment analysis would increase the accuracy of predicting the correct emotion or category \cite{lowriwilliams}. Figure \ref{topsixgroups} shows a bar plot of the top six emotion groups, ranked by most frequently appearing groups in the data set. The emotion group ``Neutral" occurs the most, it comprises just over $20$ percent of the data set. 
+ 
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width = 4.2in]{TopSixGroup1.png}
+% 	\caption{Barplot of Frequency of Top Six Emotions in Primary Emotion Data}
+% 	\label{TopSixGroup1}
+% \end{figure}
+ 
+
+ \begin{figure}[htb]
+		\centering
+ 		\caption{Frequency of Top Six Emotion Groups in the Primary Emotion Data}
+ 		\input{TopSixGroup1.tex}
+ 		\label{topsixgroups}
+ \end{figure}
+ 	
+ %\clearpage
+ 
+\section{Methods}
+
+\subsection{Text Mining}
+The goal of this project is to implement a method which when given a bit of text will sort the text into one of the emotions categories. The first step in this project is to do some basic text mining. Text mining is the process of ``cleaning" a data set most raw data will contain punctuation, capitalizations, quotes, tenses, and much more \cite{TextMining}. For most text analysis, not all words are needed. Words like ``the", ``a", ``an", and others, known as ``stopwords", are not important to build a model which will assign emotion or predict a star rating \cite{TextMining}. 
+
+Once the data is clean, each sentence must be broken down into ``tokens". A token can be each sentence, each word, or even a set of words \cite{TextMining}. For this project each token represents a word in each sentence. 
+
+\subsection{Adam Optimizer}
+
+Building on it, the Adam could be viewed as the theoretical successor to RMSProp \cite{adam}. While RMSProp keeps an average square update velocity or `momentum'\cite{rmsprop}, Adam keeps a exponential moving or running average of update velocity squared to control the rate at which the gradient is descended, in which old values are decayed and outweighed by new values \cite{adam}. The original Adam paper justifies this as a `signal to noise ratio'.\cite{adam}.
+
+While theoretically superior, it is sometimes beat out by other optimizers, even its parent optimizer RMSProp. However, the differences are small, and most deficits can be removed by adjusting hyper-parameters. Adam, being theoretically advanced and generally performing well in empirical testing, was chosen as the optimizer for this project. We decisively stuck with it as a matter of practicality \cite{learn}. In this project, our model averaged from ten to twenty minutes to fully train. Hence, we chose to focus on developing one optimizer well, as optimizer to optimizer performance among top contenders don't dramatically differ \cite{learn}.
+
+Algorithm \ref{fig:adam_alg} gives a pseudo-code representation of the Adam optimizer. Refer to Table \cref{fig:adam_table} for an explanation of the components and notation in the description of the optimizer \cite{adam}.
+
+\begin{table}[]
+	\begin{adjustwidth}{-1in}{-1in}
+		\centering
+		\caption{Glossary of notation used in Adam optimizer}
+		\label{fig:adam_table}
+		\begin{tabular}{lll}
+			\hline
+			& \textbf{Description}                                                   & \textbf{Elaboration}                                                                                                                                                                                                                                               \\ \hline
+			\multicolumn{1}{|l}{$f(x)$}    & Objective function                                                     & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}The term to be minimized. This is not the model function.\\ If $g(x)$ is the function we wish to optimize, and $\lambda$ is\\ our loss function, $f(x) = \lambda \circ g(x)$. See eq. 1 \\ for clarification\end{tabular}} \\ \hline
+			\multicolumn{1}{|l}{$\alpha$}  & Step Size                                                              & \multicolumn{1}{l|}{Size of increment of change of parameters per $t$.}                                                                                                                                                                                            \\ \hline
+			\multicolumn{1}{|l}{$t$}       & Time                                                                   & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Integer value to keep track of iteration of optimizer.\\ Pragmatically, the iterator variable of the optimizer for loop.\end{tabular}}                                                                              \\ \hline
+			\multicolumn{1}{|l}{$\odot$}   & Component-Wise Multiplication                                          & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}$[a,b,c, ..] \odot [d, e,f,...] = [ad,be,cf,...]$, When a non\\ scalar $n$ value is raised to a power $p$, it implies\\  $n \odot n^{p-1}$\end{tabular}}                                                                      \\ \hline
+			\multicolumn{1}{|l}{$m_t$}     & Moment  Estimation                                                     & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Moving average of gradient -- a smoothed version of\\ the gradient function. Defined by first moment of \\ gradient.\end{tabular}}                                                                                  \\ \hline
+			\multicolumn{1}{|l}{$v_t$}     & Variance Estimation                                                    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Variance of gradient function as defined by second\\  moment of gradient.\end{tabular}}                                                                                                                             \\ \hline
+			\multicolumn{1}{|l}{$\theta$}  & \begin{tabular}[c]{@{}l@{}}Parameters of Model\\ Function\end{tabular} & \multicolumn{1}{l|}{Parameters of model. Earlier denoted $p$ and $m$.}                                                                                                                                                                                             \\ \hline
+			\multicolumn{1}{|l}{$g_t$}     & Gradient                                                               & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Gradient with respect to optimization parameters. \\ Earlier denoted  $\frac{\partial \lambda}{\partial p}$, more appropriately denoted $\nabla_\theta f(\theta)$\end{tabular}}                                   \\ \hline
+			\multicolumn{1}{|l}{$\beta_1$} & Decay rate of $m_t$                                                    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Multiplied by previous $m_t$ each iteration($t$),  \\ and determines how long back to find average gradient.\\ \\ Acceptable range [0,1), Default .9\end{tabular}}                                                                           \\ \hline
+			\multicolumn{1}{|l}{$\beta_2$} & Decay rate of $v_t$                                                    & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Multiplied by previous $v_t$ each iteration($t$), \\ and determines how long back to calculate moving variance.  \\ \\ Acceptable range: [0,1), Default .999\end{tabular}}                                                                           \\ \hline
+		\end{tabular}
+	\end{adjustwidth}
+\end{table}
+
+\newcommand{\assn}{\mathrel{{:}{=}}}
+
+\begin{algorithm}[]
+	\KwData{$\theta_0$, $f(x)$ (initial function parameters, unoptimized objective function), }
+	\textbf{Initialize variables}:
+	$\{m_0,V_0,t\} = 0$\;
+	\vspace{3.5mm}
+	\While{\text{model is not fitted}}{
+		\begin{align*}
+		t &\assn t +  1\\ 
+		g_t &\assn \nabla_\theta f\left(\theta_{t-1}\right)\;  \hspace{2mm} \text{Find actual gradient. }\\
+		m_t &\assn \beta_1 m_{t-1} + (1-\beta_1)g_t\\
+		&\text{Assign new gradient moving average, where previous} \\
+		&\text{gradients have weight} \frac{\beta_1}{1} \\
+		v_t &\assn \beta_2 m_{t-1} + (1-\beta_1)g_t^2 \\
+		&\text{Assign a new moving variance estimation in the same manner,}\\
+		&\text{but instead using } \beta_2\\
+		\widehat{m_t} &\assn \frac{m_t}{1-\beta_1^t}\\
+		\widehat{v_t} &\assn \frac{v_t}{1-\beta_2^t}\\
+		&\text{Bias results from where we initiated } v_t \text{ with zero. The last two}\\
+		&\text{statements correct that bias. See Adam paper.}\\
+		\theta_t &\assn \theta_{t-1} - \alpha\frac{ \widehat{m_t}}{\sqrt{v_t} + \epsilon}\\
+		& \text{Update the parameters going in the opposite direction of our new}\\
+		& \text{calculated gradient average. Weigh update by dividing by } \sqrt{\widehat{v_t}}, \\
+		& \text{(more noise, lower effective step size.)}
+		\end{align*}
+	}
+	\vspace{3.5mm}
+	\caption{Pseudo-code representation of Adam optimizer. The $\mathrel{{:}{=}}$ ligature  represents assignment.}
+	\label{fig:adam_alg}
+\end{algorithm}
+
+\subsubsection{Further Comments on Components}
+
+%Richard, Dr. Joyner doesn't think this paragraph flows with the rest of the paper, do you think you could maybe add a transition or something here?
+
+%Dr. Joyner could be having a problem with this paragraph because it's appearing between the algorithm and the table explaining the algorithm..
+
+\paragraph{Gradient} - The gradient of a function $\nabla_\theta f(\theta)$ evaluated at point $\theta$ is by definition the direction of steepest ascent at point $\theta$. We use this, as we are trying to reduce our inaccuracy/loss by moving in the direction of steepest \textit{descent} \mbox{(i.e. $-\nabla_\theta f(\theta).$)} \cite{gradient} 
+
+\paragraph{Gradient Moving Average}
+The Adam optimizer does not just naively use the gradient itself, but instead smooths it using the exponential moving average as originally described by J. Stuart Hunter.\cite{EMA} This formula gives a much less noisy curve to descend, and helps prevent the optimizer from plateauing in local minima. Although used recursively here, a non recursive equivalent is given by
+\[m_t = \sum_{t=0}^{t_f} \left(1-\beta_1\right) \beta_1^{t_f-t}\nabla_\theta f\left(\theta_{t}\right)^2.\]
+(Although purely semantic, in the original EMA formula, \(\beta_1\) and and \(\left(1-\beta_1\right)\) are switched.)
+
+\paragraph{Moving Variance}
+The moving variance is used to modulate the learning rate of the function, depending on how noisy the slope is. For an intuitive sense, 
+recall that standard deviation is given by
+\[\sigma = \sqrt{\sum \left(x_n - \bar{x}\right)^2}.\]
+If we replace \(x_n\) with \ \(\nabla_\theta f(\theta)\), and \(\bar{x}\) with a gradient of \(\vec{0}\), we get \footnote{\(f\left(\theta_{t}\right)^2 \implies \) component wise multiplication}
+\[\sigma = \sqrt{\sum \left(\nabla_\theta f(\theta)\right)^2}.\]
+Applying the same exponential moving average to this `variance from the zero gradient' yields a moving average in the same manner of the moving average of the gradient. Albeit, the variance is more conservative, as \(\beta_2\) is typically larger than \(\beta_1\)\cite{adam}.
+
+\subsection{Model Layers}
+
+Although earlier referred to as the objective function, the predictive model is not actually a single function, but instead a composition of functions. Each element function is henceforth referred to as a layer. Diagrammed in \cref{layers}, our model is composed of three main layers: an embedding layer, a single or multiple (Bi-)LSTM layer(s), and a dense output layer.
+
+Data is transported through the layers in tensors\cite{tensorflow}. Tensors are a generalization of linear algebra, matrices and vectors to higher dimensions. The essentials are that, a rank zero tensor is a scalar, a rank one tensor is a vector, rank two is a matrix, and three is a `three dimensional' matrix, and so on \cite{tensors}. 
+
+\begin{figure}[h]
+	\centering
+	\caption{Model Layers with Data Flow and Back Propagation of Updates \cite{knisely}}
+	\label{layers}
+	\def\svgwidth{3.5in}
+	\input{drawing.pdf_tex}
+\end{figure}
+
+
+
+
+\subsubsection{Embedding Layer}
+
+The embedding layer takes one hot encoded texts, and returns a collection of words, and yields a tensor composed of 128 dimensional vectors, each of which represents a single word. While it would have been possible to use one hot encoded tensors directly, using an embedding layer has a couple of unique advantages \cite{Keras.io}. Namely, rather than representing words in a discrete manner (i.e. enumeration), the words are viewable on a continuous spectrum \cite{dropout_embedding}.  
+
+Just as with the other layers, when in training, the inner workings (parameters) of this layer may change. This gives our model the ability of choosing how to represent the words as it sees ideal. Rather than each just being portrayed by a label, the model is able to place the words in a vector-space \cite{embed}. This can yield additional information to later layers. For example, it could be possible that semantically similar words would be placed close together, allowing for one to gain benefit from information learned about the other.\cite{dropout_embedding,embed}
+
+
+ \subsubsection{LSTM Layer(s)}
+
+The LSTM layer is the brains of the model.
+
+While a single LSTM neural networks is only illustrated in \cref{layers},  two bidirectional LSTM layers were used in when developing a model for the Primary emotion data. This change inspired an increase of approximately five percent validation accuracy. This is not surprising, as historically, multiple Bidirectional LSTM has shown better results than single layer standard LSTMs \cite{Keras.io,deep_bi}. 
+
+However, for the Labeled Twitter Dataset, changing from a single-layer single-directional LSTM to any number of bidirectional layers  only lowered performance,  and increasing time to convergence.  We hypothesize this may be due to Twitter's character count limit, resulting in tweets being less semantically complex than other text documents.
+
+LSTM Neural nets, or Long Short Term Memory Neural Networks are type of recurrent neural network (RNN). RNNs are designed for processing sequentially organized data. In our case this is text. Keeping \(\theta\) as our training parameter, and \(x_n\) as the \( n^\text{th}\) term in our sequential `array', the change of `state' \(s\) of information of a RNN can be described as follows  \cite{NeuralNet}.
+
+\begin{algorithm}[]
+	\[n \mathrel{{:}{=}} 0\] 
+	\While{\(n \leq \text{last}\)}{
+		\begin{align*}
+		n &\mathrel{{:}{=}} n+ 1 \\
+		s^{(n)}(f(),x,\theta) &\mathrel{{:}{=}}  f(s^{(n-1)}(...), x_n, \theta)
+		\end{align*}	
+	}
+\end{algorithm}
+
+This method recurrence allows for the context of previous information to be used process later information, and allows learning to be shared among states, as the parameters for all states are the same. Moreover, bidirectional neural networks allow information from both directions, allow for context from words later on and previously in a sentence.
+For a more in depth explanation of RNN and LSTM layers, see \textcite{NeuralNet} and \textcite{graves}.
+
+\subsubsection{Dense Layer}
+The Dense Layer is the final layer of the model. Our LSTM layer has 196 output cells, but we simply want a single number to define the sentiment of a comment.  The Dense layer takes every output from the (last) LSTM layer, and applies a transformation and shift based on what the Adam Optimizer found ideal during training. It can be expressed as
+\[ \text{Output} = \text{softmax(} W \cdot I + B ). \]
+In the equation above \(W\) is our weight tensor, \(I\) is our input tensor, and \(B\) is a bias tensor that simply shifts the output. While regular dot products are defined to always produce a scalar, tensor dot products produce a tensor who's rank is dependent on the ranks of its parent tensors. In our case, we get in a tensor of rank two, with dimensions of \(2\times b.\) The first index corresponds to either positive and or negative correlation of our input, and the second corresponds to the position any particular documents we inputted \cite{tensors, tensorflow}.
+
+Softmax is our activation function. It modifies our output to from a collection of two vectors  with arbitrary scaling of positive and negative correlation to a collection of two vectors that each add up to one. We do desire a probability for our predictions, but simply summing to one does not make this our output a probability in itself. However, combined with our loss function that optimizes for probabilities (as described in \cref{loss-section}), our outputs theoretically ought to  be one \cite{NeuralNet,tensorflow}.
+
+For any particular non normalized raw input \(r(x)\)  into the softmax function, with indices \(i=0\)  and \(i=1\) representing positive and negative sentiment respectively, the output would be \cite{NeuralNet}
+\[f(x)_i = \sigma(r(x))_i  = \frac{e^{r(x)_i}}{\sum_{k=0}^1 e^{r (x)_k}}.\]
+
+
+\subsection{Dropout}
+Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout tested was between 20-50\% \cite{NeuralNet}.
+
+
+\subsection{Cross-entropy Loss} \label{loss-section}
+As describe before, the loss function can be anything, and is used to find the magnitude of the error, and is used to descend the gradient. We used Cross-entropy loss, which is a measure the divergence between two probabilities. It yields how much information would be required to describe the distribution \(f(x)_{\text{act},i} \) in a encoding perfectly tuned for \(f(x)_i \) for all instances \(i\). Cross-entropy is defined as \cite{NeuralNet}
+
+\[L = -\sum_{n=0}^i f(x)_{\text{act},n} \log f(x)_n.\] 
+For example, in a system where event \(f(x)_1\) never occurs, a perfect encoding would never allow for the possibility of expressing \(f(x)_1,\) as that would translate to inefficiency. Logically the Cross-entropy loss for any actual occurrence (i.e. \(f(x)_{\text{act},1}= 1\)) of  event \(f(x)_1\) would be undefined,
+\[L = -1\cdot\log 0.\]
+We use this over some other loss function, such as root mean square error, because that we are trying to optimize the accuracy of our \textit{probability} prediction of sentiment being positive or negative. Thus, this method of measuring accuracy is more ideal in our case . 
+
+
+For example, an insurance adjuster who accounts for no probability of a flood for a 20 year period, when there is in fact a 1\% probability has made a much worse prediction than one who accounts for 5\% probability of flooding when there really is a 6\% chance. The root mean square error does not distinguish between these cases \cite{NeuralNet}.
+
+We have two probabilities, sentiment being positive or negative. If \(f(x)\) is our algorithms probability of the sentiment being positive, then the algorithm's prediction for the negative probability is \(1-f(x)\).
+
+Therefore our total loss for a single training example is
+\[L = - f(x)_\text{act} \log f(x) -\sigma -(1-f(x)_\text{act}) \log (1-f(x)).\]
+
+\subsection{Validation Accuracy}
+Figure \ref{valepoch} shows the change in validation accuracy by epoch, which is the number of times the model has seen the training data set, for a few different methods. We used both mono-directional and bi-directional neural nets with up to three hidden layers. As we can see, each method starts at approximately the same level of validation accuracy. The bidirectional method with two hidden layers appears to have the most consistent accuracy over the epochs; it levels off after five epochs without much fluctuation in validation accuracy. 
+
+\begin{figure}[htb]
+	\centering
+	\caption{Validation Accuracy by Epoch}
+	\resizebox{4in}{!}{\input{validationbyepoch.tex}}
+	\label{valepoch}
+\end{figure}
+
+\section{Positive and Negative Groups}
+
+For this project, we first ran our method on Primary Emotion Data \cite{lowriwilliams}, then we ran it on a sample of labeled Twitter data \cite{LabeledTwitter}, to determine if the method would work on both sets of data and accurately predict the underlying emotion of a text. In both cases the data was broken into two groups, positive and negative. Once the data was labeled as positive and negative, the data was then split into a training set and a testing or validation set. Next the data goes through the LSTM method which is programmed to go through each element of the data set and learn the appropriate response variable. In this project the LSTM network loops through each sentence and the corresponding emotion category and then continues through each sentence. This LSTM network learns the proportion of each emotion category. Once the LSTM network has gone through the entire training data set, it will predict the emotion in the test data set. The model will predict the same proportion of positive sentiment from the test set as is represented in the training data set, and the model will do the same for negative sentiment. 
+
+\section{Results}
+
+\subsection{Primary Emotion Data Results}
+The Primary Emotion Data positive group contained the categories joy, love, optimism, trust, and awe; in the negative group we have anger, disgust, sadness, aggression, contempt, disapproval, and remorse. The rest of the emotion groups are disregarded since they do not fall into either positive or negative categorizations.
+
+The results using the predictive model on the training set, which was made up of $80$ percent of the data, was an accuracy of approximately $89$ percent. The testing set was composed of the remaining $20$ percent of the data and had an accuracy of $74$ percent. The gap in the training and testing accuracy suggests that the method is over-fitting to  the training set. Put more simply, the method is learning the patterns in the training data set rather than learning the overall dynamics of the data. Consequently the method can accurately predict the training set, but it makes less accurate predictions for data it has not yet seen.
+
+Figure \ref{primemresult} shows a barplot of both positive and negative predictions for the Primary Emotion Data testing set. The light blue shows the percent of correct predictions for both categories. The dark blue bar indicates the percent of False Negatives, or sentences which should have been classified as positive for the positive bar, or negative in the negative bar. For the Primary Emotion data the model is most accurately predicting the positive emotions; meanwhile it isn't doing quite as well with the negative emotion group. We would prefer more accuracy in the prediction of negative sentiment. 
+
+The accurate prediction of negative sentiment in review is important to companies so they can know which areas they need to improve. A big part of that process is finding out where the company is going wrong with the customer. This information is found in reviews from the customer, whether through some social media website, Yelp!, or reviews posted directly to the company. At some point the company is going to see the comment, tweet, or review and have to analyze it. However a problem with this is the volume of reviews a company, especially a big chain restaurant will receive. A model like the one developed in this project could go through a large set of reviews and tell the company which reviews should be examined more closely, or which reviews are potentially the most important. In other words, the model used in this project could tell a company which reviews are the most negative and should be investigated further.   
+
+%\begin{figure}[h!]
+%	\center
+%	\includegraphics[width = 3.5in]{BarPlotPrimaryResults.png}
+%	\caption{Barplot of Results of Primary Emotion Data, Positive and Negative Categories}
+%	\label{bpprimem}
+%\end{figure}
+
+%\begin{subfigure}[]{6cm} \centering \resizebox{\linewidth}{!}{\input{chick.tex} }  \caption{} \label{fig:chicktt} \end{subfigure
+		
+\begin{figure}[]
+	\hfill
+	\vspace*{-1in}
+	\centering
+	\begin{adjustwidth}{-.75in}{-.75in}
+		
+ \begin{subfigure}{3in}
+ 	\centering
+ 	\caption{Primary Emotion Accuracy}
+	\resizebox{3in}{!}{\input{PrimaryEmotionDataResults.tex}}
+	\label{primemresult}
+\end{subfigure}
+\hfill
+\begin{subfigure}{3in}
+	\centering
+	\caption{Labeled Twitter Data Accuracy}
+	\resizebox{3in}{!}{\input{LabeledTwitterDataResults.tex}}
+	\label{lbtwitresult}
+\end{subfigure}
+\hfill
+\end{adjustwidth}
+\caption{Testing Accuracy Of Training Data Sets}\label{duo_chart}
+\end{figure}
+\subsection{Labeled Twitter Data Results}
+
+The sampled Twitter data was collected by Figure Eight \cite{LabeledTwitter} and consists of about $40,000$ tweets, assigned emotion, and user identification. There are some cases of multiple tweets from the same person. The emotion categories are empty, sadness, enthusiasm, neutral, worry, love, fun, hate, happiness, surprise, and boredom. The twitter data was split into positive and negative categories, where the positive category contains the emotion groups enthusiasm, love, and happiness, and the negative category contains the emotion groups sadness and hate. The other emotions are ignored since they do not fall into completely positive or negative categories. 
+
+ \begin{center}
+	\captionof{table}{Labeled Twitter Data}
+	\begin{tabular}{ |c|c| } 
+		\hline
+		Emotion & Tweet \\
+		\hline \hline
+		happiness & mmm much better day... so far! it's still quite\\
+		 & early. last day of uds \\
+		\hline
+		worry &  sucks not being able to take days off of work or \\
+		& have the money to take the trip  so sad \\
+		\hline
+		hate & dammit! hulu desktop has totally screwed up my ability \\
+		& to talk to a particular port on one of our dev servers. \\
+		& so i can't watch and code  \\ 
+		\hline
+		love & @RobertF3 correct! I ADORE him. I just plucked him up \\ 
+		& and put him under my arm cuz he was cryin.  All better now! \\ & Hahaha \\
+		\hline
+	\end{tabular}
+	\label{McdonaldsServiceFailureTable}
+\end{center}
+
+The training set contained $90$ percent of the data and had an accuracy of $82.3$ percent. The testing set contained the remaining $10$ percent of the data and had an accuracy of $83.3$ percent. The testing accuracy was actually higher than the training accuracy and both values were very close which indicates the method was not over-fitting to the training data. We note that the testing set of the Labeled Twitter data contained a higher percentage of the Labeled Twitter data compared to the testing set of the Primary Emotion data since the Labeled Twitter data is a much bigger data set, and $10$ percent of the data was more than an adequate size for testing set. 
+
+Figure \ref{lbtwitresult} gives a barplot containing the results of the testing accuracy for the Twitter data; again there is a bar for both the negative and positive results. The light green shows the percent of correct predictions for each group. The dark green bar shows the percent of false negatives for each group. In other words, the percent of sentences that should have been predicted to be positive in the positive bar, or negative in the negative bar. 
+ barplot we can see that the model is doing a great job of predicting negative sentiment in the Twitter data but not quiet as well when predicting the positive sentiment. However the percent of correctly predicted positive sentiment for the Twitter data is about the same as the percent of correctly predicted positive sentiment in the Primary Emotion data. Most companies want to know which areas they are succeeding in, but they also need to know in which areas they can improve. If the model can accurately find negative sentiment in a tweet or a comment, we can then make recommendations based on that output about which reviews the company should be taking more seriously. 
+
+%\begin{figure}[h!]
+%	\centering
+%	\includegraphics[width = 3.5in]{BarPlotTwitterResults.png}
+%	\caption{Barplot of Results of Twitter Data, Positive and Negative Categories}
+%\end{figure}
+
+
+\subsection{Unlabeled Raw Twitter Data Results}
+
+\input{meg.tex}
+\label{twitmeg}
+
+For the next step in this project we tested our model on a few different sets of raw unlabeled twitter data. The data sets were tweets at a few different restaurants. We chose Panera, Taco Bell, Chick-Fil-A, and Pal's (a local chain). The model was trained on the labeled twitter data, then was applied to a set of the raw twitter data and outputted a percent positive score, between $0$ and $1$, with a score of $0$ indicating negative sentiment and a score of $1$ indicating positive sentiment. Figure \ref{twitmeg} shows the distribution of positive sentiment scores for the various restaurants in the Unlabeled Twitter data.
+
+A look at Panera's result (\cref{fig:Paneratt}) reveals that the model predicted mostly positive responses. This is not surprising, Panera has a good reputation for great food and customer service. Obviously there are some less positive or negative reviews, but the majority of the reviews are positive. From figure \cref{fig:palstt} we can see the majority of Pal's tweets have a positive sentiment score, which is good. This histogram is not as heavily skewed as the Panera histogram, so there may be slightly more negative tweets as compared to Panera, but overall Pal's is doing well from the customers tweets. In figure \cref{fig:tacott} we see that Taco Bell again is mostly in the positive score range, but the histogram does even off around $.06$. Overall it would appear that Taco Bell is meeting customer expectations. We also looked at Chipotle \cref{fig:Chipotlett}, which as we can is is pretty negative, this could be due to many factors. Finally we look at the results for Chick-Fil-A. From figure \cref{fig:chicktt} we see a high percentage of tweets with positive sentiment. This tells us that Chick-Fil-A is doing well overall. They are meeting customers expectations. They do have some negative tweets, just as the previous restaurants do, but that is to be expected. No business is perfect, so some less than positive reviews are bound to occur. It is interesting to note that there are not as many middling positive tweets, or tweets that fall in the middle of the graph. 
+
+Figure \ref{compstat} displays some basic statistical analysis on each restaurant from the raw unlabeled Twitter data. The red bar gives the proportion of positive reviews which were over $0.5$ on the positive sentiment score, the blue bar gives the mean positive sentiment score, and the purple bar shows the median positive sentiment score for each restaurant. As we can see most of the restaurants are positive, each of the bars falls over $0.5$ in this bar graph. The only two exceptions are Chipotle and Comcast, which both have means that are higher than their medians. This is not surprising since we know that a mean will be pulled toward the outliers. Panera appears to have the most positive statistics of the restaurants, with a median score of $0.8$. 
+
+\begin{figure}[]
+	\centering
+	\caption{Statistical Comparison of Twitter Restaurants}
+	\input{comparison.tex}
+	\label{compstat}
+\end{figure}
+
+
+\subsection{McDonald's Service Failure Sentiment Results}
+
+The McDonald's Service failure is a labeled data set that contains just over $1500$ reviews. The reviews are of Mcdonald's restaurants in different locations around the United States. The McDonald's data set aims to classify reviews into different service failure categories. Service failures describe an instance when a customer at a given restaurant had an unsatisfactory experience due to something specific with either the food, staff, or location. An example might be a customer enters a restaurant and places an order, however it's over fifteen minutes before the order is filled. This would be an example of an Order Problem. The McDonald's data set has six different service failure classification groups, Bad Food, Order Problem, Scary McDs (a scary restaurant), Rude Service, Slow Service, and a category that contains No Service Failures (NA). Table \cref{McdonaldsServiceFailureTable} gives a few examples of the McDonald's Service Failure data. 
+
+
+ \begin{center}
+	\captionof{table}{Mcdonalds Service Failure Data}
+	\centering
+	\begin{tabular}{ |c|c| } 
+		\hline
+		Service Failure & Review \\
+		\hline \hline
+		na & I see I'm not the only one giving 1 star. \\
+		 & Only because there is not a -25 Star!!! \\
+		  & That's all I need to say! \\
+		\hline
+		SlowServiceScaryMcDs &  25 minutes in drive through line. \\
+		& Gunshots from the apartments behind. \\
+		& Worst McDonald's ever! \\
+		\hline
+		RudeService & Disorganized. Didn't even get to order. \\
+		& Employees were hanging out with friends out front.  \\ 
+		\hline
+		BadFood & So horrible no matter what time of day it is, \\
+		& you'll always get food that has \\ 
+		& been prepared so messy. \\
+		\hline
+	\end{tabular}
+	\label{McdonaldsServiceFailureTable}
+\end{center}
+
+For the purposes of this project, we wanted to see how our model would classify the sentiment in each review. Figure \ref{servfail} gives the sentiment results of the six different Service Failure groups. As we can see, most of the groups contain negative sentiment, which is what we would expect. The NA group works as a control group, showing that our model doesn't just predict negative sentiment. Rather the NA group has almost a uniform distribution, neither overly positive or negative, it also contains a lot of middling sentiment (review that fall between $0.4$ and $0.6$ on the Positive Sentiment Score).
+
+The results from Figure \ref{servfail} show that service failures are expressed in text that contains negative sentiment. Knowing that a service failure will have highly negative sentiment tells businesses which comments they need to investigate. While it's important to know where a business is doing well, businesses are able to improve once they know where they are failing. Not only does this model tell a business which reviews they need to look at to improve, this model also speeds up the process. Most companies could just pay someone or multiple people to read through every review, tweet, yelp! post, and etc, but that is incredibly time consuming and labor intensive. A model that looks through all that text data and then tells you which texts contain the most important information saves both time and money.  
+
+
+\input{meg_fail.tex}
+%\label{servfail}
+% Label Must be done in meg_fail.tex file. I switched it for you
+% see file for sub label refrences
+
+
+
+\subsection{Analysis}
+
+
+\begin{figure}[]
+	\caption{\ }\label{filler}
+	\floatpagestyle{empty}
+		\vspace*{-1.6in}
+		\begin{adjustwidth*}{-1in}{-1in}
+\begin{subfigure}{16cm}
+\caption{Sentiment Distribution of All Service failures}
+\label{all}
+\input{all.tex}
+\end{subfigure}
+
+\begin{subfigure}{16cm}
+		\centering
+		\caption{Sentiment Vs. Cumulative Service Failure Occurrence}
+		\label{sentivfail}
+		\input{senti_v_fail.tex}
+\end{subfigure}
+
+\begin{subfigure}{16cm}
+		\centering
+		\caption{Required Comments to view Catch  Service Failures}
+		\label{sentichick}
+		\input{senti_req_chick.tex}
+\end{subfigure}
+	\end{adjustwidth*}
+\end{figure}
+
+
+Once we ran the Mcdonalds Service Failure data through our model we were able to develop a function which models the distribution of the service failures. Given in \cref{all} is a histogram showing the distribution of all the Service Failures combined. As we can see it is heavily right-skewed showing mostly negative sentiment, just as we would expect. The blue line shows the function which models the distribution of the service failures. From this model we were able to calculate the Cumulative Distribution Function (CDF), essentially the area under the curve, or a function which gives the area under the curve for any value of $x$ (in this case $x$ is the positive sentiment score). For example, we want to know the percent of service failures that fall below a $0.4$ positive sentiment score, we can simply plug in $0$ to $0.4$ into the CDF and we will get the percentage.
+
+Figure \ref{sentivfail} gives the function of the percent of Service Failures which fall under a certain positive sentiment score. So if we want to find $80$ percent of all Service Failure reviews, we simply need to look at all reviews that fall under the $0.4$ positive sentiment score. 
+
+Figure \ref{sentichick} shows the positive sentiment scores that contain the desired percentage of Service Failures. The red line models the Chick-Fil-A Twitter distribution. While this method of determining the amount of Service Failures within a specific positive sentiment score assumes that Mcdonalds service failures are similar to Chick-Fil-A Service Failures, which may not be the case, this is more simply a proof of concept for how this data and model could be used to help businesses improve.  
+
+\section{Conclusion}
+This project developed a model which when given a bit of text, predicted the underlying emotion. The model was trained on one of two data sets, either the Primary Emotion Data \cite{lowriwilliams} or the Labeled Twitter data \cite{LabeledTwitter}. The model was tested for accuracy on both the Primary Emotion and Labeled Twitter Data, while our method performed better on the Labeled Twitter data, overall its performance exceeded our expectations. Once the model was fully developed and tested, we ran the model on two unlabeled data sets. First we scraped Twitter for tweets at various restaurants and ran that data through the model. The results of the unlabeled Twitter data showed that most of the restaurants such as, Panera, Taco Bell, and Pal's, contained mostly positive tweets. To test that our model was not biased or just predicting positive sentiment all of the time, we ran tweets at Comcast through the model. The results for Comcast (\cref{fig:comcast}) were mostly negative, as we expected, which shows that the model is not unduly biased and does predict negative sentiment. 
+
+The final data set we ran through our model was McDonald's Service Failure data. The purpose was to determine the underlying sentiment in those reviews. The data was labeled with several Service Failures, we ran each category through the model and again got the expected negative results. The McDonalds data did contain one category labeled ``NA" for no service failures, this category had results that were uniform across the positive sentiment score. The NA group served as a control group for the McDonalds data ensuring that the model was not only predicting negative sentiment. 
+
+Given the results of each data set we were able to develop a function which modeled the distribution of the Service Failure data. Given that function we then found the CDF which enabled us to show the percentage of Service Failures that fall under a given positive sentiment score. With this information we were able to recommend which reviews or tweets are most urgent and contain the most information for improvement of a business. The use of this model for a business would allow that business to not only learn which areas needs improvement, but  would also provide this information quickly and accurately.
+
+The possible business applications of a model like this are numerous. Businesses in the United States perform in a competitive market of customers. With reviews on social media and other sites consumers can easily find the ideal business to meet their needs. These same reviews can also help the business to analyze where they are struggling, where they are succeeding, and how to improve. For businesses, quicker improvement times lead to better customer loyalty and in turn greater profits.   
+
+
+
+\clearpage 
+
+\printbibliography
+
+\end{document}
