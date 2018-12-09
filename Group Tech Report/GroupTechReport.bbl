@@ -854,6 +854,33 @@
       \field{title}{Neural Networks and Deep Learning}
       \field{year}{2015}
     \endentry
+    \entry{graves}{book}{}
+      \name{author}{1}{}{%
+        {{hash=dfca94b0427da7f9088af596e23b46c0}{%
+           family={Graves},
+           familyi={G\bibinitperiod},
+           given={Alex},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{dfca94b0427da7f9088af596e23b46c0}
+      \strng{fullhash}{dfca94b0427da7f9088af596e23b46c0}
+      \strng{bibnamehash}{dfca94b0427da7f9088af596e23b46c0}
+      \strng{authorbibnamehash}{dfca94b0427da7f9088af596e23b46c0}
+      \strng{authornamehash}{dfca94b0427da7f9088af596e23b46c0}
+      \strng{authorfullhash}{dfca94b0427da7f9088af596e23b46c0}
+      \field{sortinit}{4}
+      \field{sortinithash}{11cdaee3b18e01d77f3f428b13c1fc76}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Stud Comput Intell}
+      \field{month}{01}
+      \field{title}{Supervised Sequence Labelling with Recurrent Neural Networks}
+      \field{volume}{385}
+      \field{year}{2012}
+      \verb{doi}
+      \verb 10.1007/978-3-642-24797-2
+      \endverb
+    \endentry
     \entry{LabeledTwitter}{data}{}
       \list{publisher}{1}{%
         {Figure Eight}%
