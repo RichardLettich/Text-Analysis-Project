@@ -14,13 +14,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4}Plutchik's Wheel of Emotion}{4}{section.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5}Primary Emotion Data}{5}{section.5}
+\contentsline {section}{\numberline {5}Primary Emotion Data}{4}{section.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Methods}{6}{section.6}
+\contentsline {section}{\numberline {6}Methods}{5}{section.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Text Mining}{6}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.1}Text Mining}{5}{subsection.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.2}Term Frequency Matrix}{7}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.2}Term Frequency Matrix}{6}{subsection.6.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.3}Adam Optimizer}{7}{subsection.6.3}
 \defcounter {refsection}{0}\relax 
@@ -38,7 +38,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {6.4.2}LSTM Layer(s)}{11}{subsubsection.6.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.4.3}Dense Layer}{12}{subsubsection.6.4.3}
+\contentsline {subsubsection}{\numberline {6.4.3}Dense Layer}{11}{subsubsection.6.4.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.5}Dropout Technique}{12}{subsection.6.5}
 \defcounter {refsection}{0}\relax 
@@ -48,18 +48,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.8}Validation Accuracy}{13}{subsection.6.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Positive and Negative Groups}{14}{section.7}
+\contentsline {section}{\numberline {7}Positive and Negative Groups}{13}{section.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Results}{15}{section.8}
+\contentsline {section}{\numberline {8}Results}{14}{section.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Primary Emotion Data Results}{15}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.1}Primary Emotion Data Results}{14}{subsection.8.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.2}Labeled Twitter Data Results}{15}{subsection.8.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.3}Unlabeled Raw Twitter Data Results}{17}{subsection.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}Mcdonalds Service Failure Sentiment Results}{18}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.4}Mcdonalds Service Failure Sentiment Results}{19}{subsection.8.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Analysis}{21}{subsection.8.5}
+\contentsline {subsection}{\numberline {8.5}Analysis}{20}{subsection.8.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Conclusion}{23}{section.9}
+\contentsline {section}{\numberline {9}Conclusion}{22}{section.9}
