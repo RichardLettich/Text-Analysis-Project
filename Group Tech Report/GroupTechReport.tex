@@ -333,7 +333,7 @@ For example, an insurance adjuster who accounts for no probability of a flood fo
 We have two probabilities, sentiment being positive and sentiment negative. If \(f(x)\) is our algorithms probability of the sentiment being positive, then the algorithm's prediction for the negative probability is \(1-f(x)\).
 
 Therefore our total loss for a single training example is
-\[L = - f(x)_\text{act} \log f(x) -\sigma -(1-f(x)_\text{act}) \log (1-f(x))\].
+\[L = - f(x)_\text{act} \log f(x)  - (1-f(x)_\text{act}) \log (1-f(x))\].
 \subsection{LSTM Neural Networks} \label{lstm_sec}
 
 \subsection{Validation Accuracy}
