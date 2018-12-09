@@ -242,7 +242,7 @@ While theoretically superior, it is sometimes beat out by other optimizers, even
 	\vspace{3.5mm}
 \end{algorithm}
 \cite{adam}
-\subsubsection{Component Breakdown}
+\subsubsection{Further Comments on Components}
 
 %Richard, Dr. Joyner doesn't think this paragraph flows with the rest of the paper, do you think you could maybe add a transition or something here?
 
@@ -288,11 +288,10 @@ Just as with the other layers, when in training, the inner workings (parameters)
 
 
  \subsubsection{LSTM Layer(s)}
-<<<<<<< HEAD
+
 The LSTM layer is the brains of the model, which is explained in greater detail in \cref{lstem_sec}.
-=======
-The LSTM layer is brains of the model. 
->>>>>>> 22c790268f97147ee771595abe0f30d3278ff58c
+
+
 
 While a single LSTM neural networks is only illustrated in \cref{layers},  two bidirectional LSTM layers were used in when developing a model for the Primary emotion data. This change inspired an increase of approximately five percent validation accuracy. This is not surprising, as historically, multiple Bidirectional LSTM has shown better results than single layer standard LSTMs \cite{Keras.io,deep_bi}. 
 
@@ -318,31 +317,28 @@ The Dense Layer is the final layer of the model. Our LSTM layer has 196 output c
 \[ \text{Output} = \text{softmax(} W \cdot I + B ) \].
 In the equation above \(W\) is our weight tensor, \(I\) is our input tensor, and \(B\) is a bias tensor that simply shifts the output. While regular dot products are defined to always produce a scalar, tensor dot products produces a tensor who's rank is dependent on the ranks of its parent tensors. In our case, we get in a tensor of rank two, with dimensions of \(2\times b\) . The first index corresponds to either positive and or negative correlation of our input, and the second corresponds to the position any particular documents we inputted. \cite{tensors, tensorflow}
 
-<<<<<<< HEAD
 \subsection{Dropout Technique}
-=======
+
 Softmax is our activation function. It modifies our output to from a collection of two vectors  with arbitrary scaling of positive and negative correlation to a collection of two vectors that each add up to one. We do desire a probability for our predictions, but simply summing to one does not make this our output a probability in itself. However, combined with our loss function that optimizes for probabilities (as described in \cref{loss-section}), our outputs theoretically ought to  be one \cite{NeuralNet,tensorflow}.
 
 For any particular non normalized raw input \(r(x)\)  into the softmax function, with indices \(i=0\)  and \(i=1\) representing positive and negative sentiment respectively, the output would be \cite{NeuralNet}
 \[f(x)_i = \sigma(r(x))_i  = \frac{e^{r(x)_i}}{\sum_{k=0}^1 e^{r (x)_k}}\].
 \subsection{Dropout}
->>>>>>> 22c790268f97147ee771595abe0f30d3278ff58c
 Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{NeuralNet}.
 
-<<<<<<< HEAD
 \subsection{Cross-entropy Loss}
 As describe before, the loss function can be anything, it is used to find the magnitude of the error, and to descend the gradient. We used Cross-entropy loss, which is a measure the divergence between two probabilities. It yields how much information would be required to transmit the distribution \(f(x)_{\text{act},i} \) in a system perfectly tuned for \(f(x)_i \) for all instances \(i\). Cross-entropy It is defined as \cite{NeuralNet}
 
-=======
+
 \subsection{Cross-entropy Loss} \label{loss-section}
 As describe before, the loss function can be anything, and is used to find the magnitude of the error, and is used to descend the gradient. We used Cross-entropy loss, which is a measure the divergence between two probabilities. It yields how much information would be required to describe the distribution \(f(x)_{\text{act},i} \) in a encoding perfectly tuned for \(f(x)_i \) for all instances \(i\). Cross-entropy It is defined as \cite{NeuralNet}
->>>>>>> 22c790268f97147ee771595abe0f30d3278ff58c
+
 \[L = -\sum_{n=0}^i f(x)_{\text{act},n} \log f(x)_n\]. 
 For example, in a system where event \(f(x)_1\) never occurs, a perfect encoding would never allow for the possibility of expressing \(f(x)_1\), as that would translate to inefficiency. Logically the Cross-entropy loss for any actual occurrence (i.e. \(f(x)_{\text{act},1}= 1\)) of  event \(f(x)_1\) would be undefined,.
 \[L = -1\cdot\log 0 \]
 We use this over some other loss function, such as root mean square error, because that we are trying to optimize the accuracy of our \textit{probability} prediction of sentiment being positive or negative. Thus, this method of measuring accuracy is more ideal in our case . 
 
-<<<<<<< HEAD
+
 For example, an insurance adjuster who accounts for no probability of a flood for a 20 year period, when there is in fact a 1\% probability has made a much worse prediction than one who accounts for 5\% probability of flooding when there really is a 6\% chance. The root mean square error does not distinguish between these cases \cite{NeuralNet}.
 
 We have two probabilities, sentiment being positive or negative. If \(f(x)\) is our algorithms probability of the sentiment being positive, then the algorithm's prediction for the negative probability is \(1-f(x)\).
@@ -351,14 +347,14 @@ Therefore our total loss for a single training example is
 \[L = - f(x)_\text{act} \log f(x) -\sigma -(1-f(x)_\text{act}) \log (1-f(x))\].
 
 \subsection{LSTM Neural Networks} \label{lstm_sec}
-=======
+
 For example, an insurance adjuster who accounts for no probability of a flood for a 20 year period, when there is in fact a 1\% probability has made a much worse prediction than one who accounts for 5\% probability of flooding when there really is a 6\% chance. The root mean square error does not distinguish between these cases. Although abstract, one of the most elegant explanations of Cross-entropy loss is as a measure of surprise. \cite{NeuralNet}
  
 We have two  probabilities, sentiment of the comment being positive and sentiment of the comment being negative. Since they must add up to one, If \(f(x)\) is our algorithms probability of the sentiment being positive, then the algorithm's prediction for the negative probability is \(1-f(x)\).
 
 Therefore our total loss for a single training example is
 \[L = - f(x)_\text{act} \log f(x)  - (1-f(x)_\text{act}) \log (1-f(x))\].
->>>>>>> 22c790268f97147ee771595abe0f30d3278ff58c
+
 
 \subsection{Validation Accuracy}
 Figure \ref{valepoch} shows the change in validation accuracy by epoch, which is the number of times the model has seen the training data set, for a few different methods. We used both mono-directional and bi-directional neural nets with up to three hidden layers. As we can see each method starts at approximately the same level of validation accuracy. The bidirectional method with two hidden layers appears to have the most consistent accuracy over the epochs; it levels off after five epochs without much fluctuation in validation accuracy. 
