@@ -319,6 +319,21 @@ In the equation above \(W\) is our weight tensor, \(I\) is our input tensor, and
 Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from overfitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{NeuralNet}.
 Dropout is a regularization technique for the Long Short Term Memory Neural Networks. It is a new approach that randomly picks neurons to be dropped from the training network \cite{NeuralNet}. Those neurons are completely neglected. The goal of using this approach is to keep the neural network from over-fitting to the training set. The dropout rate that is used and experimented with is between 20-50\% \cite{NeuralNet}.
 
+\subsection{Cross-entropy Loss}
+As describe before, the loss function can be anything, and is used to find the magnitude of the error, and is used to descend the gradient. We used Cross-entropy loss, which is a measure the divergence between two probabilities. It yields how much information would be required to transmit the distribution \(f(x)_{\text{act},i} \) in a system perfectly tuned for \(f(x)_i \) for all instances \(i\). Cross-entropy It is defined as \cite{NeuralNet}
+
+\[L = -\sum_{n=0}^i f(x)_{\text{act},n} \log f(x)_n\]. 
+
+For example, in a system where event \(f(x)_1\) never occurs, a perfect encoding would never allow for the possibility of expressing \(f(x)_1\), as that would translate to inefficiency. Logically the Cross-entropy loss for any actual occurrence (i.e. \(f(x)_{\text{act},1}= 1\)) of  event \(f(x)_1\) would be undefined,.
+\[L = -1\cdot\log 0 \]
+We use this over some other loss function, such as root mean square error, because that we are trying to optimize the accuracy of our \textit{probability} prediction of sentiment being positive or negative. Thus, this method of measuring accuracy is more ideal in our case . 
+
+For example, an insurance adjuster who accounts for no probability of a flood for a 20 year period, when there is in fact a 1\% probability has made a much worse prediction than one who accounts for 5\% probability of flooding when there really is a 6\% chance. The root mean square error does not distinguish between these cases.
+
+We have two probabilities, sentiment being positive and sentiment negative. If \(f(x)\) is our algorithms probability of the sentiment being positive, then the algorithm's prediction for the negative probability is \(1-f(x)\).
+
+Therefore our total loss for a single training example is
+\[L = - f(x)_\text{act} \log f(x) -\sigma -(1-f(x)_\text{act}) \log (1-f(x))\].
 \subsection{LSTM Neural Networks} \label{lstm_sec}
 
 \subsection{Validation Accuracy}
