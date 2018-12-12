@@ -2039,3 +2039,49 @@
     <bcf:citekey order="39">tensorflow</bcf:citekey>
     <bcf:citekey order="40">tensors</bcf:citekey>
     <bcf:citekey order="41">knisely</bcf:citekey>
+    <bcf:citekey order="42">Keras.io</bcf:citekey>
+    <bcf:citekey order="43">dropout_embedding</bcf:citekey>
+    <bcf:citekey order="44">embed</bcf:citekey>
+    <bcf:citekey order="45">dropout_embedding</bcf:citekey>
+    <bcf:citekey order="45">embed</bcf:citekey>
+    <bcf:citekey order="46">Keras.io</bcf:citekey>
+    <bcf:citekey order="46">deep_bi</bcf:citekey>
+    <bcf:citekey order="47">NeuralNet</bcf:citekey>
+    <bcf:citekey order="48">NeuralNet</bcf:citekey>
+    <bcf:citekey order="49">NeuralNet</bcf:citekey>
+    <bcf:citekey order="50">graves</bcf:citekey>
+    <bcf:citekey order="51">graves</bcf:citekey>
+    <bcf:citekey order="52">tensors</bcf:citekey>
+    <bcf:citekey order="52">tensorflow</bcf:citekey>
+    <bcf:citekey order="53">NeuralNet</bcf:citekey>
+    <bcf:citekey order="53">tensorflow</bcf:citekey>
+    <bcf:citekey order="54">NeuralNet</bcf:citekey>
+    <bcf:citekey order="55">NeuralNet</bcf:citekey>
+    <bcf:citekey order="56">NeuralNet</bcf:citekey>
+    <bcf:citekey order="57">NeuralNet</bcf:citekey>
+    <bcf:citekey order="58">NeuralNet</bcf:citekey>
+    <bcf:citekey order="59">lowriwilliams</bcf:citekey>
+    <bcf:citekey order="60">LabeledTwitter</bcf:citekey>
+    <bcf:citekey order="61">LabeledTwitter</bcf:citekey>
+    <bcf:citekey order="62">McDonalds</bcf:citekey>
+    <bcf:citekey order="63">McDonalds</bcf:citekey>
+    <bcf:citekey order="64">lowriwilliams</bcf:citekey>
+    <bcf:citekey order="65">LabeledTwitter</bcf:citekey>
+  </bcf:section>
+  <!-- SORTING TEMPLATES -->
+  <bcf:sortingtemplate name="none">
+    <bcf:sort order="1">
+      <bcf:sortitem order="1">citeorder</bcf:sortitem>
+    </bcf:sort>
+  </bcf:sortingtemplate>
+  <!-- DATALISTS -->
+  <bcf:datalist section="0"
+                name="none/global//global/global"
+                type="entry"
+                sortingtemplatename="none"
+                sortingnamekeytemplatename="global"
+                labelprefix=""
+                uniquenametemplatename="global"
+                labelalphanametemplatename="global">
+  </bcf:datalist>
+</bcf:controlfile>
