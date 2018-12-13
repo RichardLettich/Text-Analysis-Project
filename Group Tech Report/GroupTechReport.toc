@@ -6,7 +6,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.1}Loss function}{2}{subsection.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2}Optimizer function -- \textit {Stochastic gradient descent}}{3}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.2}Optimizer function -- \textit {Stochastic gradient descent}}{2}{subsection.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.3}Caveats}{3}{subsection.2.3}
 \defcounter {refsection}{0}\relax 
@@ -22,40 +22,40 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.2}Adam Optimizer}{6}{subsection.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.2.1}Further Comments on Components}{7}{subsubsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.1}Further Comments on Components}{9}{subsubsection.6.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Gradient}{7}{section*.7}
+\contentsline {paragraph}{Gradient}{9}{section*.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Gradient Moving Average}{7}{section*.8}
+\contentsline {paragraph}{Gradient Moving Average}{9}{section*.9}
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Moving Variance}{7}{section*.9}
+\contentsline {paragraph}{Moving Variance}{9}{section*.10}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.3}Model Layers}{10}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.3}Model Layers}{9}{subsection.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.3.1}Embedding Layer}{11}{subsubsection.6.3.1}
+\contentsline {subsubsection}{\numberline {6.3.1}Embedding Layer}{10}{subsubsection.6.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.3.2}LSTM Layer(s)}{11}{subsubsection.6.3.2}
+\contentsline {subsubsection}{\numberline {6.3.2}LSTM Layer(s)}{10}{subsubsection.6.3.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.3.3}Dense Layer}{12}{subsubsection.6.3.3}
+\contentsline {subsubsection}{\numberline {6.3.3}Dense Layer}{11}{subsubsection.6.3.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4}Dropout}{13}{subsection.6.4}
+\contentsline {subsection}{\numberline {6.4}Dropout}{12}{subsection.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5}Cross-entropy Loss}{13}{subsection.6.5}
+\contentsline {subsection}{\numberline {6.5}Cross-entropy Loss}{12}{subsection.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.6}Validation Accuracy}{14}{subsection.6.6}
+\contentsline {subsection}{\numberline {6.6}Validation Accuracy}{13}{subsection.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7}Positive and Negative Groups}{14}{section.7}
+\contentsline {section}{\numberline {7}Positive and Negative Groups}{13}{section.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8}Results}{15}{section.8}
+\contentsline {section}{\numberline {8}Results}{14}{section.8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1}Primary Emotion Data Results}{15}{subsection.8.1}
+\contentsline {subsection}{\numberline {8.1}Primary Emotion Data Results}{14}{subsection.8.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2}Labeled Twitter Data Results}{16}{subsection.8.2}
+\contentsline {subsection}{\numberline {8.2}Labeled Twitter Data Results}{15}{subsection.8.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {8.3}Unlabeled Raw Twitter Data Results}{17}{subsection.8.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4}McDonald's Service Failure Sentiment Results}{19}{subsection.8.4}
+\contentsline {subsection}{\numberline {8.4}McDonald's Service Failure Sentiment Results}{18}{subsection.8.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.5}Analysis}{21}{subsection.8.5}
+\contentsline {subsection}{\numberline {8.5}Analysis}{20}{subsection.8.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9}Conclusion}{23}{section.9}
+\contentsline {section}{\numberline {9}Conclusion}{22}{section.9}
