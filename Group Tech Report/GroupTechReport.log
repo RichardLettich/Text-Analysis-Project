@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 DEC 2018 21:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  12 DEC 2018 21:18
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1830,18 +1830,18 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 508.
 
 (./all.tex)
-Overfull \hbox (1.77873pt too wide) in paragraph at lines 1082--515
+Overfull \hbox (1.77873pt too wide) in paragraph at lines 1082--514
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1082--515
+Underfull \hbox (badness 10000) in paragraph at lines 1082--514
 
  []
 
 (./senti_v_fail.tex) (./senti_req_chick.tex)
 
-LaTeX Warning: Float too large for page by 109.40794pt on input line 531.
+LaTeX Warning: Float too large for page by 94.50784pt on input line 531.
 
 [20] [21] [22] [23]
 Package microtype Info: Loading generic protrusion settings for font family
@@ -1883,13 +1883,13 @@ Package logreq Info: Writing requests to 'GroupTechReport.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 49627 strings out of 492649
- 1112103 string characters out of 6129622
- 2336301 words of memory out of 5000000
+ 49629 strings out of 492649
+ 1112119 string characters out of 6129622
+ 2336077 words of memory out of 5000000
  52560 multiletter control sequences out of 15000+600000
- 546083 words of font info for 136 fonts, out of 8000000 for 9000
+ 546134 words of font info for 137 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 78i,21n,136p,10418b,2461s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 78i,21n,136p,10418b,2432s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb
@@ -1913,7 +1913,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf
 ist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2018/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2018/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on GroupTechReport.pdf (29 pages, 508227 bytes).
+Output written on GroupTechReport.pdf (29 pages, 508192 bytes).
 PDF statistics:
  597 PDF objects out of 1000 (max. 8388607)
  519 compressed objects within 6 object streams
